@@ -17,7 +17,7 @@ app.use('/static', express.static(path.join(`${__dirname}/public`)));
 
 app.get('/', (req, res) => res.send('Home Route'));
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 3333;
 
 mongoose
     .connect(process.env.DB_HOST, {
