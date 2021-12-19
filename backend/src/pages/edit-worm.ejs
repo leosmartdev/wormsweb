@@ -1,0 +1,30 @@
+<%- include('header'); -%>
+<div class="container-form">
+	<h1><% if(editing){ %>Edit Worm<% } else { %>Add Worm<% } %></h1>
+
+	<form method="POST" action="/<% if(editing){ %>edit-worm<% } else { %>add-worm<% } %>">
+		<div>
+			<label>Name</label>
+			<input type="text" name="name" value="<% if(editing){ %><%= worm.name %><% } %>" required />
+		</div>
+		<div>
+			<label>Image</label>
+			<input type="text" name="image" value="<% if(editing){ %><%= worm.image %><% } %>" required />
+		</div>
+		<div>
+			<label>Description</label>
+			<textarea type="text" name="description" rows="10" cols="50" required ><% if(editing){ %><%= worm.description %><% } %></textarea>
+		</div>
+		<% if(editing){ %>
+		<div>
+			<input type="hidden" name="wormId" value="<%= worm.id %>" />
+		</div>
+		<% } %>
+		<div>
+			<button type="submit"><% if(editing){ %>Edit Worm<% } else { %>Add Worm<% } %></button>
+		</div>
+	</form>
+</div>
+		<%- include('footer'); -%>
+	</body>
+</html>
