@@ -16,9 +16,9 @@ exports.getIndex = async (req, res) => {
 };
 
 exports.getWorm = async (req, res) => {
-	const animeId = req.params.animeId;
+	const wormId = req.params.wormId;
 
-	const worm = await Worm.findById(animeId, (worm) => worm);
+	const worm = await Worm.findById(wormId, (worm) => worm);
 
 	try {
 		console.log(worm);
@@ -33,7 +33,7 @@ exports.getAddWorm = (req, res) => {
 };
 
 exports.getEditWorm = async (req, res) => {
-	const animeId = req.params.animeId;
+	const wormId = req.params.wormId;
 
 	const editMode = req.query.edit;
 
@@ -41,10 +41,10 @@ exports.getEditWorm = async (req, res) => {
 		return res.redirect('/');
 	}
 
-	const worm = await Worm.findById(animeId);
+	const worm = await Worm.findById(wormId);
 
 	try {
-		if (!animeId) {
+		if (!wormId) {
 			return res.redirect('/');
 		}
 		console.log(worm);
@@ -69,7 +69,7 @@ exports.postWorm = (req, res) => {
 };
 
 exports.postEditWorm = (req, res) => {
-	const animeId = req.body.animeId;
+	const wormId = req.body.wormId;
 	const { name, image, description } = req.body;
 
 	Worm.findById(animeId)
@@ -82,7 +82,7 @@ exports.postEditWorm = (req, res) => {
 		})
 		.then(() => {
 			console.log('Item Updated');
-			res.status(201).redirect(`/${animeId}`);
+			res.status(201).redirect(`/${wormId}`);
 		})
 		.catch((err) => {
 			console.log(err);
@@ -90,9 +90,9 @@ exports.postEditWorm = (req, res) => {
 };
 
 exports.postDelete = async (req, res) => {
-	const animeId = req.body.animeId;
+	const wormId = req.body.wormId;
 
-	const worm = await Worm.findByIdAndRemove(animeId, (data) => data);
+	const worm = await Worm.findByIdAndRemove(wormId, (data) => data);
 
 	try {
 		console.log(worm);

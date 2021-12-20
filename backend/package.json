@@ -12,11 +12,15 @@
 	"author": "Dmytro",
 	"license": "MIT",
 	"dependencies": {
+		"@material-ui/core": "^4.12.3",
+		"@material-ui/icons": "^4.11.2",
+		"bootstrap": "^5.1.3",
 		"concurrently": "^5.2.0",
 		"cors": "^2.8.5",
 		"dotenv": "^8.2.0",
 		"ejs": "^3.1.3",
 		"express": "^4.17.1",
+		"jquery": "^3.6.0",
 		"mongoose": "^5.9.24",
 		"nodemon": "^2.0.4"
 	}

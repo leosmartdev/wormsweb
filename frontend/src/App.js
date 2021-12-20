@@ -1,4 +1,8 @@
 import React, { Fragment, useEffect, useState } from 'react';
+import $ from 'jquery';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
+
 import './App.css';
 
 const App = () => {
@@ -24,13 +28,24 @@ const App = () => {
 	return (
 		<Fragment>
 			<header>
-				
+				<div className='d-flex justify-content-end'>
+					<button className='btn btn-warning top-btn'><a href='/login'>INICIAR SESIÓN </a></button>
+					<button className='btn btn-warning top-btn'><a href='/register' className=''>REGISTRARSE</a></button>
+				</div>
+				<div className="d-flex justify-content-center p-3 menu"> 
+					<a href="/start" className='p-2 ml-3'>Inicio</a>
+					<a href="/information" className='p-2 ml-3'>Información</a>
+					<a href="/screenshots" className='p-2 ml-3'>Screenshots</a>
+					<a href="/download" className='p-2 ml-3'>Descargas</a>
+					<a href="/about" className='p-2 ml-3'>Sobre nosotros</a>
+					<a href="/documentation" className='p-2 ml-3'>Documentación</a>
+					<button className='btn btn-lg btn-warning'><a href='/playgame' className=''>JUGAR AHORA</a></button>
+				</div>
 			</header>
 
 			<div className="container">
 				{loading ? (
 					<div>
-						<p>No data to load</p>
 					</div>
 				) : (
 					<div>
@@ -55,27 +70,9 @@ const App = () => {
 					</div>
 				)}
 			</div>
-			{/* <div>
-				<h1>Add New Worm</h1>
-				<form method="POST" action="http://localhost:8080/add-worm">
-					<div>
-						<label>Name</label>
-						<input type="text" name="name" required />
-					</div>
-					<div>
-						<label>Image</label>
-						<input type="text" name="image" required />
-					</div>
-					<div>
-						<label>Description</label>
-						<input type="text" name="description" required />
-					</div>
+			{
 
-					<div>
-						<button type="submit">Add Worm</button>
-					</div>
-				</form>
-			</div> */}
+			}
 		</Fragment>
 	);
 };
