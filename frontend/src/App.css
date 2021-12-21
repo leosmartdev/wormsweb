@@ -8,3 +8,98 @@
     font-size: 1.7vw;
     color: white;
 }
+.custom-btn {
+    border: 3px solid white;
+    border-radius: 5%;
+    padding: 8%;
+    width: 100%;
+}
+.first-slogan {
+    margin-top: 4%;
+    text-align: center;
+    vertical-align: middle;
+    color: whitesmoke;
+    font-size: 5rem;
+}
+
+/* Start Touranment CSS */
+.tournament {
+    margin-top: 10%;
+    color: whitesmoke;
+}
+
+.tournament-title {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.touranment-description {
+    padding: 0 10%;
+    font-size: 2rem;
+}
+/* End Touranment CSS */
+
+/* Start Download CSS */
+.download {
+    color: whitesmoke;
+    font-size: 3rem;
+    font-weight: bold;
+    margin-top: 5%;
+    padding: 3%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.down-des {
+    padding: 3%;
+}
+.video-frame {
+    margin: 3%;
+    border: 3px solid whitesmoke;
+    width: 100%;
+    height: auto;
+    border-radius: 7%;
+}
+/* End Download CSS */
+
+/* Start Screenshot CSS */
+.screen-shot {
+    margin-top: 5%;
+}
+.screen-title {
+    color: whitesmoke;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.screen-image {
+    height: auto;
+    margin: 3%;
+}
+/* End Screenshot CSS */
+
+/* Start Footer CSS */
+.footer {
+    width: 100%;
+    height: auto;
+    margin-top: 5%;
+    color: white;
+    
+}
+.footer-col-1 {
+    height: 30%;
+}
+
+.footer .img-1 {
+    background-color: whitesmoke;
+    margin: 1%;
+    padding: 2%;
+    width: 20%;
+}
+
+
+.footer .img-3 {
+    width: 20%;
+    height: 10%;
+}
+/* End Footer CSS */
