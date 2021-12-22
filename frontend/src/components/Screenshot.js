@@ -5,7 +5,7 @@ import '../App.css';
 class Screenshot extends Component {
     render() {
         return (
-            <div className="screen-shot">
+            <div className="screen-shot" id="screenshots">
                 <div className="d-flex justify-content-center screen-title">
                     <p>Screenshots</p>
                 </div>

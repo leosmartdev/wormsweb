@@ -4,7 +4,7 @@ import '../App.css';
 class Information extends Component {
     render() {
         return (
-            <div className='tournament'>
+            <div className='tournament' id="information">
                 <div className='d-flex justify-content-center tournament-title'>
                     <p>Información</p>
                 </div>

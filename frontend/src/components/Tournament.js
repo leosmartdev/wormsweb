@@ -5,7 +5,7 @@ import '../App.css';
 class Tournament extends Component {
     render() {
         return (
-            <div className='tournament'>
+            <div className='tournament' id='tournament'>
                 <div className='d-flex justify-content-center tournament-title'>
                     <p>Torneo</p>
                 </div>

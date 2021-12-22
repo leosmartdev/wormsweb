@@ -13,13 +13,13 @@ class Header extends Component {
                         <button className='btn btn-warning top-btn'>REGISTRARSE</button>
                     </div>
                     <div className="d-flex justify-content-center p-3 menu"> 
-                        <a href="http://localhost:5000/start" className='p-2 ml-3'>Inicio</a>
-                        <a href="http://localhost:5000/information" className='p-2 ml-3'>Información</a>
-                        <a href="http://localhost:5000/screenshots" className='p-2 ml-3'>Screenshots</a>
-                        <a href="http://localhost:5000/download" className='p-2 ml-3'>Descargas</a>
-                        <a href="http://localhost:5000/about" className='p-2 ml-3'>Sobre nosotros</a>
-                        <a href="http://localhost:5000/documentation" className='p-2 ml-3'>Documentación</a>
-                        <button className='btn btn-lg btn-warning'><a href='http://localhost:5000/playgame' className=''>JUGAR AHORA</a></button>
+                        <a href="#" className='p-2 ml-3'>Inicio</a>
+                        <a href="#information" className='p-2 ml-3'>Información</a>
+                        <a href="#screenshots" className='p-2 ml-3'>Screenshots</a>
+                        <a href="#download" className='p-2 ml-3'>Descargas</a>
+                        <a href="#about" className='p-2 ml-3'>Sobre nosotros</a>
+                        <a href="#tournament" className='p-2 ml-3'>Documentación</a>
+                        <button className='btn btn-lg btn-warning'><a href='#playgame' className=''>JUGAR AHORA</a></button>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import  '../App.css';
 class Slider extends Component {
     render() {
         return (
-            <div className='first-slogan mt-3'>
+            <div className='first-slogan mt-3' id='#start'>
                 <p>Los gusanos en la zona de </p>
                 <p> una serpiente resbaladiza</p>
             </div>

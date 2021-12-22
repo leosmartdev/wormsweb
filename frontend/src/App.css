@@ -84,22 +84,43 @@
     height: auto;
     margin-top: 5%;
     color: white;
+    flex-flow: row wrap;
     
-}
-.footer-col-1 {
-    height: 30%;
 }
 
 .footer .img-1 {
-    background-color: whitesmoke;
     margin: 1%;
     padding: 2%;
-    width: 20%;
+    width: 60%;
+    height: 30vh;
 }
 
 
+.footer .img-2 {
+    margin-top: 4%;
+    padding: 0 20%;
+    height: 20%;
+}
+.footer .footer-col-3 {
+    padding: 0 20%;
+
+}
 .footer .img-3 {
-    width: 20%;
-    height: 10%;
+    margin: 4% 0;
+    height: 8vh;
+}
+
+.footer .img-3 .hover {
+    background-color: red;
+    border: solid 1px white;
+}
+
+.footer .footer-memo {
+    margin-top: 2%;
+    
+}
+.footer hr {
+    color: yellow;
+    padding: 1px;
 }
 /* End Footer CSS */
