@@ -15,9 +15,9 @@ import Screenshot from './components/Screenshot';
 const App = () => {
 	return (
 		<Fragment>
-			<Header />
 
-			<div className="container">
+			<div className="container-fluid">
+				<Header />
 				<Slider />
 				<Tournament />
 				<Download />
