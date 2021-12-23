@@ -1,29 +1,29 @@
 <%- include('header'); -%>
 
 <main>
-	<div class="container-worm">
-		<div><h1>Worm</h1></div>
-		<div class="worm-content">
-			<div><img src="<%= worm.image %>" alt="<%= worm.name %>" /></div>
-			<div>
-				<h2><%= worm.name %></h2>
+  <div className="container-worm">
+    <div><h1>Worm</h1></div>
+    <div className="worm-content">
+      <div><img src="<%= worm.image %>" alt="<%= worm.name %>" /></div>
+      <div>
+        <h2><%= worm.name %></h2>
 
-				<p class="worm-description"><%= worm.description %></p>
-			</div>
-		</div>
-		<div class="worm-edit-delete">
-			<div>
-				<form method="POST" action="/delete">
-					<div>
-						<input type="hidden" value="<%= worm.id %>" name="wormId" />
-						<button>Delete</button>
-					</div>
-				</form>
-			</div>
-			<div>
-				<a href="/edit-worm/<%= worm.id %>?edit=true">Edit</a>
-			</div>
-		</div>
-	</div>
+        <p className="worm-description"><%= worm.description %></p>
+      </div>
+    </div>
+    <div className="worm-edit-delete">
+      <div>
+        <form method="POST" action="/delete">
+          <div>
+            <input type="hidden" value="<%= worm.id %>" name="wormId" />
+            <button>Delete</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <a href="/edit-worm/<%= worm.id %>?edit=true">Edit</a>
+      </div>
+    </div>
+  </div>
 </main>
 <%- include('footer'); -%>

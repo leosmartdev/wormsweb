@@ -1,0 +1,18 @@
+@use "fonts";
+@use "colors";
+@use "defaults";
+@use "templates/components/headings.scss";
+
+html,
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

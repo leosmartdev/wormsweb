@@ -1,0 +1,23 @@
+// button
+.button {
+  padding: 0.45rem 0.8rem;
+  border: 0;
+  background-color: var(--blue);
+  background: var(--linear-gradient);
+  color: var(--linkblue);
+  border: 3px solid white;
+  font-size: 0.5rem;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover,
+  &:active {
+    background: var(--linear-gradient-reversed);
+    filter: brightness(90%);
+  }
+}
+@media (min-width: 800px) {
+  .button {
+    font-size: 0.75rem;
+  }
+}

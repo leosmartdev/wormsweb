@@ -1,0 +1,41 @@
+footer {
+  background-image: url(./../../img/fotter-web.png),
+    url(./../../img/Back-Home.png);
+  background-position: center, right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  border-top: 3px solid #79710b;
+  min-height: 442px;
+  text-align: center;
+  padding-top: 1.5rem;
+}
+.social-media-area ul {
+  display: flex;
+}
+.sponsors {
+  display: flex;
+  grid-gap: 1.5rem;
+  padding: 0 1rem;
+}
+.sponsors img {
+  max-height: 181px;
+  height: auto;
+  width: 100%;
+}
+.border-bottom {
+  border-bottom: 1px solid gray;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+.legal {
+  font-size: 12px;
+  padding: 0.81rem 0;
+  color: gray;
+  & a {
+    color: gray;
+    &:hover {
+      color: white;
+    }
+  }
+}

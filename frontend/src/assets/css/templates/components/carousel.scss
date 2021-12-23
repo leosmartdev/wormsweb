@@ -1,0 +1,21 @@
+.slider-one .carousel {
+  width: 80vw;
+  max-height: 50vh;
+  position: relative;
+}
+.slider-one .carousel__slider {
+  max-height: 50vh;
+}
+.slider-one .carousel__inner-slide,
+.slider-one .carousel__slide--visible,
+.slider-one .carousel__slide--hidden {
+  max-height: 50vh;
+}
+.slider-one .slide-container {
+  display: flex;
+  height: 50vh;
+}
+.carousel__next-button:disabled,
+.carousel__back-button:disabled {
+  display: none;
+}

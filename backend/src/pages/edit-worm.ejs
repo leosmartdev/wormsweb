@@ -1,5 +1,5 @@
 <%- include('header'); -%>
-<div class="container-form">
+<div className="container-form">
 	<h1><% if(editing){ %>Edit Worm<% } else { %>Add Worm<% } %></h1>
 
 	<form method="POST" action="/<% if(editing){ %>edit-worm<% } else { %>add-worm<% } %>">

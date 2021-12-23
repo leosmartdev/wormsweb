@@ -1,32 +1,32 @@
-import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
-import $ from 'jquery';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-import '../node_modules/bootstrap/dist/js/bootstrap.min.js';
-import './App.css';
-import Header from './components/Header.js';
-import Footer from './components/Footer';
-import Slider from './components/Slider';
-import Tournament from './components/Tournament';
-import Download from './components/Download';
-import Information from './components/Information';
-import Screenshot from './components/Screenshot';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GameLayout from "./layouts/GameLayout";
+import Layout from "./layouts/Layout";
+// pages
+import HomePage from "./pages/Home";
+import Play from "./pages/Play";
 
-const App = () => {
-	return (
-		<Fragment>
-
-			<div className="container-fluid">
-				<Header />
-				<Slider />
-				<Tournament />
-				<Download />
-				<Information />
-				<Screenshot />
-				<Footer />	
-			</div>
-		</Fragment>
-	);
-};
-
-export default App;
+export default function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <HomePage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/play"
+          element={
+            <GameLayout>
+              <Play />
+            </GameLayout>
+          }
+        />
+      </Routes>
+    </Router>
+  );
+}
