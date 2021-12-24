@@ -5,6 +5,7 @@ import {
   Slide,
   ButtonBack,
   ButtonNext,
+  Image,
 } from "pure-react-carousel";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "./../../assets/css/templates/components/carousel.scss";
@@ -53,34 +54,34 @@ export class CarouselScreenshotSlider extends React.Component {
   render() {
     return (
       <CarouselProvider
-        naturalSlideHeight={100}
-        naturalSlideWidth={100}
+        naturalSlideHeight={435}
+        naturalSlideWidth={775}
         totalSlides={3}
       >
         <Slider>
           <Slide index={0}>
-            <div className="slide-container">
+            <div className="slide-container-2">
               <div className="flex-wrapper margin-auto">
-                <img src={screenshot} alt="screenshot 1" />
+                <Image src={screenshot} />
               </div>
             </div>
           </Slide>
           <Slide index={1}>
-            <div className="slide-container">
+            <div className="slide-container-2">
               <div className="flex-wrapper margin-auto">
-                <img src={screenshot} alt="screenshot 1" />
+                <Image src={screenshot} />
               </div>
             </div>
           </Slide>
           <Slide index={2}>
-            <div className="slide-container">
+            <div className="slide-container-2">
               <div className="flex-wrapper margin-auto">
-                <img src={screenshot} alt="screenshot 1" />
+                <Image src={screenshot} />
               </div>
             </div>
           </Slide>
         </Slider>
-        <div className="slider-one-arrow-container">
+        <div className="slider-two-arrow-container">
           <ButtonBack>&nbsp;</ButtonBack>
           <ButtonNext>&nbsp;</ButtonNext>
         </div>

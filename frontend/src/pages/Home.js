@@ -72,8 +72,10 @@ function HomePage() {
         </div>
         <div className="vh-100 flex-wrapper direction-column">
           <h6>Screenshots</h6>
-          <div className="slider-one">
-            <CarouselScreenshotSlider />
+          <div class="container-slider-two">
+            <div class="slider-two">
+              <CarouselScreenshotSlider />
+            </div>
           </div>
         </div>
       </main>
