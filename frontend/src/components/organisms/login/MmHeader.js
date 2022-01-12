@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "./../../atoms/Logo";
 import Button from "./../../atoms/Button";
-import "./../../../assets/css/templates/header-home.scss";
+import "./../../../assets/css/templates/header-login.scss";
 import {
   connectWallet,
   getCurrentWalletConnected,
@@ -60,7 +60,7 @@ function MmHeader() {
     <>
       <header>
         <div className="tab-area">
-          <div className="tab-icons">
+          <div className="mm-connect-area">
             <Button onClick={connectWalletPressed}  className="mm-connect">
               {walletAddress.length > 0 ? (
                 "Conectada: " +
@@ -69,13 +69,13 @@ function MmHeader() {
                 String(walletAddress).substring(38)
               ) : (
                 <span>CONECTAR BILLETERA</span>
-              )}                
+              )}
             </Button>
           </div>
         </div>
         <div className="header flex-wrapper">
           <div className="header-left">
-            <Logo alt="Police or Thief" className="img-logo" />
+            <Logo alt="Police or Thief" className="mm-img-logo" />
           </div>
         </div>
       </header>

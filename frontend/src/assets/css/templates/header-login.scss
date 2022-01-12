@@ -1,0 +1,100 @@
+// header templates
+header {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+  }
+  .mm-connect {
+    font-size: small;
+  }
+  .mm-connect-area {
+      margin-left: auto;
+      margin-top: 20px;
+      display: flex;
+      gap: 4px;
+  }
+  
+
+  @media (min-width: 800px) {
+    .header {
+      font-size: 0.55rem;
+    }
+    .header-right nav ul li:nth-child(-n + 2) {
+      display: block;
+    }
+  }
+  @media (min-width: 1000px) {
+    .header {
+      font-size: 0.75rem;
+    }
+  }
+  .header-left {
+    padding-left: 0.6rem;
+    margin-top: -3rem;
+  }
+  .overlayDivMenuMobile {
+    display: none;
+  }
+  
+  .overlayDivMenuMobile {
+    overflow-y: scroll;
+    list-style: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 9;
+  }
+  .overlayDivMenuMobile ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .overlayDivMenuMobile.showOverlay {
+    width: 100%;
+    display: block;
+    background: #000000f0;
+    padding-top: 33vh;
+  }
+  .buttonHamburguerStyles {
+    padding: 0.13rem 0.25rem 0.151rem 0.25rem;
+  }
+  .img-logo {
+    max-width: 250px;
+    height: auto;
+    margin-top:20px;
+  }
+  @media (max-width: 376px) {
+    .img-logo {
+      max-width: 100px !important;
+      padding-top: 0.42rem;
+    }
+  }
+  @media (max-width: 650px) {
+    .img-logo {
+      max-width: 150px;
+      padding-top: 0.42rem;
+    }
+  }
+  @media (min-width: 1500px) {
+    .header-right nav ul li {
+      margin-top: 0.421rem !important;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-right nav ul {
+      flex-direction: column;
+    }
+    .header-right button {
+      order: 2;
+    }
+    .header-right nav ul li {
+      margin: 0 0 0.5rem auto !important;
+      order: 1;
+    }
+  }
+  

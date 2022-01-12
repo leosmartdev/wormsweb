@@ -29,12 +29,13 @@
 }
 //
 .slider-two .carousel {
-  width: 80vw;
+  width: 55vw;
+  max-height: 60vh;
   position: relative;
   margin: auto;
 }
 .slider-two .carousel__slider {
-  padding-top: 1.5rem;
+  // padding-top: 1.5rem;
 }
 .slider-two .slide-container {
   display: flex;
@@ -45,6 +46,6 @@
 }
 @media (min-width: 783px) {
   .slider-two .carousel__slider {
-    padding-top: 3rem;
+    // padding-top: 3rem;
   }
 }

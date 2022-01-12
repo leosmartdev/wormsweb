@@ -61,11 +61,11 @@ function Header() {
       <header>
         <div className="tab-area">
           <div className="tab-icons">
-            <div className="btn-tab">
+            {/* <div className="btn-tab">
               <a href="/mmlogin">INICIAR SESIÓN</a>
-            </div>
+            </div> */}
             <div className="btn-tab">
-              <a href="register">REGISTRARSE</a>
+              <a href="/mmlogin">REGISTRARSE</a>
             </div>
           </div>
         </div>

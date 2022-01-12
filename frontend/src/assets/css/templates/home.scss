@@ -41,34 +41,38 @@ main {
 }
 .left-right-flex {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 @media (min-width: 900px) {
-  .left-right-flex {
-    flex-direction: row;
-  }
 }
 .left-right-flex .right,
 .left-right-flex .left {
   position: relative;
-  overflow: hidden;
-  width: 100%;
+  // overflow: hidden;
   margin: auto;
+  text-align: center;
 }
 .left-right-flex .left {
-  font-size: 7vw;
-  line-height: 7vw;
-  padding-left: 10vw;
+  flex: 50%;
+}
+.left-right-flex .right {
+  flex: 50%;
 }
 .mm-connect {
   font-size: small;
 }
 @media (max-width: 900px) {
+  .left-right-flex {
+    flex-direction: column;
+  }
   .left-right-flex .right {
     margin-top: 0;
   }
   .left-right-flex .left button {
-    width: 80vw;
+    // width: 80vw;
+  }
+  .homefirstbuttondiv {
+    flex-direction: column;
   }
 }
 .slider-one-arrow-container,
@@ -103,5 +107,195 @@ main {
   transform: rotateY(180deg);
 }
 .container-slider-two {
-  margin: auto;
+  margin: 20px auto;
 }
+
+.home-first-area {
+  margin-top: 200px;
+}
+
+.homefirstimg1 {
+  width: 40vw;
+} 
+.homefirstimg5 {
+  width: 40vw;
+} 
+.homeparag1 {
+  font-size: 15px;
+}
+.leftrightinnerdiv {
+  margin: auto;
+  display: table;
+  width: 80%;
+}
+.homefirstbuttondiv {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: 90%;
+  margin-top: 30px;
+  margin-bottom: 5px;
+}
+.homefirstbutton1 {
+  margin-left: 5px;
+  padding: 2px 15px;
+}
+
+@media (max-width: 1072px) {
+  .homefirstbuttondiv {
+    flex-direction: column;
+  }
+  
+  .homefirstbuttondiv button {
+    margin-top: 5px;
+  }
+}
+
+@media (max-width: 900px) {
+  .homefirstimg1 {
+    width: 80vw;
+  }
+  .homefirstimg5 {
+    width: 80vw;
+  }
+}
+
+.box-with-borders2 {
+  border-top: 3px solid #79710b;
+  border-bottom: 3px solid #79710b;
+  background: #00000079;
+  text-align: center;
+  place-items: center;
+  width: 100%;
+}
+.homesecondleftdiv {
+  float: left;
+  width: 30%;
+  height: 100vh;
+}
+.homesecondrightdiv {
+  float: left;
+  width: 60%;
+  height: 100vh;
+  padding: 3vw 0; 
+}
+.homesecondleftdiv > div {
+  display: table;
+}
+.homesecondimg1 {
+  width: 250px;
+  margin-top: calc(50vh - 150px)
+}
+.homesecondrightdiv p {
+  margin-top: 20px;
+  font-size: 23px;
+  line-height: 40px;
+}
+
+@media (max-width: 1250px) {
+  .homesecondrightdiv {
+    width: 70%;
+    padding: 3vw 5vw;
+  }
+}
+
+@media (max-width: 1150px) {
+  .homesecondrightdiv p {
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .homesecondrightdiv p {
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  .homesecondleftdiv {
+    width: 100%;
+    height: 320px;
+  }
+  .homesecondimg1 {
+    margin-top: 20px;
+  }
+  .homesecondrightdiv {
+    width: 100%;
+    padding: 20px 30px;
+  }
+  .homesecondrightdiv p {
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 700px) {
+  .homesecondrightdiv p {
+    line-height: 25px;
+  }
+}
+
+.homethirdarea > div.left p {
+  line-height: 2rem;
+  font-size: 2.5rem;
+  text-shadow: 0px 0px 50px yellow;
+  width: 90%;
+}
+
+.homethirdarea > div.right video {
+  border-radius: 30px 0 0 30px;
+  border-top: 8px solid white;
+  border-left: 8px solid white;
+  border-bottom: 8px solid white;
+}
+
+@media (max-width: 900px) {  
+  .homethirdarea > div.left p {
+    margin: 30px 30px;
+  }
+}
+.homefourtharea {
+  position: relative;
+  border-top: 3px solid #79710b;
+  border-bottom: 3px solid #79710b;
+  background: #00000079;
+  text-align: center;
+  place-items: center;
+  width: 100%;  
+
+}
+.homefourtharea > h2{
+  margin-top: 30px;
+  font-size: 2.5rem;
+  text-shadow: 0px 0px 50px yellow;
+}
+
+.homefourtharea > img {
+  width: 90%;
+}
+
+.homefourthcontrolpanel {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 65px;
+  height: 240px;
+  display: grid;
+  grid-template-columns: auto;
+  background-color: #a79d14;
+  border-radius: 20px 0 0 20px;
+}
+
+.homefourthcontrolpanel > .a {
+  display: table;
+}
+
+.homefourthcontrolpanel .homefourthimgs {
+  margin-top: 10px;
+  width: 60%;
+}
+
+.homefiftharea > h6 {
+  margin-top: 20px;
+  text-shadow: 0px 0px 50px yellow;
+}
+

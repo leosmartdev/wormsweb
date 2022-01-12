@@ -10,7 +10,7 @@ import {
 import "pure-react-carousel/dist/react-carousel.es.css";
 import "./../../assets/css/templates/components/carousel.scss";
 
-import screenshot from "./../../assets/img/worms.png";
+import screenshot from "./../../assets/img/7.png";
 export default class CarouselSlider extends React.Component {
   render() {
     return (
@@ -54,8 +54,8 @@ export class CarouselScreenshotSlider extends React.Component {
   render() {
     return (
       <CarouselProvider
-        naturalSlideHeight={435}
         naturalSlideWidth={775}
+        naturalSlideHeight={600}
         totalSlides={3}
       >
         <Slider>
