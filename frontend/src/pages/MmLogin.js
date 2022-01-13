@@ -59,13 +59,10 @@ function MmLoginPage() {
 
   return (
     <>
-      <div className="mm-login">
-        <div className="vh-100 flex-wrapper">
-          <div className="box-with-borders">
-						<div className="mm-login-dashboard">
-							<div className="wrapper-container-dialog1">
-								<h4>Conectar Cartera</h4>
-								<p className="first">
+        <div className="vh-100 mm-login">
+						<div className="mmlogincenterdiv">
+								<h4 className="mmtitle">Conectar Cartera</h4>
+								<p className="mmfirstp">
 										Conéctese con su billetera disponible
 										o cree una nueva billetera para
 										unirse a nuestro mercado
@@ -74,17 +71,16 @@ function MmLoginPage() {
 									<img src={metaLogo} alt="Ingresar con MetaMask" width="60" className="logo-img"/>
 									<span className="logo-text">Iniciar Sesión con <br/> Meta Mask</span>
 								</Button>
-								<p className="second">
+								<p className="mmsecondp">
 										No somos propietarios de sus claves privadas y no
 										podemos acceder a sus fondos sin su confirmación.
 										Ver término de uso
 								</p>
-							</div>
 						</div>
-          <SocialMedia />
-          </div>
+              <div className="mediadiv">
+                <SocialMedia/>
+              </div>
         </div>
-      </div>
     </>
   );
 }

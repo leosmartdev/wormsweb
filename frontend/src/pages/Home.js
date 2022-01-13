@@ -77,20 +77,20 @@ function HomePage() {
             </div>
           </div>
         </div>
-        <div className="vh-100 left-right-flex homethirdarea">
-          <div className="left">
+        <div className="vh-100 homethirdarea">
+          <div className="homethirdleftdiv">
             <p>Salva el
               universo y
               obten grandes
               recompensas</p>
           </div>
-          <div className="right">
+          <div className="homethirdrightdiv">
             <Video />
           </div>
         </div>
         <div className="vh-100 flex-wrapper">
           <div className="homefourtharea">
-                <h2>ROAD MAP</h2>
+                <p>ROAD MAP</p>
                 <img src={homefourthimg1} className="homefourthimg1"/>
                 <div className="homefourthcontrolpanel">                  
                   <a href="#">

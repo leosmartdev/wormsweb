@@ -33,6 +33,7 @@
   max-height: 60vh;
   position: relative;
   margin: auto;
+  margin-top: 50px;
 }
 .slider-two .carousel__slider {
   // padding-top: 1.5rem;
@@ -47,5 +48,14 @@
 @media (min-width: 783px) {
   .slider-two .carousel__slider {
     // padding-top: 3rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .slider-two .carousel {
+    width: 70vw;
+    max-height: 60vh;
+    position: relative;
+    margin: auto;
   }
 }

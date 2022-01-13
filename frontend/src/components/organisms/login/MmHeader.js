@@ -75,7 +75,7 @@ function MmHeader() {
         </div>
         <div className="header flex-wrapper">
           <div className="header-left">
-            <Logo alt="Police or Thief" className="mm-img-logo" />
+            <Logo alt="Police or Thief" className="img-logo" />
           </div>
         </div>
       </header>

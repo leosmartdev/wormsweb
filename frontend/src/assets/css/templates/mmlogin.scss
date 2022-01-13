@@ -1,64 +1,80 @@
 div.mm-login {
-    background: url(./../../img/fotter-web.png), url(./../../img/back-website.png) no-repeat center;
-    background-size: cover;
-    text-align:left;
-  }
-  .logo-text {
-    float:left;
-    line-height:20px;
-    margin-left:20px;
-    padding: 10px 0;
-  }
-  .logo-img {
-    float:left;
-  }
-  .mm-login-dashboard {
-    margin-top: 120px;
-  }
-  main {
-    background: url(./../../img/back-website.png) no-repeat center;
-    background-size: cover;
-  }
-  .box-with-borders {
-    border-top: 3px solid #79710b;
-    border-bottom: 3px solid #79710b;
-    background: #00000079;
-    text-align: center;
-    display: grid;
-    place-items: center;
-    width: 100%;
-  }
-  .wrapper-container h2,
-  .wrapper-container h3,
-  .wrapper-container h4,
-  .wrapper-container h5,
-  .wrapper-container h6 {
-    font-size: 6vw;
-  }
-  .wrapper-container p {
-    margin: 1rem 0;
-    font-size: 24px;
-  }
-  .wrapper-container-dialog1 {
-    text-align: left;
+  background-image: url(./../../img/19.png), url(./../../img/back-game.png);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 40% , cover;
+  background-position: bottom, left;
+  border-top: 3px solid #79710b;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 1rem;
+  position: relative;
+}
+.mmlogincenterdiv {
+  width: 400px;
+  margin: auto;
+  margin-top: 18vh;
+}
+.mmtitle {
+  font-size: 40px;  
+}
+.mmfirstp {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.mmsecondp {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.logo-text {
+  float:left;
+  line-height:20px;
+  margin-left:20px;
+  padding: 10px 0;
+}
+.logo-img {
+  float:left;
+}
+.mm-connect {
+  font-size: small;
+}
+.mediadiv {
+  display: table;
+  margin: auto;
+  margin-top: 12vh;
+}
+@media (max-width: 500px) {
+  .mmlogincenterdiv {
+    width: 350px;
     margin: auto;
-    max-width: 420px;  
-  } 
-  
-  .wrapper-container-dialog1 span {
-    text-align:left;
+    margin-top: 18vh;
   }
-  .wrapper-container-dialog1 p.first {
-    font-size: 22px;
-    margin: 15px 0;
+  .mmtitle {
+    font-size: 35px;  
   }
-  
-  .wrapper-container-dialog1 p.second {
+  .mmfirstp {
+    font-size: 23px;
+    margin: 20px 0;
+  }
+  .mmsecondp {
     font-size: 18px;
-    margin: 15px 0;
+    margin: 20px 0;
+  }  
+}
+@media (max-width: 400px) {
+  .mmlogincenterdiv {
+    width: 300px;
+    margin: auto;
+    margin-top: 18vh;
   }
-  
-  .mm-connect {
-    font-size: small;
+  .mmtitle {
+    font-size: 32px;  
   }
-  
+  .mmfirstp {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .mmsecondp {
+    font-size: 15px;
+    margin: 20px 0;
+  }  
+}

@@ -1,31 +1,37 @@
 footer {
   background-image: url(./../../img/19.png), url(./../../img/back-game.png);
-  background-position: left bottom, left top;
   background-repeat: no-repeat, repeat;
+  background-size: 100%, cover;
+  background-position: bottom, left;
   border-top: 3px solid #79710b;
-  min-height: 442px;
+  min-height: 100vh;
   text-align: center;
-  padding-top: 1.5rem;
+  padding-top: 1rem;
   position: relative;
 }
 
 .footerfirstarea {
   display: table;
   width: 100%;
-  margin: 1rem 0;
-
 }
 .footerfirsttitle {
-  margin: 10px 0;
+  margin-bottom: 50px;
 }
 .footerfirsttitle h1 {
   text-shadow: 0 0 50px yellow;
 }
+.footerimgsdiv {
+  display: flex;
+  flex-direction: row;
+  margin: 30px;
+}
 .footerimgs {
-  float: left;
-  width: 33.3%;
+  flex: 33.3%
 }
 
+.footerimgs img {
+  width: 90%;
+}
 .footerimgs p {
   font-size: 25px
 }
@@ -34,12 +40,23 @@ footer {
   font-size: 20px
 }
 
-
 @media (max-width: 900px) {
-  .footerimgs {
-    width: 100%;
+  .footerimgsdiv {
+    flex-direction: column;
   }  
+  .footerimgs img {
+    width: 300px;
+  }
 }  
+@media (max-width: 500px) {
+  .footerimgs img {
+    width: 80%;
+    margin-top: 20px;
+  }  
+  .footerfirsttitle {
+    margin-bottom: 0;
+  }
+}
 
 .footersecondarea {
   display: table;
@@ -53,6 +70,11 @@ footer {
   border-bottom: 1px solid #a79d14;
   border-right: 1px solid #a79d14;
   padding: 50px;
+}
+@media (max-width: 400px) {
+  .footersecondchilddivs {
+    padding: 50px 0;
+  }
 }
 
 .footersecondchilddivs p {
@@ -76,8 +98,12 @@ footer {
   border-bottom: 2px solid rgb(161, 161, 161);
 }
 .footerthirdimgs1 {
-  display: table;
+  display: flex;
+  flex-direction: row;
   margin: auto;
+}
+.footerthirdimgs1 a {
+  flex: 25%;
 }
 .footerthirdimgs2 {
   display: table;
@@ -86,6 +112,23 @@ footer {
 
 .footerthirdimgs2 img{
   margin: 30px 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .footerthirdimgs1 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  .footerthirdimgs1 .thirdimg {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .footerthirdimgs1 .thirdimg {
+    width: 100%;
+  }
 }
 
 

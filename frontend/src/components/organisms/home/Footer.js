@@ -32,7 +32,7 @@ function Footer() {
           <div className="footerfirsttitle">
             <h1>Equipo</h1>
           </div>
-          <div>
+          <div className="footerimgsdiv">
             <div className="footerimgs">
               <img src={footerimg1}/>
               <p>Nombre y Apellido</p>
@@ -64,7 +64,7 @@ function Footer() {
           <div className="footerthirdimgs1">
             <a href="#"><img src={footerimg6}/></a>
             <a href="#"><img src={footerimg7}/></a>
-            <a href="#"><img src={footerimg8}/></a>
+            <a href="#"><img src={footerimg8} className="thirdimg"/></a>
             <a href="#"><img src={footerimg9}/></a>
           </div>
           <div className="footerthirdimgs2">

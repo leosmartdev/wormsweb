@@ -112,12 +112,16 @@ header {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .header-right nav ul {
     flex-direction: column;
   }
   .header-right button {
     order: 2;
+  }
+  
+  .header-right button svg {
+    width: 25px;
   }
   .header-right nav ul li {
     margin: 0 0 0.5rem auto !important;

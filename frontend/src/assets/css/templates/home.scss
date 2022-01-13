@@ -71,9 +71,6 @@ main {
   .left-right-flex .left button {
     // width: 80vw;
   }
-  .homefirstbuttondiv {
-    flex-direction: column;
-  }
 }
 .slider-one-arrow-container,
 .slider-two-arrow-container {
@@ -85,23 +82,26 @@ main {
 .slider-one .carousel__next-button,
 .slider-two .carousel__next-button {
   position: absolute;
-  right: 0;
-  top: 3px;
+  right: -20px;
+  top: -40px;
   border: 0;
   background: url(./../../img/slider-arrow.png) no-repeat center;
   background-size: cover;
   height: 5vh;
-  width: 20px;
+  width: 50px;
   filter: invert(97%) sepia(100%) saturate(0%) hue-rotate(277deg)
     brightness(104%) contrast(101%);
 }
 .slider-one .carousel__back-button,
 .slider-two .carousel__back-button {
+  position: absolute;
+  left: -20px;
+  top: -40px;
   border: 0;
   background: url(./../../img/slider-arrow.png) no-repeat center;
   background-size: cover;
   height: 5vh;
-  width: 20px;
+  width: 50px;
   filter: invert(97%) sepia(100%) saturate(0%) hue-rotate(277deg)
     brightness(104%) contrast(101%);
   transform: rotateY(180deg);
@@ -109,7 +109,7 @@ main {
 .container-slider-two {
   margin: 20px auto;
 }
-
+//--------------- first area ------------------
 .home-first-area {
   margin-top: 200px;
 }
@@ -154,12 +154,21 @@ main {
 @media (max-width: 900px) {
   .homefirstimg1 {
     width: 80vw;
+    margin-top: 20px;
+  }
+  .homefirstbuttondiv {
+    margin-top: 10px;
   }
   .homefirstimg5 {
     width: 80vw;
+    margin-top: 10px;
+  }
+  .homefirstbutton1 {
+    margin-left: 5px;
+    padding: 0px 5px;
   }
 }
-
+//---------------- second area -----------------------
 .box-with-borders2 {
   border-top: 3px solid #79710b;
   border-bottom: 3px solid #79710b;
@@ -176,7 +185,6 @@ main {
 .homesecondrightdiv {
   float: left;
   width: 60%;
-  height: 100vh;
   padding: 3vw 0; 
 }
 .homesecondleftdiv > div {
@@ -188,26 +196,35 @@ main {
 }
 .homesecondrightdiv p {
   margin-top: 20px;
-  font-size: 23px;
   line-height: 40px;
 }
 
+@media (min-width: 1367px) and (max-width: 1450px) {
+  .homesecondrightdiv p {
+    font-size: 35px;
+    line-height: 40px;
+  }  
+}
+
+@media (min-width: 1251px) and (max-width: 1366px) {
+  .homesecondrightdiv p {
+    font-size: 32px;
+  }
+}
 @media (max-width: 1250px) {
   .homesecondrightdiv {
     width: 70%;
     padding: 3vw 5vw;
   }
-}
-
-@media (max-width: 1150px) {
   .homesecondrightdiv p {
-    line-height: 35px;
+    font-size: 30px;
   }
 }
 
+
 @media (max-width: 1000px) {
   .homesecondrightdiv p {
-    line-height: 30px;
+    line-height: 35px;
   }
 }
 
@@ -234,25 +251,104 @@ main {
   }
 }
 
-.homethirdarea > div.left p {
+@media (min-width: 320px) and (max-width: 400px) {
+  .homesecondrightdiv p {
+    line-height: 18px;
+    font-size: 19px;
+  }
+  .homesecondrightdiv {
+    width: 100%;
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 381px) and (max-width: 499px) {
+  .homesecondrightdiv p {
+    line-height: 20px;
+    font-size: 22px;
+  }
+  .homesecondrightdiv {
+    width: 100%;
+    padding: 10px 20px;
+  }
+}
+//--------------- third area --------------------
+.homethirdarea {
+  display: flex;
+  flex-direction: row;
+}
+
+.homethirdleftdiv, .homethirdrightdiv {
+  flex: 50%;
+  position: relative;
+  margin: auto;
+  text-align: center;
+}
+
+.homethirdleftdiv p {
   line-height: 2rem;
   font-size: 2.5rem;
   text-shadow: 0px 0px 50px yellow;
   width: 90%;
+  margin: 30px;
+  text-align: center;
 }
 
-.homethirdarea > div.right video {
+.homethirdrightdiv > video {
   border-radius: 30px 0 0 30px;
   border-top: 8px solid white;
   border-left: 8px solid white;
   border-bottom: 8px solid white;
 }
 
-@media (max-width: 900px) {  
-  .homethirdarea > div.left p {
-    margin: 30px 30px;
+@media (max-width: 1000px) {
+  
+  .homethirdleftdiv p {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+  }  
+}
+
+@media (max-width: 900px) {
+  .homethirdarea {
+    flex-direction: column;
+  }
+  .homethirdleftdiv, .homethirdrightdiv {
+    flex: none;
+    margin: 20px; 
+  }
+  .homethirdrightdiv > video {
+    width: 80vw;
+    border-radius: 30px;
+    border: 8px solid white;
   }
 }
+
+@media (max-width: 600px) {
+  
+  .homethirdleftdiv p {
+    line-height: 1.5rem;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }  
+}
+@media (max-width: 500px) {
+  
+  .homethirdleftdiv, .homethirdrightdiv {
+    flex: none;
+    margin: 30px 0;
+  }
+  .homethirdleftdiv p {
+    line-height: 1.5rem;
+    font-size: 1.2rem;
+    margin: auto;
+  }  
+  .homethirdrightdiv {
+    margin-top: 0;
+  }
+}
+
+//--------------------  fourth area -----------------
 .homefourtharea {
   position: relative;
   border-top: 3px solid #79710b;
@@ -263,13 +359,14 @@ main {
   width: 100%;  
 
 }
-.homefourtharea > h2{
-  margin-top: 30px;
+.homefourtharea > p{
+  margin: 30px;
   font-size: 2.5rem;
   text-shadow: 0px 0px 50px yellow;
 }
 
 .homefourtharea > img {
+  margin: 30px;
   width: 90%;
 }
 
@@ -294,6 +391,73 @@ main {
   width: 60%;
 }
 
+@media (max-width: 1100px) {
+  .homefourtharea > p {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 900px) {
+
+}
+@media (max-width: 768px) {
+  .homefourtharea > p {
+    font-size: 1.8rem;
+  }
+  .homefourthcontrolpanel {
+    width: 55px;
+    height: 220px;
+  }
+}
+@media (max-width: 640px) {
+  .homefourthcontrolpanel {
+    top: 30px;  
+    width: 45px;
+    height: 180px;
+  }
+  .homefourtharea > p {
+    margin: 20px;
+  }
+  .homefourtharea > img {
+    margin: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .homefourthcontrolpanel {
+    top: 30px;  
+    width: 40px;
+    height: 150px;
+  }
+  .homefourtharea > p {
+    margin: 20px;
+    font-size: 1.5em;
+  }
+  .homefourtharea > img {
+    margin: 20px;
+  }
+  .homefourthcontrolpanel .homefourthimgs {
+    margin-top: 0px;
+  }
+  .homefourthcontrolpanel a{
+    height: 20px;
+  }
+}
+@media (max-width: 370px) {
+  .homefourthcontrolpanel {
+    top: 20px;  
+    width: 35px;
+    height: 130px;
+  }
+  .homefourthcontrolpanel a{
+    height: 15px;
+  }
+  .homefourtharea > p {
+    margin: 20px;
+    font-size: 1.2em;
+  }
+
+}
+
+// ------------------   fifth area  ------------------
 .homefiftharea > h6 {
   margin-top: 20px;
   text-shadow: 0px 0px 50px yellow;
