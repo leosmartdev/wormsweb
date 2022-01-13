@@ -1,0 +1,18 @@
+// header templates
+header {
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    right: 0;
+  }
+  .mm-connect {
+    font-size: small;
+  }
+  .mm-connect-area {
+      margin-left: auto;
+      margin-top: 20px;
+      display: flex;
+      gap: 4px;
+  }
+  
+

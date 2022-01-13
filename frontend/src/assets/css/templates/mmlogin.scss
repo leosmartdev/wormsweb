@@ -1,0 +1,80 @@
+div.mm-login {
+  background-image: url(./../../img/19.png), url(./../../img/back-game.png);
+  background-repeat: no-repeat, repeat;
+  background-size: 100% 40% , cover;
+  background-position: bottom, left;
+  border-top: 3px solid #79710b;
+  min-height: 100vh;
+  text-align: center;
+  padding-top: 1rem;
+  position: relative;
+}
+.mmlogincenterdiv {
+  width: 400px;
+  margin: auto;
+  margin-top: 18vh;
+}
+.mmtitle {
+  font-size: 40px;  
+}
+.mmfirstp {
+  font-size: 25px;
+  margin: 20px 0;
+}
+.mmsecondp {
+  font-size: 20px;
+  margin: 20px 0;
+}
+.logo-text {
+  float:left;
+  line-height:20px;
+  margin-left:20px;
+  padding: 10px 0;
+}
+.logo-img {
+  float:left;
+}
+.mm-connect {
+  font-size: small;
+}
+.mediadiv {
+  display: table;
+  margin: auto;
+  margin-top: 12vh;
+}
+@media (max-width: 500px) {
+  .mmlogincenterdiv {
+    width: 350px;
+    margin: auto;
+    margin-top: 18vh;
+  }
+  .mmtitle {
+    font-size: 35px;  
+  }
+  .mmfirstp {
+    font-size: 23px;
+    margin: 20px 0;
+  }
+  .mmsecondp {
+    font-size: 18px;
+    margin: 20px 0;
+  }  
+}
+@media (max-width: 400px) {
+  .mmlogincenterdiv {
+    width: 300px;
+    margin: auto;
+    margin-top: 18vh;
+  }
+  .mmtitle {
+    font-size: 32px;  
+  }
+  .mmfirstp {
+    font-size: 20px;
+    margin: 20px 0;
+  }
+  .mmsecondp {
+    font-size: 15px;
+    margin: 20px 0;
+  }  
+}

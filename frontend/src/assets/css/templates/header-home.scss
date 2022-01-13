@@ -5,6 +5,9 @@ header {
   left: 0;
   right: 0;
 }
+.mm-connect {
+  font-size: small;
+}
 .tab-area {
   width: 100%;
   text-align: right;
@@ -12,6 +15,7 @@ header {
   padding-right: 0.6rem;
   & > .tab-icons {
     margin-left: auto;
+    margin-top: 0px;
     display: flex;
     gap: 4px;
     & > .btn-tab {
@@ -34,7 +38,7 @@ header {
   justify-content: space-between;
   padding: var(--padding);
   font-size: 0.35rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 .header-right {
   padding-right: 0.81rem;
@@ -108,12 +112,16 @@ header {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 500px) {
   .header-right nav ul {
     flex-direction: column;
   }
   .header-right button {
     order: 2;
+  }
+  
+  .header-right button svg {
+    width: 25px;
   }
   .header-right nav ul li {
     margin: 0 0 0.5rem auto !important;
