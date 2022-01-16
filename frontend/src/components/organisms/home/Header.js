@@ -73,7 +73,7 @@ function Header() {
         </div> */}
         <div className="header flex-wrapper">
           <div className="header-left">
-            <Logo alt="Police or Thief" className="img-logo" />
+            <Logo alt="SPACE WORMS" className="img-logo" />
           </div>
           <div className="header-right">
             <nav>

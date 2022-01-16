@@ -1,4 +1,4 @@
-import "../../assets/css/templates/components/social-media.scss";
+import "assets/css/templates/components/social-media.scss";
 function SocialMedia() {
   return (
     <div className="social-media-area">

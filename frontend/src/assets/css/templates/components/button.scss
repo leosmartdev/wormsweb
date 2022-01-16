@@ -16,7 +16,15 @@
     filter: brightness(90%);
   }
 }
-
+.cancel {
+  background: var(--linear-gradient-cancel);
+  color: white;
+  &:hover,
+  &:active {
+    background: var(--linear-gradient-cancel-reversed);
+    filter: brightness(90%);
+  }
+}
 @media (min-width: 800px) {
   .button {
     font-size: 0.75rem;

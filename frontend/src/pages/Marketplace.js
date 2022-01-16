@@ -3,118 +3,45 @@ import Button from "components/atoms/Button";
 import { useEffect, useState } from "react";
 import "assets/css/templates/components/modal.scss";
 import { useForm } from "react-hook-form";
+import SocialMedia from "components/molecules/SocialMedia";
+import eggNFT from "assets/img/huevo-gusano.png";
+import Logo from "components/atoms/Logo";
 
 function MarketPlacePage() {
-  // const [walletAddress, setWallet] = useState("");
-  // const [status, setStatus] = useState("");
-
-  // const [name, setName] = useState("");
-  // const [description, setDescription] = useState("");
-  // const [url, setURL] = useState("");
-  // const [ip, setIP] = useState("");
-
   const [modalOpen, setModalOpen] = useState(true);
-  const [currentModal, setCurrentModal] = useState("");
+  const [currentModal, setCurrentModal] = useState("loading-screen");
 
-  // useEffect(async () => {
-  //   const { address, status } = await getCurrentWalletConnected();
-
-  //   setWallet(address);
-  //   setStatus(status);
-
-  //   addWalletListener();
-  // }, []);
-
-  // function addWalletListener() {
-  //   if (window.ethereum) {
-  //     window.ethereum.on("accountsChanged", (accounts) => {
-  //       if (accounts.length > 0) {
-  //         setWallet(accounts[0]);
-  //         setStatus("👆🏽 Write a message in the text-field above.");
-
-  //         // once connected, open modal with create account form
-  //         setModalOpen(true);
-  //       } else {
-  //         setWallet("");
-  //         setStatus("🦊 Connect to Metamask using the top right button.");
-  //       }
-  //     });
-  //   } else {
-  //     setStatus(
-  //       <p>
-  //         {" "}
-  //         🦊{" "}
-  //         <a
-  //           target="_blank"
-  //           href={`https://metamask.io/download.html`}
-  //           rel="noreferrer"
-  //         >
-  //           You must install Metamask, a virtual Ethereum wallet, in your
-  //           browser.
-  //         </a>
-  //       </p>
-  //     );
-  //   }
-  // }
-
-  // const connectWalletPressed = async () => {
-  //   const walletResponse = await connectWallet();
-  //   setStatus(walletResponse.status);
-  //   setWallet(walletResponse.address);
-  // };
   // the Modal
-  const ShowCreateAccountModal = () => {
-    // the ip getter note this needs some cors header sent from backend
-    // const getData = async () => {
-    //   // const res = await axios.get("https://geolocation-db.com/json/");
-    //   // console.log(res.data);
-    //   // setIP(res.data.IPv4);
-    //   setIP("fake.ip.address.development");
-    // };
-    // useEffect(() => {
-    //   getData();
-    // }, []);
+  const ShowBuyEgg = () => {
     return (
       <>
         <div className="modal-wrapper">
           <div className="grid place-center">
-            <div className="create-account-modal">
-              <button
-                className="close-modal-button"
-                onClick={() => {
-                  setModalOpen(false);
-                }}
-              >
-                X
-              </button>
-              {/*  */}
-              {/* form starts */}
-              {currentModal !== "show-form" ? (
-                <>
-                  <h1>Ya Casi has llegado</h1>
+            {/*  */}
+            {/* form starts */}
+            {currentModal !== "loading-screen" ? (
+              <>
+                <div className="create-account-modal">
+                  <h1>Compra</h1>
                   <p className="my-1">
-                    Conecta tu cuenta de juego para continuar en el mercado
+                    Estas a punto de comprar un huevo en Space Worms
                   </p>
-                  <button
-                    className="button"
+                  <BuyEggForm
                     onClick={() => {
-                      setCurrentModal("show-form");
+                      setModalOpen(false);
                     }}
-                  >
-                    Crear una nueva cuenta
-                  </button>
-                </>
-              ) : (
-                <>
-                  <h1>Crear Cuenta</h1>
-                  <p className="my-1">
-                    Conecta tu cuenta de juego para continuar en el mercado
-                  </p>
-                  <CreateAccountForm />
-                </>
-              )}
-              {/*  */}
-            </div>
+                  />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="loading-screen-container">
+                  <Logo />
+                  <h1>Cargando</h1>
+                </div>
+              </>
+            )}
+            {/*  */}
           </div>
         </div>
       </>
@@ -123,37 +50,97 @@ function MarketPlacePage() {
 
   return (
     <>
-      {modalOpen ? "modal" : ""}
-      <span>wip</span>
-      {/* <div className="vh-100 mm-login">
-        <div className="mmlogincenterdiv">
-          <h4 className="mmtitle">Conectar Cartera</h4>
-          <p className="mmfirstp">
-            Conéctese con su billetera disponible o cree una nueva billetera
-            para unirse a nuestro mercado
-          </p>
-          <Button onClick={connectWalletPressed}>
-            <img
-              src={metaLogo}
-              alt="Ingresar con MetaMask"
-              width="60"
-              className="logo-img"
-            />
-            <span className="logo-text">
-              Iniciar Sesión con <br /> Meta Mask
-            </span>
-          </Button>
-          <p className="mmsecondp">
-            No somos propietarios de sus claves privadas y no podemos acceder a
-            sus fondos sin su confirmación. Ver término de uso
-          </p>
+      {modalOpen ? <ShowBuyEgg /> : ""}
+
+      <div className="vh-100 mm-mint grid">
+        <div className="">
+          <h1 className="mmtitle">Minteo NFT</h1>
+          <div>
+            <div className="NFT-status-container">
+              <div className="NFT-status-box">
+                <div>Cantidad Disponible</div>
+                <div>1000 / 1000</div>
+              </div>
+              <div className="NFT-status-box">
+                <div>Tiempo disponible</div>
+                <div>2 días / 48Hrs</div>
+              </div>
+              <div className="NFT-status-box">
+                <div>Egg comprados</div>
+                <div>00</div>
+              </div>
+            </div>
+            <div className="NFT-view-container">
+              <div className="image-container">
+                <img src={eggNFT} alt="" />
+              </div>
+              <div className="NFT-view-info-price">
+                <div className="NFT-view-info-name">Minteo NFT</div>
+                <div>100 BUSD</div>
+              </div>
+              <div className="NFT-view-info-stats">
+                <div className="NFT-rare">Raro 5%</div>
+                <div className="NFT-common">Común 12%</div>
+                <div className="NFT-legendary">Legendario 8%</div>
+                <div className="NFT-uncommon">Poco común 3%</div>
+              </div>
+              <button
+                onClick={() => {
+                  setModalOpen(true);
+                }}
+                className="button"
+              >
+                Comprar
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="mediadiv">
+        <div>
           <SocialMedia />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
 
+// form component
+
+const BuyEggForm = ({ onClick }) => {
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (values) => console.log(values);
+
+  return (
+    <form className="buy-egg-form mt-1" onSubmit={handleSubmit(onSubmit)}>
+      <div className="buy-egg-form-label flex-wrapper">
+        <div>Costo de huevo</div>
+        <div>100 BUSD</div>
+      </div>
+      <div className="buy-egg-form-quantity flex-wrapper">
+        <div>Cantidad</div>
+        <div>
+          <input
+            type="number"
+            className="number-input"
+            {...register("nftquantity")}
+          />
+        </div>
+      </div>
+      <div className="buy-egg-form-label flex-wrapper">
+        <div>Precio total</div>
+        <div>100 BUSD</div>
+      </div>
+      <div class="buy-egg-form-terms">* máximo de compra por wallet (2)</div>
+      <div className="buy-egg-form-actions flex-wrapper mt-1">
+        <button className="button cancel create-acc-button" onClick={onClick}>
+          Cancelar
+        </button>
+        <button className="button create-acc-button">Comprar</button>
+      </div>
+    </form>
+  );
+};
 export default MarketPlacePage;

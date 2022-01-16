@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
 import Logo from "../../atoms/Logo";
-import Button from "../../atoms/Button";
 import "assets/css/templates/header-market.scss";
-import {
-  connectWallet,
-  getCurrentWalletConnected,
-} from "../../../util/interact.js";
-
+import userAvatar from "assets/img/avatar_2.png";
 function Header() {
   // const [walletAddress, setWallet] = useState("");
   // const [status, setStatus] = useState("");
@@ -63,21 +58,24 @@ function Header() {
     <>
       <header>
         <div className="header flex-wrapper">
-          <div className="header-left">
+          <div className="header-left flex-wrapper">
             <Logo alt="Space Worms" className="img-logo" />
+            <nav>
+              <ul>
+                <li>
+                  <a href="/compra-egg">Compra Egg</a>
+                </li>
+                <li>
+                  <a href="/marketplace">Marketplace</a>
+                </li>
+              </ul>
+            </nav>
           </div>
           <div className="header-right">
-            <div className="mm-connect-area">
-              <Button onClick={connectWalletPressed} className="mm-connect">
-                {walletAddress.length > 0 ? (
-                  "Conectada: " +
-                  String(walletAddress).substring(0, 6) +
-                  "..." +
-                  String(walletAddress).substring(38)
-                ) : (
-                  <span>CONECTAR BILLETERA</span>
-                )}
-              </Button>
+            <div className="user-area">
+              <button>
+                <img src={userAvatar} alt="" />
+              </button>
             </div>
           </div>
         </div>
@@ -86,4 +84,4 @@ function Header() {
   );
 }
 
-export default MmHeader;
+export default Header;
