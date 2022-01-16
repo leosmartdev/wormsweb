@@ -6,10 +6,13 @@ import { useForm } from "react-hook-form";
 import SocialMedia from "components/molecules/SocialMedia";
 import eggNFT from "assets/img/huevo-gusano.png";
 import Logo from "components/atoms/Logo";
+import LoadingWorm from "components/organisms/LoadingWorm";
+import alien from "assets/img/alien.png";
+import soldierWorm from "assets/img/gusano-guerrero.png";
 
 function MarketPlacePage() {
   const [modalOpen, setModalOpen] = useState(true);
-  const [currentModal, setCurrentModal] = useState("loading-screen");
+  const [currentModal, setCurrentModal] = useState("asd");
 
   // the Modal
   const ShowBuyEgg = () => {
@@ -19,7 +22,7 @@ function MarketPlacePage() {
           <div className="grid place-center">
             {/*  */}
             {/* form starts */}
-            {currentModal !== "loading-screen" ? (
+            {currentModal === "buy-egg" ? (
               <>
                 <div className="create-account-modal">
                   <h1>Compra</h1>
@@ -33,11 +36,24 @@ function MarketPlacePage() {
                   />
                 </div>
               </>
-            ) : (
+            ) : currentModal === "loading-screen" ? (
               <>
                 <div className="loading-screen-container">
-                  <Logo />
-                  <h1>Cargando</h1>
+                  <div>
+                    <Logo />
+                    <h1>Cargando</h1>
+                  </div>
+                  <LoadingWorm />
+                </div>
+              </>
+            ) : (
+              <>
+                <div className="absolute img-loading">
+                  <img src={soldierWorm} alt="" />
+                </div>
+                <div className="flex-wrapper">
+                  <img src={alien} alt="" />
+                  <h1>Bienvenido a la aventura</h1>
                 </div>
               </>
             )}
