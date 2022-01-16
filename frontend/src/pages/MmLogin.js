@@ -15,7 +15,7 @@ function MmLoginPage() {
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
 
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [currentModal, setCurrentModal] = useState("almost-there");
   // const [ip, setIP] = useState("");
 
