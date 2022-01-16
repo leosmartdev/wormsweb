@@ -14,7 +14,7 @@ function Header() {
 
   const navigate = useNavigate();
   const routeChange = () => {
-    navigate("/play");
+    navigate("/MmLogin");
   };
   return (
     <>
@@ -31,8 +31,18 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="/info" rel="author">
-                Información
+              <a href="/intro" rel="author">
+                Introduccion
+              </a>
+            </li>
+            <li>
+              <a href="/gameplay" rel="author">
+                Gameplay
+              </a>
+            </li>
+            <li>
+              <a href="/roadmap" rel="author">
+                Roadmap
               </a>
             </li>
             <li>
@@ -41,34 +51,26 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="/descargas" rel="author">
-                Descargas
+              <a href="/team" rel="author">
+                Equipo
               </a>
             </li>
             <li>
-              <a href="/about" rel="author">
-                Sobre nosotros
-              </a>
-            </li>
-            <li>
-              <a href="/documentacion" rel="author">
-                Documentación
+              <a href="/whitepaper" rel="author">
+                Whitepaper
               </a>
             </li>
           </ul>
         </nav>
       </div>
       <header>
-        <div className="tab-area">
+        {/* <div className="tab-area">
           <div className="tab-icons">
-            {/* <div className="btn-tab">
-              <a href="/mmlogin">INICIAR SESIÓN</a>
-            </div> */}
             <div className="btn-tab">
               <a href="/mmlogin">REGISTRARSE</a>
             </div>
           </div>
-        </div>
+        </div> */}
         <div className="header flex-wrapper">
           <div className="header-left">
             <Logo alt="Police or Thief" className="img-logo" />
@@ -76,34 +78,39 @@ function Header() {
           <div className="header-right">
             <nav>
               <ul>
-                <li className="desktop-only">
+                <li className="desktop-only header-link">
                   <a href="/" rel="author">
                     Inicio
                   </a>
                 </li>
-                <li className="desktop-only">
-                  <a href="/info" rel="author">
-                    Información
+                <li className="desktop-only header-link">
+                  <a href="/introduccion" rel="author">
+                    Introduccion
                   </a>
                 </li>
-                <li className="desktop-only">
+                <li className="desktop-only header-link">
+                  <a href="/gameplay" rel="author">
+                    Gameplay
+                  </a>
+                </li>
+                <li className="desktop-only header-link">
+                  <a href="/roadmap" rel="author">
+                    Roadmap
+                  </a>
+                </li>
+                <li className="desktop-only header-link">
                   <a href="/screenshots" rel="author">
                     Screenshots
                   </a>
                 </li>
-                <li className="desktop-only">
-                  <a href="/descargas" rel="author">
-                    Descargas
+                <li className="desktop-only header-link">
+                  <a href="/equipo" rel="author">
+                    Equipo
                   </a>
                 </li>
-                <li className="desktop-only">
-                  <a href="/about" rel="author">
-                    Sobre nosotros
-                  </a>
-                </li>
-                <li className="desktop-only">
-                  <a href="/documentacion" rel="author">
-                    Documentación
+                <li className="desktop-only header-link">
+                  <a href="/whitepaper" rel="author">
+                    Whitepaper
                   </a>
                 </li>
                 <Button onClick={routeChange}>

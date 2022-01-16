@@ -7,7 +7,6 @@ import {
   getCurrentWalletConnected,
 } from "../../../util/interact.js";
 
-
 function MmHeader() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
@@ -41,7 +40,11 @@ function MmHeader() {
         <p>
           {" "}
           🦊{" "}
-          <a target="_blank" href={`https://metamask.io/download.html`}>
+          <a
+            target="_blank"
+            href={`https://metamask.io/download.html`}
+            rel="noreferrer"
+          >
             You must install Metamask, a virtual Ethereum wallet, in your
             browser.
           </a>
@@ -59,23 +62,23 @@ function MmHeader() {
   return (
     <>
       <header>
-        <div className="tab-area">
-          <div className="mm-connect-area">
-            <Button onClick={connectWalletPressed}  className="mm-connect">
-              {walletAddress.length > 0 ? (
-                "Conectada: " +
-                String(walletAddress).substring(0, 6) +
-                "..." +
-                String(walletAddress).substring(38)
-              ) : (
-                <span>CONECTAR BILLETERA</span>
-              )}
-            </Button>
-          </div>
-        </div>
         <div className="header flex-wrapper">
           <div className="header-left">
-            <Logo alt="Police or Thief" className="img-logo" />
+            <Logo alt="Space Worms" className="img-logo" />
+          </div>
+          <div className="header-right">
+            <div className="mm-connect-area">
+              <Button onClick={connectWalletPressed} className="mm-connect">
+                {walletAddress.length > 0 ? (
+                  "Conectada: " +
+                  String(walletAddress).substring(0, 6) +
+                  "..." +
+                  String(walletAddress).substring(38)
+                ) : (
+                  <span>CONECTAR BILLETERA</span>
+                )}
+              </Button>
+            </div>
           </div>
         </div>
       </header>

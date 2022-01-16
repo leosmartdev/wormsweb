@@ -1,4 +1,3 @@
-
 main {
   background: url(./../../img/back-website.png) no-repeat center;
   background-size: cover;
@@ -68,8 +67,8 @@ main {
   .left-right-flex .right {
     margin-top: 0;
   }
-  .left-right-flex .left button {
-    // width: 80vw;
+  .left-right-flex .left {
+    padding-top: 5rem;
   }
 }
 .slider-one-arrow-container,
@@ -107,7 +106,7 @@ main {
   transform: rotateY(180deg);
 }
 .container-slider-two {
-  margin: 20px auto;
+  margin: auto;
 }
 //--------------- first area ------------------
 .home-first-area {
@@ -116,12 +115,12 @@ main {
 
 .homefirstimg1 {
   width: 40vw;
-} 
+}
 .homefirstimg5 {
   width: 40vw;
-} 
+}
 .homeparag1 {
-  font-size: 15px;
+  font-size: 20px;
 }
 .leftrightinnerdiv {
   margin: auto;
@@ -132,7 +131,7 @@ main {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: 90%;
+
   margin-top: 30px;
   margin-bottom: 5px;
 }
@@ -145,7 +144,7 @@ main {
   .homefirstbuttondiv {
     flex-direction: column;
   }
-  
+
   .homefirstbuttondiv button {
     margin-top: 5px;
   }
@@ -174,7 +173,6 @@ main {
   border-bottom: 3px solid #79710b;
   background: #00000079;
   text-align: center;
-  place-items: center;
   width: 100%;
 }
 .homesecondleftdiv {
@@ -185,14 +183,16 @@ main {
 .homesecondrightdiv {
   float: left;
   width: 60%;
-  padding: 3vw 0; 
+  padding: 3vw 0;
+  display: grid;
+  place-items: center;
 }
 .homesecondleftdiv > div {
   display: table;
 }
 .homesecondimg1 {
   width: 250px;
-  margin-top: calc(50vh - 150px)
+  margin-top: calc(50vh - 150px);
 }
 .homesecondrightdiv p {
   margin-top: 20px;
@@ -203,7 +203,7 @@ main {
   .homesecondrightdiv p {
     font-size: 35px;
     line-height: 40px;
-  }  
+  }
 }
 
 @media (min-width: 1251px) and (max-width: 1366px) {
@@ -220,7 +220,6 @@ main {
     font-size: 30px;
   }
 }
-
 
 @media (max-width: 1000px) {
   .homesecondrightdiv p {
@@ -241,13 +240,13 @@ main {
     padding: 20px 30px;
   }
   .homesecondrightdiv p {
-    line-height: 30px;
+    line-height: 40px;
   }
 }
 
 @media (max-width: 700px) {
   .homesecondrightdiv p {
-    line-height: 25px;
+    line-height: 28px;
   }
 }
 
@@ -261,7 +260,9 @@ main {
     padding: 10px 20px;
   }
 }
-
+.homefourthimg1 {
+  place-items: center;
+}
 @media (min-width: 381px) and (max-width: 499px) {
   .homesecondrightdiv p {
     line-height: 20px;
@@ -272,21 +273,28 @@ main {
     padding: 10px 20px;
   }
 }
+@media (max-width: 896px) {
+  .hs-flex-column {
+    flex-direction: column;
+  }
+}
 //--------------- third area --------------------
 .homethirdarea {
   display: flex;
   flex-direction: row;
 }
 
-.homethirdleftdiv, .homethirdrightdiv {
+.homethirdleftdiv,
+.homethirdrightdiv {
   flex: 50%;
   position: relative;
   margin: auto;
   text-align: center;
+  padding: 0.55rem;
 }
 
 .homethirdleftdiv p {
-  line-height: 2rem;
+  line-height: 2.2rem;
   font-size: 2.5rem;
   text-shadow: 0px 0px 50px yellow;
   width: 90%;
@@ -295,27 +303,25 @@ main {
 }
 
 .homethirdrightdiv > video {
-  border-radius: 30px 0 0 30px;
-  border-top: 8px solid white;
-  border-left: 8px solid white;
-  border-bottom: 8px solid white;
+  border-radius: 30px;
+  border: 8px solid white;
 }
 
 @media (max-width: 1000px) {
-  
   .homethirdleftdiv p {
     line-height: 1.5rem;
     font-size: 1.5rem;
-  }  
+  }
 }
 
 @media (max-width: 900px) {
   .homethirdarea {
     flex-direction: column;
   }
-  .homethirdleftdiv, .homethirdrightdiv {
+  .homethirdleftdiv,
+  .homethirdrightdiv {
     flex: none;
-    margin: 20px; 
+    margin: 20px;
   }
   .homethirdrightdiv > video {
     width: 80vw;
@@ -325,16 +331,15 @@ main {
 }
 
 @media (max-width: 600px) {
-  
   .homethirdleftdiv p {
     line-height: 1.5rem;
     font-size: 1.5rem;
     margin-bottom: 0;
-  }  
+  }
 }
 @media (max-width: 500px) {
-  
-  .homethirdleftdiv, .homethirdrightdiv {
+  .homethirdleftdiv,
+  .homethirdrightdiv {
     flex: none;
     margin: 30px 0;
   }
@@ -342,7 +347,7 @@ main {
     line-height: 1.5rem;
     font-size: 1.2rem;
     margin: auto;
-  }  
+  }
   .homethirdrightdiv {
     margin-top: 0;
   }
@@ -356,10 +361,9 @@ main {
   background: #00000079;
   text-align: center;
   place-items: center;
-  width: 100%;  
-
+  width: 100%;
 }
-.homefourtharea > p{
+.homefourtharea > p {
   margin: 30px;
   font-size: 2.5rem;
   text-shadow: 0px 0px 50px yellow;
@@ -397,7 +401,6 @@ main {
   }
 }
 @media (max-width: 900px) {
-
 }
 @media (max-width: 768px) {
   .homefourtharea > p {
@@ -410,7 +413,7 @@ main {
 }
 @media (max-width: 640px) {
   .homefourthcontrolpanel {
-    top: 30px;  
+    top: 30px;
     width: 45px;
     height: 180px;
   }
@@ -423,7 +426,7 @@ main {
 }
 @media (max-width: 500px) {
   .homefourthcontrolpanel {
-    top: 30px;  
+    top: 30px;
     width: 40px;
     height: 150px;
   }
@@ -437,24 +440,23 @@ main {
   .homefourthcontrolpanel .homefourthimgs {
     margin-top: 0px;
   }
-  .homefourthcontrolpanel a{
+  .homefourthcontrolpanel a {
     height: 20px;
   }
 }
 @media (max-width: 370px) {
   .homefourthcontrolpanel {
-    top: 20px;  
+    top: 20px;
     width: 35px;
     height: 130px;
   }
-  .homefourthcontrolpanel a{
+  .homefourthcontrolpanel a {
     height: 15px;
   }
   .homefourtharea > p {
     margin: 20px;
     font-size: 1.2em;
   }
-
 }
 
 // ------------------   fifth area  ------------------
@@ -462,4 +464,3 @@ main {
   margin-top: 20px;
   text-shadow: 0px 0px 50px yellow;
 }
-
