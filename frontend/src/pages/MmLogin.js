@@ -4,8 +4,12 @@ import metaLogo from "./../assets/img/zorro.png";
 import SocialMedia from "../components/molecules/SocialMedia";
 import { useEffect, useState } from "react";
 import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
+import api from  "../util/api.js";
 import "assets/css/templates/components/modal.scss";
 import { useForm } from "react-hook-form";
+
+
+import axios from "axios";
 
 function MmLoginPage() {
   const [walletAddress, setWallet] = useState("");
@@ -24,6 +28,7 @@ function MmLoginPage() {
 
     setWallet(address);
     setStatus(status);
+    // setModalOpen(true);
 
     addWalletListener();
   }, []);
@@ -40,6 +45,7 @@ function MmLoginPage() {
         } else {
           setWallet("");
           setStatus("🦊 Connect to Metamask using the top right button.");
+          setModalOpen(false);
         }
       });
     } else {
@@ -59,12 +65,13 @@ function MmLoginPage() {
       );
     }
   }
-
+  
   const connectWalletPressed = async () => {
     const walletResponse = await connectWallet();
     setStatus(walletResponse.status);
     setWallet(walletResponse.address);
   };
+
   // the Modal
   const ShowCreateAccountModal = () => {
     // the ip getter note this needs some cors header sent from backend
@@ -167,6 +174,32 @@ const CreateAccountForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (values) => console.log(values);
+  const [email, setEmail] = useState('');
+  const [mailcode, setMailcode] = useState('');
+  
+
+  const createMailcode = async () => {
+    if (email != "") {
+      await api.post('/createmailcode', {params: {email: email}})
+          .then(function (response) {
+            console.log(response.data.Success);
+          })
+          .catch(function (error) {
+              console.log("stories error response :: ", error);
+          });
+    }
+  };
+  const registerEmail = async () => {
+    if (email != "") {
+      await api.post('/register', {params: {email: email, mailcode: mailcode}})
+          .then(function (response) {
+            console.log(response.data.Success);
+          })
+          .catch(function (error) {
+              console.log("stories error response :: ", error);
+          });
+    }
+  };
 
   return (
     <form
@@ -176,6 +209,7 @@ const CreateAccountForm = () => {
       <input
         type="email"
         placeholder="Email"
+        onInput={event => setEmail(event.target.value)}
         {...register("email", {
           required: "INGRESE SU CORREO ELECTRONICO",
           pattern: {
@@ -190,16 +224,17 @@ const CreateAccountForm = () => {
           <input
             type="text"
             placeholder="Ingresa el código"
+            onInput={event => setMailcode(event.target.value)}
             {...register("mailcode", {
               required: "Inserte el codigo recibido en la casilla de correo",
             })}
           />
         </div>
         <div>
-          <button className="button">Enviar código vía email</button>
+          <button className="button" onClick={createMailcode}>Enviar código vía email</button>
         </div>
       </div>
-      <button className="button create-acc-button">Crear Cuenta</button>
+      <button className="button create-acc-button " onClick={registerEmail}>Crear Cuenta</button>
       <div className="form-terms mt-1">
         Al continuar, acepta los términos de servicio y confirma que ha leído la
         política de privacidad
