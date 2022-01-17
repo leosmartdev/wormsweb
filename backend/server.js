@@ -10,7 +10,7 @@ let dbConfig = require('./database/db')
 const route = require('../backend/routes/route.js')
 
 
-mongoose.connect('mongodb://localhost:27017/ManualAuth5', {
+mongoose.connect(dbConfig.db, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, (err) => {

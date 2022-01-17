@@ -8,6 +8,9 @@ let userSchema = new Schema({
   email: {
     type: String
   },
+  walletaddress: {
+    type: String
+  },
   mailcode: {
     type: Number
   },
@@ -15,6 +18,9 @@ let userSchema = new Schema({
     type: Boolean
   },
   ipaddress: {
+    type: String
+  },
+  createdtime: {
     type: String
   }
 }, {

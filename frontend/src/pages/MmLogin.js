@@ -7,6 +7,7 @@ import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
 import api from  "../util/api.js";
 import "assets/css/templates/components/modal.scss";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 
 import axios from "axios";
@@ -38,13 +39,11 @@ function MmLoginPage() {
       window.ethereum.on("accountsChanged", (accounts) => {
         if (accounts.length > 0) {
           setWallet(accounts[0]);
-          setStatus("👆🏽 Write a message in the text-field above.");
 
           // once connected, open modal with create account form
           setModalOpen(true);
         } else {
           setWallet("");
-          setStatus("🦊 Connect to Metamask using the top right button.");
           setModalOpen(false);
         }
       });
@@ -81,9 +80,11 @@ function MmLoginPage() {
       // setIP(res.data.IPv4);
       // setIP("fake.ip.address.development");
     };
+
     useEffect(() => {
       getData();
     }, []);
+
     return (
       <>
         <div className="modal-wrapper">
@@ -120,7 +121,7 @@ function MmLoginPage() {
                   <p className="my-1">
                     Conecta tu cuenta de juego para continuar en el mercado
                   </p>
-                  <CreateAccountForm />
+                  <CreateAccountForm address={walletAddress}/>
                 </>
               )}
               {/*  */}
@@ -141,7 +142,14 @@ function MmLoginPage() {
             Conéctese con su billetera disponible o cree una nueva billetera
             para unirse a nuestro mercado
           </p>
-          <Button onClick={connectWalletPressed}>
+          <Button onClick={() => {
+            if (walletAddress == "") {
+              setModalOpen(false);
+              connectWalletPressed();
+            } else {
+              setModalOpen(true);
+            }
+          }}>
             <img
               src={metaLogo}
               alt="Ingresar con MetaMask"
@@ -167,7 +175,7 @@ function MmLoginPage() {
 
 // form component
 
-const CreateAccountForm = () => {
+const CreateAccountForm = (props) => {
   const {
     handleSubmit,
     register,
@@ -176,11 +184,11 @@ const CreateAccountForm = () => {
   const onSubmit = (values) => console.log(values);
   const [email, setEmail] = useState('');
   const [mailcode, setMailcode] = useState('');
-  
+  const navigate = useNavigate();
 
   const createMailcode = async () => {
     if (email != "") {
-      await api.post('/createmailcode', {params: {email: email}})
+      await api.post('/createmailcode', {params: {email: email, address: props.address}})
           .then(function (response) {
             console.log(response.data.Success);
           })
@@ -193,7 +201,10 @@ const CreateAccountForm = () => {
     if (email != "") {
       await api.post('/register', {params: {email: email, mailcode: mailcode}})
           .then(function (response) {
-            console.log(response.data.Success);
+            if (response.data.Success == "verified") {
+              localStorage.setItem("uuid", response.data.uuid);
+              navigate("/marketplace");
+            }
           })
           .catch(function (error) {
               console.log("stories error response :: ", error);

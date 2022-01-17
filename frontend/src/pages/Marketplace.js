@@ -3,16 +3,47 @@ import Button from "components/atoms/Button";
 import { useEffect, useState } from "react";
 import "assets/css/templates/components/modal.scss";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import SocialMedia from "components/molecules/SocialMedia";
 import eggNFT from "assets/img/huevo-gusano.png";
 import Logo from "components/atoms/Logo";
 import LoadingWorm from "components/organisms/LoadingWorm";
 import alien from "assets/img/alien.png";
 import soldierWorm from "assets/img/gusano-guerrero.png";
+import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
 
 function MarketPlacePage() {
   const [modalOpen, setModalOpen] = useState(true);
   const [currentModal, setCurrentModal] = useState("asd");
+  
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(async () => {
+    // const { address, status } = await getCurrentWalletConnected();
+    // setWallet(address);
+    // setStatus(status);
+    addWalletListener();
+  }, []);
+
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          // setWallet(accounts[0]);
+          // setStatus("👆🏽 Write a message in the text-field above.");
+
+        } else {
+          // setWallet("");
+          // setStatus("🦊 Connect to Metamask using the top right button.");
+          
+          localStorage.removeItem("uuid");
+          navigate("/mmlogin");
+        }
+      });
+    }
+  }
 
   // the Modal
   const ShowBuyEgg = () => {
