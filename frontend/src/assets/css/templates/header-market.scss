@@ -1,13 +1,4 @@
 // header templates
-header {
-  position: absolute;
-  z-index: 10;
-  left: 0;
-  right: 0;
-}
-.mm-connect {
-  font-size: small;
-}
 .tab-area {
   width: 100%;
   text-align: right;
@@ -120,6 +111,7 @@ li.header-link {
     border: 0;
     margin-right: 0.4rem;
     margin-top: 0.4rem;
+    cursor: pointer;
     & img {
       width: clamp(2.5rem, 5vw, 5rem);
     }

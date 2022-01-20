@@ -13,6 +13,7 @@ html {
   font-family: var(--font);
   font-size: 30px;
   font-weight: 900;
+  font-smooth: always;
 }
 a {
   text-decoration: none;
@@ -79,6 +80,9 @@ nav ul {
   max-width: 100%;
   height: auto;
 }
+.mt-2 {
+  margin-top: 0.4rem;
+}
 .ml-2 {
   margin-left: 0.4rem;
 }
@@ -115,4 +119,13 @@ video {
 .place-center {
   place-items: center;
   height: 100%;
+}
+
+// should be as template, default in every header
+.header-right > nav > ul {
+  margin-right: 0.25rem;
+  margin-top: 0.25rem;
+  & > * {
+    margin: auto 0.25rem;
+  }
 }

@@ -4,11 +4,10 @@ import metaLogo from "./../assets/img/zorro.png";
 import SocialMedia from "../components/molecules/SocialMedia";
 import { useEffect, useState } from "react";
 import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
-import api from  "../util/api.js";
+import api from "../util/api.js";
 import "assets/css/templates/components/modal.scss";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-
 
 import axios from "axios";
 
@@ -64,7 +63,7 @@ function MmLoginPage() {
       );
     }
   }
-  
+
   const connectWalletPressed = async () => {
     const walletResponse = await connectWallet();
     setStatus(walletResponse.status);
@@ -121,7 +120,7 @@ function MmLoginPage() {
                   <p className="my-1">
                     Conecta tu cuenta de juego para continuar en el mercado
                   </p>
-                  <CreateAccountForm address={walletAddress}/>
+                  <CreateAccountForm address={walletAddress} />
                 </>
               )}
               {/*  */}
@@ -142,14 +141,16 @@ function MmLoginPage() {
             Conéctese con su billetera disponible o cree una nueva billetera
             para unirse a nuestro mercado
           </p>
-          <Button onClick={() => {
-            if (walletAddress == "") {
-              setModalOpen(false);
-              connectWalletPressed();
-            } else {
-              setModalOpen(true);
-            }
-          }}>
+          <Button
+            onClick={() => {
+              if (walletAddress === "") {
+                setModalOpen(false);
+                connectWalletPressed();
+              } else {
+                setModalOpen(true);
+              }
+            }}
+          >
             <img
               src={metaLogo}
               alt="Ingresar con MetaMask"
@@ -182,33 +183,37 @@ const CreateAccountForm = (props) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (values) => console.log(values);
-  const [email, setEmail] = useState('');
-  const [mailcode, setMailcode] = useState('');
+  const [email, setEmail] = useState("");
+  const [mailcode, setMailcode] = useState("");
   const navigate = useNavigate();
 
   const createMailcode = async () => {
-    if (email != "") {
-      await api.post('/createmailcode', {params: {email: email, address: props.address}})
-          .then(function (response) {
-            console.log(response.data.Success);
-          })
-          .catch(function (error) {
-              console.log("stories error response :: ", error);
-          });
+    if (email !== "") {
+      await api
+        .post("/createmailcode", {
+          params: { email: email, address: props.address },
+        })
+        .then(function (response) {
+          console.log(response.data.Success);
+        })
+        .catch(function (error) {
+          console.log("stories error response :: ", error);
+        });
     }
   };
   const registerEmail = async () => {
-    if (email != "") {
-      await api.post('/register', {params: {email: email, mailcode: mailcode}})
-          .then(function (response) {
-            if (response.data.Success == "verified") {
-              localStorage.setItem("uuid", response.data.uuid);
-              navigate("/marketplace");
-            }
-          })
-          .catch(function (error) {
-              console.log("stories error response :: ", error);
-          });
+    if (email !== "") {
+      await api
+        .post("/register", { params: { email: email, mailcode: mailcode } })
+        .then(function (response) {
+          if (response.data.Success === "verified") {
+            localStorage.setItem("uuid", response.data.uuid);
+            navigate("/marketplace");
+          }
+        })
+        .catch(function (error) {
+          console.log("stories error response :: ", error);
+        });
     }
   };
 
@@ -220,7 +225,7 @@ const CreateAccountForm = (props) => {
       <input
         type="email"
         placeholder="Email"
-        onInput={event => setEmail(event.target.value)}
+        onInput={(event) => setEmail(event.target.value)}
         {...register("email", {
           required: "INGRESE SU CORREO ELECTRONICO",
           pattern: {
@@ -235,17 +240,21 @@ const CreateAccountForm = (props) => {
           <input
             type="text"
             placeholder="Ingresa el código"
-            onInput={event => setMailcode(event.target.value)}
+            onInput={(event) => setMailcode(event.target.value)}
             {...register("mailcode", {
               required: "Inserte el codigo recibido en la casilla de correo",
             })}
           />
         </div>
         <div>
-          <button className="button" onClick={createMailcode}>Enviar código vía email</button>
+          <button className="button" onClick={createMailcode}>
+            Enviar código vía email
+          </button>
         </div>
       </div>
-      <button className="button create-acc-button " onClick={registerEmail}>Crear Cuenta</button>
+      <button className="button create-acc-button " onClick={registerEmail}>
+        Crear Cuenta
+      </button>
       <div className="form-terms mt-1">
         Al continuar, acepta los términos de servicio y confirma que ha leído la
         política de privacidad

@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import Logo from "../../atoms/Logo";
+import Logo from "components/atoms/Logo";
 import "assets/css/templates/header-market.scss";
 import userAvatar from "assets/img/avatar_2.png";
+import { Link } from "react-router-dom";
 function Header() {
   // const [walletAddress, setWallet] = useState("");
   // const [status, setStatus] = useState("");
@@ -73,9 +74,11 @@ function Header() {
           </div>
           <div className="header-right">
             <div className="user-area">
-              <button>
-                <img src={userAvatar} alt="" />
-              </button>
+              <Link to="/wallet">
+                <button>
+                  <img src={userAvatar} alt="" />
+                </button>
+              </Link>
             </div>
           </div>
         </div>

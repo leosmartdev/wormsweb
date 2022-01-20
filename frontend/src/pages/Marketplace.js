@@ -15,7 +15,7 @@ import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
 function MarketPlacePage() {
   const [modalOpen, setModalOpen] = useState(true);
   const [currentModal, setCurrentModal] = useState("asd");
-  
+
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
@@ -27,24 +27,33 @@ function MarketPlacePage() {
     addWalletListener();
   }, []);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setModalOpen(false);
+    }, 3000);
+  }, []);
+
   function addWalletListener() {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
         if (accounts.length > 0) {
           // setWallet(accounts[0]);
           // setStatus("👆🏽 Write a message in the text-field above.");
-
         } else {
           // setWallet("");
           // setStatus("🦊 Connect to Metamask using the top right button.");
-          
+
           localStorage.removeItem("uuid");
           navigate("/mmlogin");
         }
       });
     }
   }
-
+  // handler to open ShowBuyEgg
+  const handleBuyEgg = () => {
+    setCurrentModal("buy-egg");
+    setModalOpen(true);
+  };
   // the Modal
   const ShowBuyEgg = () => {
     return (
@@ -79,6 +88,9 @@ function MarketPlacePage() {
               </>
             ) : (
               <>
+                {() => {
+                  setModalOpen(false);
+                }}
                 <div className="absolute img-loading">
                   <img src={soldierWorm} alt="" />
                 </div>
@@ -131,14 +143,11 @@ function MarketPlacePage() {
                 <div className="NFT-legendary">Legendario 8%</div>
                 <div className="NFT-uncommon">Poco común 3%</div>
               </div>
-              <button
-                onClick={() => {
-                  setModalOpen(true);
-                }}
-                className="button"
-              >
-                Comprar
-              </button>
+              <div className="mt-1">
+                <button onClick={handleBuyEgg} className="button">
+                  Comprar
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +189,9 @@ const BuyEggForm = ({ onClick }) => {
         <div>Precio total</div>
         <div>100 BUSD</div>
       </div>
-      <div class="buy-egg-form-terms">* máximo de compra por wallet (2)</div>
+      <div className="buy-egg-form-terms">
+        * máximo de compra por wallet (2)
+      </div>
       <div className="buy-egg-form-actions flex-wrapper mt-1">
         <button className="button cancel create-acc-button" onClick={onClick}>
           Cancelar

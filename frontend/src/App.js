@@ -8,6 +8,8 @@ import HomePage from "./pages/Home";
 import MmLoginPage from "./pages/MmLogin";
 import MarketPlacePage from "pages/Marketplace";
 import MarketLayout from "./layouts/MarketLayout";
+import WalletPage from "pages/Wallet";
+import WalletLayout from "layouts/WalletLayout";
 
 export default function App() {
   return (
@@ -35,6 +37,14 @@ export default function App() {
             <MarketLayout>
               <MarketPlacePage />
             </MarketLayout>
+          }
+        />
+        <Route
+          path="/wallet"
+          element={
+            <WalletLayout>
+              <WalletPage />
+            </WalletLayout>
           }
         />
       </Routes>
