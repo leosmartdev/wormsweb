@@ -20,6 +20,9 @@ function MarketPlacePage() {
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
 
+  // we create an initial state for the current eggs available by user
+  const [currentBoughtEggs, setCurrentBoughtEggs] = useState(1);
+
   useEffect(async () => {
     // const { address, status } = await getCurrentWalletConnected();
     // setWallet(address);
@@ -113,7 +116,7 @@ function MarketPlacePage() {
 
       <div className="vh-100 mm-mint grid">
         <div className="">
-          <h1 className="mmtitle">Minteo NFT</h1>
+          <h1 className="mmtitle">Egg Worms</h1>
           <div>
             <div className="NFT-status-container">
               <div className="NFT-status-box">
@@ -126,7 +129,16 @@ function MarketPlacePage() {
               </div>
               <div className="NFT-status-box">
                 <div>Egg comprados</div>
-                <div>00</div>
+                {/* on the first boolean, first string should display the current number of eggs bought, it will always be > 0 so... yeah. setting on first string a number just for visualizing the useState. */}
+                {/* two booleans inserted probably first one wouldn't be needed once backend and MM actually works here */}
+                <div>
+                  {currentBoughtEggs !== 0 ? "01" : "00"}{" "}
+                  {currentBoughtEggs !== 0 && (
+                    <>
+                      <button className="button mint-button">Mint NFT</button>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
             <div className="NFT-view-container">

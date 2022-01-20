@@ -203,6 +203,10 @@ div.mm-mint {
 .NFT-view-info-stats {
   box-shadow: 0px 2px 10px -2px white;
 }
+.mint-button {
+  padding: 2px;
+  font-size: 20px;
+}
 // wallet (probably had to moev these to a single file
 div.mm-wallet {
   background-image: url(./../../img/19.png), url(./../../img/back-game.png);
@@ -285,6 +289,10 @@ div.mm-wallet {
         border-top: 1px solid #666;
         > a {
           width: 100%;
+          display: flex;
+          > span {
+            margin-right: 5px;
+          }
         }
       }
     }

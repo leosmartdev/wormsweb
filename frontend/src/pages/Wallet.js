@@ -1,7 +1,10 @@
-import SocialMedia from "components/molecules/SocialMedia";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import cryptoCoinLogo from "assets/img/gusano1.png";
+import userAvatar from "assets/img/avatar_2.png";
+import inventoryIcon from "assets/img/icono_inventario.png";
+import walletIcon from "assets/img/icono_wallet.png";
+
 export default function WalletPage() {
   const [modalOpen, setModalOpen] = useState(true);
 
@@ -16,7 +19,10 @@ export default function WalletPage() {
             <div>
               <div className="wallet-blue-box">
                 <div className="wallet-user-info">
-                  <div>img</div>
+                  <div>
+                    {" "}
+                    <img src={userAvatar} alt="" />
+                  </div>
                   <div>JhonWick</div>
                   <div>wallet id</div>
                 </div>
@@ -25,12 +31,24 @@ export default function WalletPage() {
                     <ul>
                       <li>
                         <Link to="/inventory">
-                          <span>i</span>Inventario
+                          <span>
+                            <img src={inventoryIcon} alt="" />
+                          </span>
+                          Inventario
                         </Link>
                       </li>
                       <li>
                         <Link to="/wallet">
-                          <span>i</span>Inventario
+                          <span>
+                            <img src={walletIcon} alt="" />
+                          </span>
+                          Wallet
+                        </Link>
+                      </li>
+
+                      <li>
+                        <Link to="/marketplace">
+                          <span>⤺</span>Volver
                         </Link>
                       </li>
                     </ul>
