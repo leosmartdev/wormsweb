@@ -9,6 +9,7 @@ import homebuttonimg2 from "./../assets/img/2.png";
 import homebuttonimg3 from "./../assets/img/4.png";
 import homesecondimg1 from "./../assets/img/5.png";
 import roadmapH from "./../assets/img/ROADMAPHORIZONTAL.png";
+import roadmapV from "./../assets/img/ROADMAPVERTICAL.png";
 
 const Video = () => {
   return (
@@ -94,9 +95,9 @@ function HomePage() {
         <div className="vh-100 flex-wrapper">
           <div className="homefourtharea">
             <p>ROAD MAP</p>
-            <div className="grid direction-column homefourthimg1">
-              <div className="m-auto px-1">
-                <div className="roadmapqinfo-top">
+            <div className="homefourthimg1">
+              <div className="m-auto px-1 roadmap-mobile-flex">
+                <div className="roadmapqinfo-top large-devices">
                   <div>
                     <ul>
                       <li>Idea y economía del juego</li>
@@ -122,8 +123,69 @@ function HomePage() {
                     </ul>
                   </div>
                 </div>
-                <img src={roadmapH} alt="roadmap" className=" img-fluid" />
-                <div className="roadmapqinfo-bottom">
+                <div className="roadmapqinfo-left small-and-medium-devices">
+                  <div>
+                    <ul>
+                      <li>Idea y economía del juego</li>
+                      <li>Contratación de equipo</li>
+                      <li>Diseño e ilustración</li>
+                      <li className="h2 mt-1">2021</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>Staking</li>
+                      <li>Marketplace</li>
+                      <li>Sistema de clanes o gremios</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>Minijuegos</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                </div>
+                <img
+                  src={roadmapH}
+                  alt="roadmap"
+                  className=" img-fluid large-devices"
+                />
+                <img
+                  src={roadmapV}
+                  alt="roadmap"
+                  className="small-and-medium-devices roadmap-vertical-img"
+                />
+                <div className="roadmapqinfo-right small-and-medium-devices">
+                  <div>
+                    <ul>
+                      <li>Idea y economía del juego</li>
+                      <li>Contratación de equipo</li>
+                      <li>Diseño e ilustración</li>
+                      <li className="h2 mt-1">2021</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>Staking</li>
+                      <li>Marketplace</li>
+                      <li>Sistema de clanes o gremios</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>Minijuegos</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="roadmapqinfo-bottom large-devices">
                   <div>
                     <ul>
                       <li className="h2 mt-1">2022</li>

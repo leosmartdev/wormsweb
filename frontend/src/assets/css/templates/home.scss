@@ -260,11 +260,7 @@ main {
     padding: 10px 20px;
   }
 }
-.homefourthimg1 {
-  place-items: center;
 
-  height: 100%;
-}
 @media (min-width: 381px) and (max-width: 499px) {
   .homesecondrightdiv p {
     line-height: 20px;
@@ -488,5 +484,41 @@ main {
   font-size: clamp(0.5rem, 2.5rem, 0.91vw);
   > * {
     text-align: right;
+  }
+}
+.roadmapqinfo-left {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0rem;
+  place-items: end;
+  margin-right: 0.5rem;
+  font-size: clamp(0.45rem, 1.7rem, 0.47vw);
+  > * {
+    text-align: right;
+  }
+}
+.roadmapqinfo-right {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 0rem;
+  place-items: end;
+  font-size: clamp(0.45rem, 1.7rem, 0.47vw);
+  > * {
+    background: purple;
+    text-align: left;
+  }
+}
+.roadmap-vertical-img {
+  width: 3rem;
+  margin-top: 3rem;
+}
+.homefourthimg1 {
+  display: grid;
+  place-items: center;
+  height: 100%;
+}
+@media (max-width: 761px) {
+  .roadmap-mobile-flex {
+    display: flex;
   }
 }

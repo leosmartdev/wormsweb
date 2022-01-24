@@ -61,6 +61,22 @@ nav ul {
     display: none !important;
   }
 }
+@media (max-width: 761px) {
+  .small-and-medium-devices {
+    display: block;
+  }
+  .large-devices {
+    display: none !important;
+  }
+}
+@media (min-width: 760px) {
+  .small-and-medium-devices {
+    display: none !important;
+  }
+  .large-devices {
+    display: block;
+  }
+}
 .w-full {
   width: 100%;
 }
@@ -110,7 +126,7 @@ video {
 }
 @media (max-width: 768px) {
   .vh-100 {
-    min-height: 400px;
+    min-height: 787px;
   }
 }
 .grid {
