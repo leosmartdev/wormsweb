@@ -8,11 +8,8 @@ import homebuttonimg1 from "./../assets/img/3.png";
 import homebuttonimg2 from "./../assets/img/2.png";
 import homebuttonimg3 from "./../assets/img/4.png";
 import homesecondimg1 from "./../assets/img/5.png";
-import homefourthimg1 from "./../assets/img/6.png";
-// import homefourthimg2 from "./../assets/img/16.png";
-// import homefourthimg3 from "./../assets/img/15.png";
-// import homefourthimg4 from "./../assets/img/17.png";
-// import homefourthimg5 from "./../assets/img/18.png";
+import roadmapH from "./../assets/img/ROADMAPHORIZONTAL.png";
+
 const Video = () => {
   return (
     <>
@@ -35,10 +32,9 @@ function HomePage() {
                   alt="spaceworms"
                 />
                 <p className="homeparag1">
-                  Video juego blockchain inspirado en slither.io donde debes ir
-                  comiendo para convertirte en el gusano mayor y obtener grandes
-                  recompensas
+                  Videojuego blockchain inspirado en slither.io
                 </p>
+                <p>Conviertete en el gusano Nº1 y obten grandes recompensas</p>
                 <div className="homefirstbuttondiv">
                   <div className="mx-auto flex-wrapper">
                     <Button className="homefirstbutton1">
@@ -61,6 +57,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+        {/*  */}
         <div className="vh-100 box-with-borders2">
           <div className="flex-wrapper hs-flex-column">
             <div className="homesecondleftdiv">
@@ -70,22 +67,21 @@ function HomePage() {
               <p>
                 Una peligrosa raza Alienígena amenaza con destruir todo a su
                 paso para controlar la Fuerza Cósmica y la última esperanza para
-                enfrentarlos son los Gusanos Espaciales: guerreros de un apetito
-                sin límites.
+                enfrentarlos son los Gusanos Espaciales.
               </p>
               <p>
                 En Space Worms podrás ser parte de esta Guerra Espacial contra
                 los Loriks en un videojuego que te brindará horas interminables
-                de diversión además de generar ingresos ilimitados. ¡No te
+                de diversión además de generar ingresos ilimitados. No te
                 pierdas la oportunidad de unirte a esta lucha para salvar al
                 Universo usando la fuerza del Sol y las Estrellas, mejorando a
-                tu gusano y resolviendo misiones diarias, o sencillamente
-                enfréntate a otros y demuestra quien es el más grande de tu
-                especie!
+                tu gusano, resolviendo misiones diarias, o sencillamente
+                enfréntate a otros.
               </p>
             </div>
           </div>
         </div>
+        {/*  */}
         <div className="vh-100 homethirdarea">
           <div className="homethirdleftdiv">
             <p>Salva el universo y obten grandes recompensas</p>
@@ -94,11 +90,65 @@ function HomePage() {
             <Video />
           </div>
         </div>
+        {/* roadmap */}
         <div className="vh-100 flex-wrapper">
           <div className="homefourtharea">
             <p>ROAD MAP</p>
-            <div className="grid homefourthimg1">
-              <img src={homefourthimg1} alt="roadmap" className=" img-fluid" />
+            <div className="grid direction-column homefourthimg1">
+              <div className="m-auto px-1">
+                <div className="roadmapqinfo-top">
+                  <div>
+                    <ul>
+                      <li>Idea y economía del juego</li>
+                      <li>Contratación de equipo</li>
+                      <li>Diseño e ilustración</li>
+                      <li className="h2 mt-1">2021</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>Staking</li>
+                      <li>Marketplace</li>
+                      <li>Sistema de clanes o gremios</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
+                      <li>Minijuegos</li>
+                      <li className="h2 mt-1">2022</li>
+                    </ul>
+                  </div>
+                </div>
+                <img src={roadmapH} alt="roadmap" className=" img-fluid" />
+                <div className="roadmapqinfo-bottom">
+                  <div>
+                    <ul>
+                      <li className="h2 mt-1">2022</li>
+                      <li>Lanzamiento sitio web</li>
+                      <li>Preventa de NFT</li>
+                      <li>Auditorías</li>
+                      <li>Preventa de token</li>
+                      <li>Alpha del juego</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li className="h2 mt-1">2022</li>
+                      <li>Salas personalizadas</li>
+                      <li>Eventos</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <ul>
+                      <li className="h2 mt-1">2022</li>
+                      <li>Alquiler de NFT</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/*  */}
@@ -135,6 +185,7 @@ function HomePage() {
             {/*  */}
           </div>
         </div>
+        {/*  */}
         <div className="vh-100 flex-wrapper direction-column homefiftharea">
           <h6>Screenshots</h6>
           <div className="container-slider-two">
@@ -143,6 +194,7 @@ function HomePage() {
             </div>
           </div>
         </div>
+        {/*  */}
       </main>
     </>
   );

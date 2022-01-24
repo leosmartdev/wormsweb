@@ -31,13 +31,13 @@ function Header() {
               </a>
             </li>
             <li>
-              <a href="/intro" rel="author">
+              <a href="/#intro" rel="author">
                 Introduccion
               </a>
             </li>
             <li>
-              <a href="/gameplay" rel="author">
-                Gameplay
+              <a href="/#trailer" rel="author">
+                Trailer
               </a>
             </li>
             <li>

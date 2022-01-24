@@ -262,6 +262,8 @@ main {
 }
 .homefourthimg1 {
   place-items: center;
+
+  height: 100%;
 }
 @media (min-width: 381px) and (max-width: 499px) {
   .homesecondrightdiv p {
@@ -364,9 +366,12 @@ main {
   width: 100%;
 }
 .homefourtharea > p {
-  margin: 30px;
+  left: 0;
+  right: 0;
+  top: 30px;
   font-size: 2.5rem;
   text-shadow: 0px 0px 50px yellow;
+  position: absolute;
 }
 
 .homefourtharea > img {
@@ -463,4 +468,25 @@ main {
 .homefiftharea > h6 {
   margin-top: 20px;
   text-shadow: 0px 0px 50px yellow;
+}
+
+.roadmapqinfo-top {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.5rem, 2.5rem, 0.91vw);
+  > * {
+    text-align: left;
+  }
+}
+.roadmapqinfo-bottom {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5rem;
+  margin-bottom: 0.5rem;
+  font-size: clamp(0.5rem, 2.5rem, 0.91vw);
+  > * {
+    text-align: right;
+  }
 }

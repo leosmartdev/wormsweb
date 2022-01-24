@@ -120,7 +120,9 @@ video {
   place-items: center;
   height: 100%;
 }
-
+.px-1 {
+  padding: 0 1rem;
+}
 // should be as template, default in every header
 .header-right > nav > ul {
   margin-right: 0.25rem;
@@ -128,4 +130,7 @@ video {
   & > * {
     margin: auto 0.25rem;
   }
+}
+.text-center {
+  text-align: center;
 }
