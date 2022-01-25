@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import Logo from "./../../atoms/Logo";
 import Button from "./../../atoms/Button";
-import "./../../../assets/css/templates/header-login.scss";
 import {
   connectWallet,
   getCurrentWalletConnected,
@@ -65,18 +64,22 @@ function MmHeader() {
             <Logo alt="Space Worms" className="img-logo" />
           </div>
           <div className="header-right">
-            <div className="mm-connect-area">
-              <Button onClick={connectWalletPressed} className="mm-connect">
-                {walletAddress.length > 0 ? (
-                  "Conectada: " +
-                  String(walletAddress).substring(0, 6) +
-                  "..." +
-                  String(walletAddress).substring(38)
-                ) : (
-                  <span>CONECTAR BILLETERA</span>
-                )}
-              </Button>
-            </div>
+            <nav className="mm-connect-area">
+              <ul>
+                <li>
+                  <Button onClick={connectWalletPressed} className="mm-connect">
+                    {walletAddress.length > 0 ? (
+                      "Conectada: " +
+                      String(walletAddress).substring(0, 6) +
+                      "..." +
+                      String(walletAddress).substring(38)
+                    ) : (
+                      <span>CONECTAR BILLETERA</span>
+                    )}
+                  </Button>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </header>

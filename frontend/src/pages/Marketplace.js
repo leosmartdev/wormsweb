@@ -15,10 +15,13 @@ import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
 function MarketPlacePage() {
   const [modalOpen, setModalOpen] = useState(true);
   const [currentModal, setCurrentModal] = useState("asd");
-  
+
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const navigate = useNavigate();
+
+  // we create an initial state for the current eggs available by user
+  const [currentBoughtEggs, setCurrentBoughtEggs] = useState(1);
 
   useEffect(async () => {
     // const { address, status } = await getCurrentWalletConnected();
@@ -27,24 +30,33 @@ function MarketPlacePage() {
     addWalletListener();
   }, []);
 
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setModalOpen(false);
+    }, 3000);
+  }, []);
+
   function addWalletListener() {
     if (window.ethereum) {
       window.ethereum.on("accountsChanged", (accounts) => {
         if (accounts.length > 0) {
           // setWallet(accounts[0]);
           // setStatus("👆🏽 Write a message in the text-field above.");
-
         } else {
           // setWallet("");
           // setStatus("🦊 Connect to Metamask using the top right button.");
-          
+
           localStorage.removeItem("uuid");
           navigate("/mmlogin");
         }
       });
     }
   }
-
+  // handler to open ShowBuyEgg
+  const handleBuyEgg = () => {
+    setCurrentModal("buy-egg");
+    setModalOpen(true);
+  };
   // the Modal
   const ShowBuyEgg = () => {
     return (
@@ -79,6 +91,9 @@ function MarketPlacePage() {
               </>
             ) : (
               <>
+                {() => {
+                  setModalOpen(false);
+                }}
                 <div className="absolute img-loading">
                   <img src={soldierWorm} alt="" />
                 </div>
@@ -101,7 +116,7 @@ function MarketPlacePage() {
 
       <div className="vh-100 mm-mint grid">
         <div className="">
-          <h1 className="mmtitle">Minteo NFT</h1>
+          <h1 className="mmtitle">Egg Worms</h1>
           <div>
             <div className="NFT-status-container">
               <div className="NFT-status-box">
@@ -114,7 +129,16 @@ function MarketPlacePage() {
               </div>
               <div className="NFT-status-box">
                 <div>Egg comprados</div>
-                <div>00</div>
+                {/* on the first boolean, first string should display the current number of eggs bought, it will always be > 0 so... yeah. setting on first string a number just for visualizing the useState. */}
+                {/* two booleans inserted probably first one wouldn't be needed once backend and MM actually works here */}
+                <div>
+                  {currentBoughtEggs !== 0 ? "01" : "00"}{" "}
+                  {currentBoughtEggs !== 0 && (
+                    <>
+                      <button className="button mint-button">Mint NFT</button>
+                    </>
+                  )}
+                </div>
               </div>
             </div>
             <div className="NFT-view-container">
@@ -131,14 +155,11 @@ function MarketPlacePage() {
                 <div className="NFT-legendary">Legendario 8%</div>
                 <div className="NFT-uncommon">Poco común 3%</div>
               </div>
-              <button
-                onClick={() => {
-                  setModalOpen(true);
-                }}
-                className="button"
-              >
-                Comprar
-              </button>
+              <div className="mt-1">
+                <button onClick={handleBuyEgg} className="button">
+                  Comprar
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -180,7 +201,9 @@ const BuyEggForm = ({ onClick }) => {
         <div>Precio total</div>
         <div>100 BUSD</div>
       </div>
-      <div class="buy-egg-form-terms">* máximo de compra por wallet (2)</div>
+      <div className="buy-egg-form-terms">
+        * máximo de compra por wallet (2)
+      </div>
       <div className="buy-egg-form-actions flex-wrapper mt-1">
         <button className="button cancel create-acc-button" onClick={onClick}>
           Cancelar

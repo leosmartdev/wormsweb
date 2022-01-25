@@ -40,7 +40,7 @@ function HomePage() {
                   recompensas
                 </p>
                 <div className="homefirstbuttondiv">
-                  <div className="mx-auto">
+                  <div className="mx-auto flex-wrapper">
                     <Button className="homefirstbutton1">
                       <img src={homebuttonimg1} alt="mobile, windows, mac" />
                     </Button>

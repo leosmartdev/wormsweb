@@ -15,7 +15,7 @@
   display: grid;
   place-items: center;
   position: relative;
-  border: 3px solid #b1a203;
+  border: 3px solid var(--yellowborder);
   border-radius: 0.5rem;
   max-width: 440px;
   & h1 {

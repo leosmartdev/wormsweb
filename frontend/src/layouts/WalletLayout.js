@@ -1,13 +1,12 @@
-import Header from "../components/organisms/marketplace/Header";
 import "../assets/css/App.scss";
 import "assets/css/templates/marketplace.scss";
 import api from "../util/api.js";
 import { useEffect, useState } from "react";
 
-import MmLayout from "../layouts/MmLayout";
+import MmLayout from "./MmLayout";
 import MmLoginPage from "../pages/MmLogin";
 
-function MarketLayout(props) {
+function WalletLayout(props) {
   // const verify = localStorage.getItem("verify");
   // const verify = true;
   // const [checked, checkUser] = useState('');
@@ -47,10 +46,7 @@ function MarketLayout(props) {
   return (
     <>
       {verify === true ? (
-        <>
-          <Header />
-          {props.children}
-        </>
+        <>{props.children}</>
       ) : (
         <MmLayout>
           <MmLoginPage />
@@ -60,4 +56,4 @@ function MarketLayout(props) {
   );
 }
 
-export default MarketLayout;
+export default WalletLayout;
