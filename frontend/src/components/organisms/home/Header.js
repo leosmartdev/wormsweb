@@ -1,11 +1,13 @@
 import { useState } from "react";
-import Logo from "./../../atoms/Logo";
-import Button from "./../../atoms/Button";
-import CrossIcon from "./../../atoms/icons/cross";
-import HamburguerIcon from "./../../atoms/icons/hamburguer";
+import Logo from "components/atoms/Logo";
+import Button from "components/atoms/Button";
+import CrossIcon from "components/atoms/icons/cross";
+import HamburguerIcon from "components/atoms/icons/hamburguer";
 import { useNavigate } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
-import "./../../../assets/css/templates/header-home.scss";
+import "assets/css/templates/header-home.scss";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+
 function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
@@ -26,34 +28,34 @@ function Header() {
         <nav>
           <ul>
             <li>
-              <a href="/" rel="author">
+              <AnchorLink href="/" rel="author">
                 Inicio
-              </a>
+              </AnchorLink>
             </li>
             <li>
-              <a href="/#intro" rel="author">
+              <AnchorLink href="#intro" rel="author">
                 Introduccion
-              </a>
+              </AnchorLink>
             </li>
             <li>
-              <a href="/#trailer" rel="author">
+              <AnchorLink href="#trailer" rel="author">
                 Trailer
-              </a>
+              </AnchorLink>
             </li>
             <li>
-              <a href="/roadmap" rel="author">
+              <AnchorLink href="#roadmap" rel="author">
                 Roadmap
-              </a>
+              </AnchorLink>
             </li>
             <li>
-              <a href="/screenshots" rel="author">
+              <AnchorLink href="#screenshots" rel="author">
                 Screenshots
-              </a>
+              </AnchorLink>
             </li>
             <li>
-              <a href="/team" rel="author">
+              <AnchorLink href="#team" rel="author">
                 Equipo
-              </a>
+              </AnchorLink>
             </li>
             <li>
               <a href="/whitepaper" rel="author">
@@ -64,13 +66,6 @@ function Header() {
         </nav>
       </div>
       <header>
-        {/* <div className="tab-area">
-          <div className="tab-icons">
-            <div className="btn-tab">
-              <a href="/mmlogin">REGISTRARSE</a>
-            </div>
-          </div>
-        </div> */}
         <div className="header flex-wrapper">
           <div className="header-left">
             <Logo alt="SPACE WORMS" className="img-logo" />
@@ -79,34 +74,34 @@ function Header() {
             <nav>
               <ul>
                 <li className="desktop-only header-link">
-                  <a href="/" rel="author">
+                  <AnchorLink href="/" rel="author">
                     Inicio
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
-                  <a href="/introduccion" rel="author">
+                  <AnchorLink href="#introduccion" rel="author">
                     Introduccion
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
-                  <a href="/gameplay" rel="author">
-                    Gameplay
-                  </a>
+                  <AnchorLink href="#trailer" rel="author">
+                    Trailer
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
-                  <a href="/roadmap" rel="author">
+                  <AnchorLink href="#roadmap" rel="author">
                     Roadmap
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
-                  <a href="/screenshots" rel="author">
+                  <AnchorLink href="#screenshots" rel="author">
                     Screenshots
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
-                  <a href="/equipo" rel="author">
+                  <AnchorLink href="#team" rel="author">
                     Equipo
-                  </a>
+                  </AnchorLink>
                 </li>
                 <li className="desktop-only header-link">
                   <a href="/whitepaper" rel="author">

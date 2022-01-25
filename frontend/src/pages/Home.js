@@ -10,7 +10,6 @@ import homebuttonimg3 from "./../assets/img/4.png";
 import homesecondimg1 from "./../assets/img/5.png";
 import roadmapH from "./../assets/img/ROADMAPHORIZONTAL.png";
 import roadmapV from "./../assets/img/ROADMAPVERTICAL.png";
-
 const Video = () => {
   return (
     <>
@@ -94,7 +93,9 @@ function HomePage() {
         {/* roadmap */}
         <div className="vh-100 flex-wrapper">
           <div className="homefourtharea">
-            <p>ROAD MAP</p>
+            <section id="#roadmap">
+              <p>ROAD MAP</p>
+            </section>
             <div className="homefourthimg1">
               <div className="m-auto px-1 roadmap-mobile-flex">
                 <div className="roadmapqinfo-top large-devices">
@@ -126,17 +127,18 @@ function HomePage() {
                 <div className="roadmapqinfo-left small-and-medium-devices">
                   <div>
                     <ul>
-                      <li>Idea y economía del juego</li>
-                      <li>Contratación de equipo</li>
-                      <li>Diseño e ilustración</li>
-                      <li className="h2 mt-1">2021</li>
+                      <li>Lanzamiento sitio web</li>
+                      <li>Preventa de NFT</li>
+                      <li>Auditorías</li>
+                      <li>Preventa de token</li>
+                      <li>Alpha del juego</li>
+                      <li className="h2 mt-1">2022</li>
                     </ul>
                   </div>
                   <div>
                     <ul>
-                      <li>Staking</li>
-                      <li>Marketplace</li>
-                      <li>Sistema de clanes o gremios</li>
+                      <li>Salas personalizadas</li>
+                      <li>Eventos</li>
                       <li className="h2 mt-1">2022</li>
                     </ul>
                   </div>
@@ -144,7 +146,7 @@ function HomePage() {
                     <ul>
                       <li>&nbsp;</li>
                       <li>&nbsp;</li>
-                      <li>Minijuegos</li>
+                      <li>Alquiler de NFT</li>
                       <li className="h2 mt-1">2022</li>
                     </ul>
                   </div>
@@ -178,10 +180,10 @@ function HomePage() {
                   </div>
                   <div>
                     <ul>
-                      <li>&nbsp;</li>
-                      <li>&nbsp;</li>
                       <li>Minijuegos</li>
                       <li className="h2 mt-1">2022</li>
+                      <li>&nbsp;</li>
+                      <li>&nbsp;</li>
                     </ul>
                   </div>
                 </div>

@@ -13,8 +13,6 @@ import dcBlack from "assets/img/dc_black.png";
 import tgBlack from "assets/img/telegram_black.png";
 import twBlack from "assets/img/tw_black.png";
 import ytBlack from "assets/img/youtube_black.png";
-import footerimg20 from "./../../../assets/img/19.png";
-import footerimg21 from "./../../../assets/img/back-website.png";
 
 function Footer() {
   return (
@@ -68,21 +66,34 @@ function Footer() {
             </a>
           </div>
           <div className="footerthirdimgs2">
-            <a href="#">
-              <img src={dcBlack} />
+            <a href="#0">
+              <img src={dcBlack} alt="discord" />
             </a>
-            <a href="#">
-              <img src={tgBlack} />
+            <a href="#0">
+              <img src={tgBlack} alt="telegram" />
             </a>
-            <a href="#">
-              <img src={twBlack} />
+            <a href="#0">
+              <img src={twBlack} alt="twitter" />
             </a>
-            <a href="#">
-              <img src={ytBlack} />
+            <a href="#0">
+              <img src={ytBlack} alt="Youtube" />
             </a>
           </div>
+          <div className="flex-wrapper footer-links">
+            <div className="mx-auto">
+              <a href="/whitepaper" alt="whitepaper" className="mr-1">
+                Whitepaper
+              </a>
+              <a
+                href="https://docs.spaceworms.app"
+                alt="Space Worms Documentation"
+                className="ml-1"
+              >
+                SpaceWorms Docs
+              </a>
+            </div>
+          </div>
         </div>
-
         <div className="legal">
           <a href="/condiciones" alt="terms">
             Condiciones de uso
