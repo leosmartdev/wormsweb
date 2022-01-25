@@ -1,9 +1,10 @@
-import axios from 'axios';
+import axios from "axios";
 
+// using aws ip 52.15.191.202
 
 export default axios.create({
-    baseURL: 'http://localhost:5000',
-    headers: {
-        'Content-Type': 'application/json',
-    }
+  baseURL: "http://52.15.191.202:5000",
+  headers: {
+    "Content-Type": "application/json",
+  },
 });

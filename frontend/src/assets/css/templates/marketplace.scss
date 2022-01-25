@@ -145,9 +145,7 @@ div.mm-mint {
   border: 3px solid var(--yellow);
   border-radius: 0.51rem;
   padding: 0.5rem 1.25rem 0.5rem 0.5rem;
-  &:nth-child(2) {
-    margin: 0 1rem;
-  }
+  margin: 0 0.25rem;
   & div:nth-child(2) {
     color: var(--yellow);
   }
