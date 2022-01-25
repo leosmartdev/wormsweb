@@ -1,6 +1,7 @@
 express = require('express'),
 router = express.Router()
 var User = require('../Models/user');
+var Worms = require('../Models/worms');
 var uuid = require('uuid');
 var nodemailer = require('nodemailer');
 
@@ -127,6 +128,36 @@ router.route('/checkuser').get((req, res) => {
       res.send({"Success": "verified"});
     }
   });
+})
+
+
+router.route('/registerNFT').post((req, res) => {
+  
+	var nftInfo = req.body.params;
+  console.log("SDFDSF", nftInfo.address, ":", nftInfo.id)
+
+	if(!nftInfo.address){
+		res.send({"info":"no address"});
+	} else {
+		if (true) {
+      var newNFT = new Worms({
+        id: '',
+        email: 'nftInfo.email',
+        address: nftInfo.address,
+        tokenId: nftInfo.id
+      });
+
+      newNFT.save(function(err, NFT){
+        if(err)
+          console.log(err);
+        else
+          console.log('Success');
+      });
+
+		} else {
+			res.send({"Success":"password is not matched"});
+		}
+	}
 })
 
 module.exports = router
