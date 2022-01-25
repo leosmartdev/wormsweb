@@ -25,29 +25,29 @@ function Footer() {
           <div className="footerimgsdiv">
             <div className="footerimgs">
               <img src={teamMember1} alt="john doe" />
-              <p>Nombre y Apellido</p>
-              <span>Cargo</span>
+              <p>Brayan Suniaga</p>
+              <span>Inversor y creador de contenido</span>
             </div>
             <div className="footerimgs">
               <img src={teamMember2} alt="john doe" />
-              <p>Nombre y Apellido</p>
-              <span>Cargo</span>
+              <p>Abraham Leon</p>
+              <span>Empresario y entusiasta de las criptomonedas</span>
             </div>
             <div className="footerimgs">
               <img src={teamMember3} alt="john doe" />
-              <p>Nombre y Apellido</p>
-              <span>Cargo</span>
+              <p>Neydua Sierra</p>
+              <span>Ingeniero e inversor de NFT</span>
             </div>
           </div>
         </div>
         <div className="footersecondarea">
           <div className="footersecondchilddivs">
             <p>Partners</p>
-            <img src={footerimg4} />
+            <img src={footerimg4} alt="partner" />
           </div>
           <div className="footersecondchilddivs">
             <p>Developers</p>
-            <img src={footerimg5} />
+            <img src={footerimg5} alt="partner" />
           </div>
         </div>
         <div className="footerthirdarea">
@@ -55,14 +55,14 @@ function Footer() {
             <a href="www.aws.com">
               <img src={awsLogo} alt="Amazon Web Store" />
             </a>
-            <a href="#">
-              <img src={footerimg7} />
+            <a href="#0">
+              <img src={footerimg7} alt="partner" />
             </a>
-            <a href="#">
-              <img src={footerimg8} className="thirdimg" />
+            <a href="#0">
+              <img src={footerimg8} className="thirdimg" alt="partner" />
             </a>
-            <a href="#">
-              <img src={footerimg9} />
+            <a href="#0">
+              <img src={footerimg9} alt="partner" />
             </a>
           </div>
           <div className="footerthirdimgs2">
