@@ -131,7 +131,7 @@ main {
   display: flex;
   flex-direction: row;
   margin: auto;
-
+  max-width: 100vw;
   margin-top: 30px;
   margin-bottom: 5px;
 }
@@ -348,6 +348,9 @@ main {
   }
   .homethirdrightdiv {
     margin-top: 0;
+  }
+  .devices-container {
+    transform: scale(0.6);
   }
 }
 

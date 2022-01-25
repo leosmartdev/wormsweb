@@ -72,7 +72,11 @@ footer {
   border-top: 1px solid #a79d14;
   border-bottom: 1px solid #a79d14;
   border-right: 1px solid #a79d14;
-  padding: 50px;
+  // padding: 50px;
+  min-height: 210px;
+  > div {
+    font-size: 12px;
+  }
 }
 @media (max-width: 400px) {
   .footersecondchilddivs {
@@ -88,6 +92,7 @@ footer {
 
 .footersecondchilddivs img {
   width: 90%;
+  max-width: 140px;
 }
 
 @media (max-width: 900px) {
@@ -166,8 +171,13 @@ footer {
 }
 .footer-links {
   font-size: 2vw;
-  margin: 1rem;
+  margin: 1rem 0;
   > div > * {
-    margin: 1rem;
+    margin: 0 2.5%;
+  }
+}
+@media (max-width: 500px) {
+  .footer-links {
+    font-size: 16px;
   }
 }

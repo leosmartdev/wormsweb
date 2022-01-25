@@ -37,7 +37,7 @@ function HomePage() {
                 </p>
                 <p>Conviertete en el gusano Nº1 y obten grandes recompensas</p>
                 <div className="homefirstbuttondiv">
-                  <div className="mx-auto flex-wrapper">
+                  <div className="mx-auto flex-wrapper devices-container">
                     <Button className="homefirstbutton1">
                       <img src={homebuttonimg1} alt="mobile, windows, mac" />
                     </Button>
