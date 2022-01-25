@@ -61,6 +61,22 @@ nav ul {
     display: none !important;
   }
 }
+@media (max-width: 761px) {
+  .small-and-medium-devices {
+    display: block;
+  }
+  .large-devices {
+    display: none !important;
+  }
+}
+@media (min-width: 760px) {
+  .small-and-medium-devices {
+    display: none !important;
+  }
+  .large-devices {
+    display: block;
+  }
+}
 .w-full {
   width: 100%;
 }
@@ -110,7 +126,7 @@ video {
 }
 @media (max-width: 768px) {
   .vh-100 {
-    min-height: 400px;
+    min-height: 787px;
   }
 }
 .grid {
@@ -120,7 +136,9 @@ video {
   place-items: center;
   height: 100%;
 }
-
+.px-1 {
+  padding: 0 1rem;
+}
 // should be as template, default in every header
 .header-right > nav > ul {
   margin-right: 0.25rem;
@@ -128,4 +146,7 @@ video {
   & > * {
     margin: auto 0.25rem;
   }
+}
+.text-center {
+  text-align: center;
 }
