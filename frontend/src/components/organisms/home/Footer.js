@@ -1,8 +1,8 @@
 import "assets/css/templates/footer-home.scss";
 
-import teamMember1 from "assets/img/81.png";
-import teamMember2 from "assets/img/82.png";
-import teamMember3 from "assets/img/83.png";
+import teamMember1 from "assets/img/t1.png";
+import teamMember2 from "assets/img/t2.png";
+import teamMember3 from "assets/img/t3.png";
 import footerimg4 from "./../../../assets/img/9.png";
 import footerimg5 from "./../../../assets/img/10.png";
 import awsLogo from "assets/img/awslogo.png";

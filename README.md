@@ -1,6 +1,5 @@
 # Worms Web
 
-
 ## Installation
 
 1. `cd` into the root folders for backend and frontend and run the command `npm install` to install the dependencies
@@ -12,5 +11,3 @@ DB_HOST="mongodb://127.0.0.1:27017/wormsweb"
 ```
 
 4. Run the command `npm run servers` from the root backend folder to start the app
-
-The app has a front end created using ejs and running on [http://localhost:5000/](http://localhost:5000/)

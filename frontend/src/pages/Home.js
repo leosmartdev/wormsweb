@@ -10,6 +10,7 @@ import homebuttonimg3 from "./../assets/img/4.png";
 import homesecondimg1 from "./../assets/img/5.png";
 import roadmapH from "./../assets/img/ROADMAPHORIZONTAL.png";
 import roadmapV from "./../assets/img/ROADMAPVERTICAL.png";
+
 const Video = () => {
   return (
     <>
@@ -93,9 +94,9 @@ function HomePage() {
         {/* roadmap */}
         <div className="vh-100 flex-wrapper">
           <div className="homefourtharea">
-            <section id="#roadmap">
-              <p>ROAD MAP</p>
-            </section>
+            <div className="absolute w-full text-center">
+              <div className="h6">ROAD MAP</div>
+            </div>
             <div className="homefourthimg1">
               <div className="m-auto px-1 roadmap-mobile-flex">
                 <div className="roadmapqinfo-top large-devices">
