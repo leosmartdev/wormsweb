@@ -24,7 +24,7 @@ export default function App() {
           }
         />
         <Route
-          path="/mmlogin"
+          path="/login"
           element={
             <MmLayout>
               <MmLoginPage />

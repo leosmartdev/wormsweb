@@ -5,6 +5,7 @@ import {
   connectWallet,
   getCurrentWalletConnected,
 } from "../../../util/interact.js";
+import { useNavigate } from "react-router-dom";
 
 function MmHeader() {
   const [walletAddress, setWallet] = useState("");

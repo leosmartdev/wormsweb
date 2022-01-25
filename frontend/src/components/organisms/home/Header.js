@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Logo from "components/atoms/Logo";
 import Button from "components/atoms/Button";
 import CrossIcon from "components/atoms/icons/cross";
@@ -7,8 +7,59 @@ import { useNavigate } from "react-router-dom";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
 import "assets/css/templates/header-home.scss";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import {
+  connectWallet,
+  getCurrentWalletConnected,
+} from "../../../util/interact.js";
+// // if wallet is logged in, do route change
+//   const navigate = useNavigate();
+//   const routeChange = () => {
+//     navigate("/marketplace");
+//   };
+//   walletAddress.lenth > 0 && routeChange();
 function Header() {
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
+
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [url, setURL] = useState("");
+
+  useEffect(async () => {
+    const { address, status } = await getCurrentWalletConnected();
+
+    setWallet(address);
+    setStatus(status);
+
+    addWalletListener();
+  }, []);
+
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWallet(accounts[0]);
+        } else {
+          setWallet("");
+        }
+      });
+    } else {
+      setStatus(
+        <p>
+          {" "}
+          🦊{" "}
+          <a
+            target="_blank"
+            href={`https://metamask.io/download.html`}
+            rel="noreferrer"
+          >
+            You must install Metamask, a virtual Ethereum wallet, in your
+            browser.
+          </a>
+        </p>
+      );
+    }
+  }
   const [navbarOpen, setNavbarOpen] = useState(false);
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen);
@@ -16,7 +67,8 @@ function Header() {
 
   const navigate = useNavigate();
   const routeChange = () => {
-    navigate("/MmLogin");
+    console.log(walletAddress);
+    navigate(walletAddress.length > 0 ? "/marketplace" : "/login");
   };
   return (
     <>

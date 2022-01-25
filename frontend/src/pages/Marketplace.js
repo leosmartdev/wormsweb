@@ -49,7 +49,7 @@ function MarketPlacePage() {
           // setStatus("🦊 Connect to Metamask using the top right button.");
 
           localStorage.removeItem("uuid");
-          navigate("/mmlogin");
+          navigate("/login");
         }
       });
     }
