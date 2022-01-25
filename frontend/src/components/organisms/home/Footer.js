@@ -1,10 +1,10 @@
 import "assets/css/templates/footer-home.scss";
 
-import teamMember1 from "assets/img/81.png";
-import teamMember2 from "assets/img/82.png";
-import teamMember3 from "assets/img/83.png";
+import teamMember1 from "assets/img/t1.png";
+import teamMember2 from "assets/img/t2.png";
+import teamMember3 from "assets/img/t3.png";
 import footerimg4 from "./../../../assets/img/9.png";
-import footerimg5 from "./../../../assets/img/10.png";
+import developersLogo from "./../../../assets/img/NT-Logo-med.png";
 import awsLogo from "assets/img/awslogo.png";
 import footerimg7 from "./../../../assets/img/12.png";
 import footerimg8 from "./../../../assets/img/13.png";
@@ -47,7 +47,8 @@ function Footer() {
           </div>
           <div className="footersecondchilddivs">
             <p>Developers</p>
-            <img src={footerimg5} alt="partner" />
+            <img src={developersLogo} alt="N&T Negocios y Tecnologías" />
+            <div>Desarrollado por N&T Negocios y Tecnologías s.r.l.</div>
           </div>
         </div>
         <div className="footerthirdarea">
@@ -80,7 +81,7 @@ function Footer() {
             </a>
           </div>
           <div className="flex-wrapper footer-links">
-            <div className="mx-auto">
+            <div className="mx-auto w-full">
               <a href="/whitepaper" alt="whitepaper" className="mr-1">
                 Whitepaper
               </a>
