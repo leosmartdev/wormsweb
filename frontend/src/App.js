@@ -1,7 +1,13 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import Layout from "./layouts/Layout";
 import MmLayout from "./layouts/MmLayout";
+import { connectWallet, getCurrentWalletConnected } from "util/interact.js";
 
 // pages
 import HomePage from "./pages/Home";
@@ -12,6 +18,43 @@ import WalletPage from "pages/Wallet";
 import WalletLayout from "layouts/WalletLayout";
 
 export default function App() {
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
+
+  useEffect(async () => {
+    const { address, status } = await getCurrentWalletConnected();
+
+    setWallet(address);
+    setStatus(status);
+
+    addWalletListener();
+  }, []);
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWallet(accounts[0]);
+        } else {
+          setWallet("");
+        }
+      });
+    } else {
+      setStatus(
+        <p>
+          {" "}
+          🦊{" "}
+          <a
+            target="_blank"
+            href={`https://metamask.io/download.html`}
+            rel="noreferrer"
+          >
+            You must install Metamask, a virtual Ethereum wallet, in your
+            browser.
+          </a>
+        </p>
+      );
+    }
+  }
   return (
     <Router>
       <Routes>
@@ -26,11 +69,24 @@ export default function App() {
         <Route
           path="/login"
           element={
+            walletAddress.length > 0 ? (
+              <Navigate to="/marketplace" />
+            ) : (
+              <MmLayout>
+                <MmLoginPage />
+              </MmLayout>
+            )
+          }
+        />
+        {/* <Route path="/login">
+          {walletAddress.length >= 0 ? (
+            <Navigate to="/marketplace" />
+          ) : (
             <MmLayout>
               <MmLoginPage />
             </MmLayout>
-          }
-        />
+          )}
+        </Route> */}
         <Route
           path="/marketplace"
           element={

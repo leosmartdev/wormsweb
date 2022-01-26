@@ -470,7 +470,7 @@ function MarketPlacePage() {
                 {/* two booleans inserted probably first one wouldn't be needed once backend and MM actually works here */}
                 <div>
                   {currentMintedNfts}{" "}
-                  {currentMintedNfts >= 2 && (
+                  {currentMintedNfts <= 2 && (
                     <>
                       <button onClick={mint_NFT} className="button mint-button">
                         Mint NFT
