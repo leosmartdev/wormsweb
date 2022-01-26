@@ -12,7 +12,6 @@ import alien from "assets/img/alien.png";
 import soldierWorm from "assets/img/gusano-guerrero.png";
 import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
 import api from "../util/api.js";
-import $ from 'jquery';
 const Web3 = require("web3");
 
 function MarketPlacePage() {
@@ -67,12 +66,9 @@ function MarketPlacePage() {
       .get(base_URI)
       .then(function (response) {
         var str = response.data;
-        // console.log(str)
-
         var str1 = str.replace(/\n/g, "").replace(/\r/g, "").replace(/\t/g, "");
         var arr = str1.split('"');
         var res = arr[arr.length - 2];
-        // console.log(res)
 
         setNftImgPath(res);
       })    

@@ -20,12 +20,9 @@ import WalletLayout from "layouts/WalletLayout";
 export default function App() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
-  const [uuid, setUuid] = useState("");
 
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
-    // const uuid = localStorage.getItem("uuid")
-    setUuid(String(localStorage.getItem("uuid")));
     setWallet(address);
     setStatus(status);
 
