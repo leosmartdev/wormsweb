@@ -49,31 +49,31 @@ router.route('/createmailcode').post((req, res) => {
             }
           });
           
-          // var transporter = nodemailer.createTransport({
-          //   host: 'mail.negociosytecnologias.net',
-          //   secure: true,
-          //   port: 465,
-          //   auth: {
-          //     user: 'spaceworms@negociosytecnologias.net',
-          //     pass: '6HEyt{MHZwkx'
-          //   }
-          // });
+          var transporter = nodemailer.createTransport({
+            host: 'mail.negociosytecnologias.net',
+            secure: true,
+            port: 465,
+            auth: {
+              user: 'spaceworms@negociosytecnologias.net',
+              pass: '6HEyt{MHZwkx'
+            }
+          });
 
-          // var mailOptions = {
-          //   from: 'spaceworms@negociosytecnologias.net',
-          //   to: personInfo.email,
-          //   subject: 'Sending Email using Node.js',
-          //   html: '<h1>'+mailcode+'</h1>'
-          // };
+          var mailOptions = {
+            from: 'spaceworms@negociosytecnologias.net',
+            to: personInfo.email,
+            subject: 'Sending Email using Node.js',
+            html: '<h1>'+mailcode+'</h1>'
+          };
 
-          // transporter.sendMail(mailOptions, function(error, info){
-          //   if (error) {
-          //     res.send({"Success":"emailerror"}); // uncerified email
-          //   } else {
-          //     res.send({"Success":"emailsent"}); //email is already sent
-          //     console.log('Email sent: ' + info.response);
-          //   }
-          // });
+          transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+              res.send({"Success":"emailerror"}); // uncerified email
+            } else {
+              res.send({"Success":"emailsent"}); //email is already sent
+              console.log('Email sent: ' + info.response);
+            }
+          });
 
 					res.send({"Success":"You are registered,You can login now."});
 				} else {
