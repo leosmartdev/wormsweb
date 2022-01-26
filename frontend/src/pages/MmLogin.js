@@ -92,7 +92,7 @@ function MmLoginPage() {
               <button
                 className="close-modal-button"
                 onClick={() => {
-                  setModalOpen(false);
+                  // setModalOpen(false);
                 }}
               >
                 X
@@ -144,10 +144,10 @@ function MmLoginPage() {
           <Button
             onClick={() => {
               if (walletAddress === "") {
-                setModalOpen(false);
+                // setModalOpen(false);
                 connectWalletPressed();
               } else {
-                setModalOpen(true);
+                // setModalOpen(true);
               }
             }}
           >
@@ -194,7 +194,22 @@ const CreateAccountForm = (props) => {
           params: { email: email, address: props.address },
         })
         .then(function (response) {
-          console.log(response.data.Success);
+          // console.log(response.data.Success);
+          if (response.data.Success === "verified") {
+            alert("You are already registered! Please click Crear Cuenta button");
+          }
+
+          if (response.data.Success === "unverified") {
+            alert("Check your mailbox, If there is no email, please check your email verification");
+          }
+          
+          if (response.data.Success === "emailerror") {
+            alert("Check your email verification please.");
+          }
+
+          if (response.data.Success === "emailsent") {
+            alert("Check your mailbox please.");
+          }
         })
         .catch(function (error) {
           console.log("stories error response :: ", error);
@@ -207,8 +222,15 @@ const CreateAccountForm = (props) => {
         .post("/register", { params: { email: email, mailcode: mailcode } })
         .then(function (response) {
           if (response.data.Success === "verified") {
+            // alert("You are already registered!");
             localStorage.setItem("uuid", response.data.uuid);
             navigate("/marketplace");
+          }
+          if (response.data.Success === "nomatchemail") {
+            alert("No email matched");
+          }
+          if (response.data.Success === "unverified") {
+            alert("No mailcode matched");
           }
         })
         .catch(function (error) {
