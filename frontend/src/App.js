@@ -23,7 +23,6 @@ export default function App() {
 
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
-
     setWallet(address);
     setStatus(status);
 
@@ -78,15 +77,6 @@ export default function App() {
             )
           }
         />
-        {/* <Route path="/login">
-          {walletAddress.length >= 0 ? (
-            <Navigate to="/marketplace" />
-          ) : (
-            <MmLayout>
-              <MmLoginPage />
-            </MmLayout>
-          )}
-        </Route> */}
         <Route
           path="/marketplace"
           element={
