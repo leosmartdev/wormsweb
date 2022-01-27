@@ -24,12 +24,267 @@ function MarketPlacePage() {
   // we create an initial state for the current eggs available by user
   const [currentMintedNfts, setCurrentMintedNfts] = useState(0);
   const [wholeMintedNfts, setWholeMintedNfts] = useState(0);
-  
+
   const [nftImgPath, setNftImgPath] = useState();
 
-  const mainnetAbi = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"actualBalance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"}],"name":"mint","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokenId","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"recipient","type":"address"}],"name":"withdraw","outputs":[],"stateMutability":"nonpayable","type":"function"}]
-  const mainnetContract = '0x6BDb553bd2BeE492C8a278705F0041137181edc8'
-  
+  const mainnetAbi = [
+    { inputs: [], stateMutability: "nonpayable", type: "constructor" },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "approved",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Approval",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "owner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "operator",
+          type: "address",
+        },
+        {
+          indexed: false,
+          internalType: "bool",
+          name: "approved",
+          type: "bool",
+        },
+      ],
+      name: "ApprovalForAll",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "previousOwner",
+          type: "address",
+        },
+        {
+          indexed: true,
+          internalType: "address",
+          name: "newOwner",
+          type: "address",
+        },
+      ],
+      name: "OwnershipTransferred",
+      type: "event",
+    },
+    {
+      anonymous: false,
+      inputs: [
+        {
+          indexed: true,
+          internalType: "address",
+          name: "from",
+          type: "address",
+        },
+        { indexed: true, internalType: "address", name: "to", type: "address" },
+        {
+          indexed: true,
+          internalType: "uint256",
+          name: "tokenId",
+          type: "uint256",
+        },
+      ],
+      name: "Transfer",
+      type: "event",
+    },
+    {
+      inputs: [],
+      name: "actualBalance",
+      outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "to", type: "address" },
+        { internalType: "uint256", name: "tokenId", type: "uint256" },
+      ],
+      name: "approve",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "address", name: "owner", type: "address" }],
+      name: "balanceOf",
+      outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+      name: "getApproved",
+      outputs: [{ internalType: "address", name: "", type: "address" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "owner", type: "address" },
+        { internalType: "address", name: "operator", type: "address" },
+      ],
+      name: "isApprovedForAll",
+      outputs: [{ internalType: "bool", name: "", type: "bool" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "address", name: "to", type: "address" }],
+      name: "mint",
+      outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+      stateMutability: "payable",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "name",
+      outputs: [{ internalType: "string", name: "", type: "string" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "owner",
+      outputs: [{ internalType: "address", name: "", type: "address" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+      name: "ownerOf",
+      outputs: [{ internalType: "address", name: "", type: "address" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "renounceOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "from", type: "address" },
+        { internalType: "address", name: "to", type: "address" },
+        { internalType: "uint256", name: "tokenId", type: "uint256" },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "from", type: "address" },
+        { internalType: "address", name: "to", type: "address" },
+        { internalType: "uint256", name: "tokenId", type: "uint256" },
+        { internalType: "bytes", name: "_data", type: "bytes" },
+      ],
+      name: "safeTransferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "operator", type: "address" },
+        { internalType: "bool", name: "approved", type: "bool" },
+      ],
+      name: "setApprovalForAll",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "bytes4", name: "interfaceId", type: "bytes4" }],
+      name: "supportsInterface",
+      outputs: [{ internalType: "bool", name: "", type: "bool" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "symbol",
+      outputs: [{ internalType: "string", name: "", type: "string" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [],
+      name: "tokenId",
+      outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "uint256", name: "tokenId", type: "uint256" }],
+      name: "tokenURI",
+      outputs: [{ internalType: "string", name: "", type: "string" }],
+      stateMutability: "view",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address", name: "from", type: "address" },
+        { internalType: "address", name: "to", type: "address" },
+        { internalType: "uint256", name: "tokenId", type: "uint256" },
+      ],
+      name: "transferFrom",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [{ internalType: "address", name: "newOwner", type: "address" }],
+      name: "transferOwnership",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+    {
+      inputs: [
+        { internalType: "address payable", name: "recipient", type: "address" },
+      ],
+      name: "withdraw",
+      outputs: [],
+      stateMutability: "nonpayable",
+      type: "function",
+    },
+  ];
+  const mainnetContract = "0x6BDb553bd2BeE492C8a278705F0041137181edc8";
+
   const rpcURL = "https://data-seed-prebsc-1-s1.binance.org:8545";
   const web3 = new Web3(rpcURL);
 
@@ -42,15 +297,15 @@ function MarketPlacePage() {
     // setStatus(status);
     addWalletListener();
   }, []);
-  
+
   useEffect(() => {
-    if(walletAddress) {
+    if (walletAddress) {
       calculateMintedEggs();
     }
   }, [walletAddress]);
-  
+
   useEffect(() => {
-    imgURI(wholeMintedNfts+1);
+    imgURI(wholeMintedNfts + 1);
   }, [wholeMintedNfts]);
 
   useEffect(() => {
@@ -59,23 +314,20 @@ function MarketPlacePage() {
     }, 3000);
   }, []);
 
-  function imgURI (tokenId) {
+  function imgURI(tokenId) {
     let base_URI = "https://negociosytecnologias.net/erc721/" + tokenId;
     try {
-      api
-      .get(base_URI)
-      .then(function (response) {
+      api.get(base_URI).then(function (response) {
         var str = response.data;
         var str1 = str.replace(/\n/g, "").replace(/\r/g, "").replace(/\t/g, "");
         var arr = str1.split('"');
         var res = arr[arr.length - 2];
 
         setNftImgPath(res);
-      })    
+      });
     } catch (error) {
       console.log("Something went wrong: " + error.message);
     }
-
   }
 
   function addWalletListener() {
@@ -96,20 +348,17 @@ function MarketPlacePage() {
   }
 
   function calculateMintedEggs() {
-
     window.contract = new web3.eth.Contract(mainnetAbi, mainnetContract);
-    
+
     window.contract.methods.tokenId().call((err, result) => {
       setWholeMintedNfts(parseInt(result));
     });
     window.contract.methods.balanceOf(walletAddress).call((err, result) => {
       setCurrentMintedNfts(parseInt(result));
     });
-
   }
   //mintNFT
   const mint_NFT = async () => {
-
     window.contract = await new web3.eth.Contract(mainnetAbi, mainnetContract);
 
     const transactionParameters = {
@@ -126,20 +375,21 @@ function MarketPlacePage() {
           params: [transactionParameters],
         })
         .then(function (result) {
+          setWholeMintedNfts(wholeMintedNfts + 1);
+          setCurrentMintedNfts(currentMintedNfts + 1);
 
-          setWholeMintedNfts(wholeMintedNfts+1)
-          setCurrentMintedNfts(currentMintedNfts+1);
-
-          window.contract.methods.balanceOf(walletAddress).call((err, result) => {
-            api
-            .post("/registerNFT", { params: { address: account1, id: parseInt(result)+1 } })
-            .then(function (response) {
-            })
-            .catch(function (error) {
-              console.log("stories error response :: ", error);
+          window.contract.methods
+            .balanceOf(walletAddress)
+            .call((err, result) => {
+              api
+                .post("/registerNFT", {
+                  params: { address: account1, id: parseInt(result) + 1 },
+                })
+                .then(function (response) {})
+                .catch(function (error) {
+                  console.log("stories error response :: ", error);
+                });
             });
-          });
-
         });
     } catch (error) {
       console.log("Something went wrong: " + error.message);
@@ -235,7 +485,7 @@ function MarketPlacePage() {
               <div className="NFT-status-box">
                 <div>Egg comprados</div>
                 {/* return number of current eggs */}
-                <div>{currentBoughtEggs}</div>
+                <div>{currentMintedNfts}</div>
               </div>
               <div className="NFT-status-box">
                 <div>Eggs minted</div>
@@ -243,12 +493,14 @@ function MarketPlacePage() {
                 {/* two booleans inserted probably first one wouldn't be needed once backend and MM actually works here */}
                 <div>
                   {currentMintedNfts}{" "}
-                  {currentMintedNfts <= 2 && (
+                  {currentMintedNfts <= 1 ? (
                     <>
                       <button onClick={mint_NFT} className="button mint-button">
                         Mint NFT
                       </button>
                     </>
+                  ) : (
+                    ""
                   )}
                 </div>
               </div>
