@@ -602,7 +602,7 @@ function MarketPlacePage() {
                 <div className="NFT-uncommon">Poco común 3%</div>
               </div>
               <div className="mt-1">
-                {currentMintedNfts >= 88 ? (
+                {currentMintedNfts >= 2 ? (
                   " "
                 ) : (
                   <button onClick={handleBuyEgg} className="button">
