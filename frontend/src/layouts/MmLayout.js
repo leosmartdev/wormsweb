@@ -3,11 +3,6 @@ import "../assets/css/App.scss";
 
 function MmLayout(props) {
   localStorage.removeItem("uuid");
-  return (
-    <>
-      <MmHeader />
-      {props.children}
-    </>
-  );
+  return <>{props.children}</>;
 }
 export default MmLayout;

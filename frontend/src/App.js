@@ -68,21 +68,21 @@ export default function App() {
         <Route
           path="/login"
           element={
-            walletAddress.length > 0 ? (
-              <Navigate to="/marketplace" />
-            ) : (
-              <MmLayout>
-                <MmLoginPage />
-              </MmLayout>
-            )
+            <MmLayout>
+              <MmLoginPage />
+            </MmLayout>
           }
         />
         <Route
           path="/marketplace"
           element={
-            <MarketLayout>
-              <MarketPlacePage />
-            </MarketLayout>
+            walletAddress.length < 0 ? (
+              <Navigate to="/login" />
+            ) : (
+              <MarketLayout>
+                <MarketPlacePage />
+              </MarketLayout>
+            )
           }
         />
         <Route

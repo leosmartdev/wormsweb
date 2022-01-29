@@ -5,7 +5,6 @@ import {
   connectWallet,
   getCurrentWalletConnected,
 } from "../../../util/interact.js";
-import { useNavigate } from "react-router-dom";
 
 function MmHeader() {
   const [walletAddress, setWallet] = useState("");
@@ -68,7 +67,7 @@ function MmHeader() {
             <nav className="mm-connect-area">
               <ul>
                 <li>
-                  <Button onClick={connectWalletPressed} className="mm-connect">
+                  <Button className="mm-connect">
                     {walletAddress.length > 0 ? (
                       "Conectada: " +
                       String(walletAddress).substring(0, 6) +

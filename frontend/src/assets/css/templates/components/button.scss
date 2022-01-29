@@ -1,12 +1,12 @@
 // button
 .button {
-  padding: 0.35rem 0.4rem;
+  padding: 0.4rem 0.4rem;
   border: 0;
   background-color: var(--blue);
   background: var(--linear-gradient-reversed);
   color: var(--linkblue);
   border: 3px solid #3d2013;
-  font-size: 0.5rem;
+  font-size: 0.75rem;
   font-weight: 700;
   border-radius: 8px;
   cursor: pointer;
@@ -28,10 +28,5 @@
   &:active {
     background: var(--linear-gradient-cancel-reversed);
     filter: brightness(140%);
-  }
-}
-@media (min-width: 800px) {
-  .button {
-    font-size: 0.75rem;
   }
 }

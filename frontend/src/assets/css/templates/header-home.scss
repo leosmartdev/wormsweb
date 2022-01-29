@@ -1,7 +1,6 @@
 // header templates
 header {
   position: absolute;
-  z-index: 10;
   left: 0;
   right: 0;
 }
@@ -39,9 +38,13 @@ header {
   padding: var(--padding);
 }
 
-.header-left {
-  padding-left: 0.6rem;
+.header-left,
+.header-right {
+  height: fit-content;
+  position: relative;
+  z-index: 12;
 }
+
 .header-right ul li a {
   font-variant-caps: all-small-caps;
 }
@@ -60,7 +63,6 @@ li.header-link {
   bottom: 0;
   height: 100vh;
   overflow: hidden;
-  z-index: 9;
 }
 .overlayDivMenuMobile ul {
   display: flex;
@@ -73,6 +75,7 @@ li.header-link {
   display: block;
   background: #000000f0;
   padding-top: 33vh;
+  z-index: 10;
 }
 .buttonHamburguerStyles {
   padding: 0.13rem 0.25rem 0.151rem 0.25rem;

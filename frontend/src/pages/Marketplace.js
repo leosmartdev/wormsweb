@@ -22,7 +22,7 @@ function MarketPlacePage() {
   // const mainnetContract = '0x61a9F541F0D3A10400e1feC8b79a1a65bed059Fb';
 
   const [modalOpen, setModalOpen] = useState(true);
-  const [currentModal, setCurrentModal] = useState("");
+  const [currentModal, setCurrentModal] = useState("init");
 
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
@@ -292,7 +292,8 @@ function MarketPlacePage() {
     },
   ];
   // contract address
-  const mainnetContract = "0x4f54DBCF6852cc5386f72210B3587B1975637386";
+  // const mainnetContract = "0x4f54DBCF6852cc5386f72210B3587B1975637386";
+  const mainnetContract = "0x5dbe62d89c20fed696580a046b82520e9f7830ad";
 
   const rpcURL = "https://data-seed-prebsc-1-s1.binance.org:8545";
   const web3 = new Web3(rpcURL);
@@ -398,7 +399,7 @@ function MarketPlacePage() {
             });
           setCurrentMintedNfts(currentMintedNfts + i);
           setWholeMintedNfts(wholeMintedNfts + i);
-          setMMStatusInfo("Mint Exitoso!");
+          setCurrentModal("bienvenido a la aventura!");
           setTimeout(() => {
             setModalOpen(false);
             setMMStatusInfo("Esperando a Metamask");
@@ -524,14 +525,22 @@ function MarketPlacePage() {
             ) : currentModal === "loading-screen" ? (
               <>
                 <div className="loading-screen-container">
-                  <div className="text-center ">
-                    <Logo />
-                  </div>
-
                   <h1>{MMStatusInfo}</h1>
                   <div>
                     <LoadingWorm />
                   </div>
+                </div>
+              </>
+            ) : currentModal === "init" ? (
+              <>
+                {() => {
+                  setModalOpen(false);
+                }}
+                <div className="flex-wrapper">
+                  <div>
+                    <LoadingWorm />
+                  </div>
+                  <h1>Cargando...</h1>
                 </div>
               </>
             ) : (

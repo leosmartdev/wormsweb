@@ -82,8 +82,8 @@ export class CarouselScreenshotSlider extends React.Component {
           </Slide>
         </Slider>
         <div className="slider-two-arrow-container">
-          <ButtonBack>&nbsp;</ButtonBack>
-          <ButtonNext>&nbsp;</ButtonNext>
+          <ButtonBack className="mr-auto">&nbsp;</ButtonBack>
+          <ButtonNext className="ml-auto">&nbsp;</ButtonNext>
         </div>
       </CarouselProvider>
     );

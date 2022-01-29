@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 import axios from "axios";
+import MmHeader from "components/organisms/login/MmHeader";
 
 function MmLoginPage() {
   const [walletAddress, setWallet] = useState("");
@@ -135,7 +136,8 @@ function MmLoginPage() {
     <>
       {modalOpen ? <ShowCreateAccountModal /> : ""}
       <div className="vh-100 mm-login">
-        <div className="mmlogincenterdiv">
+        <MmHeader />
+        <div className="mmlogincenterdiv container grid place-center">
           <h4 className="mmtitle">Conectar Cartera</h4>
           <p className="mmfirstp">
             Conéctese con su billetera disponible o cree una nueva billetera
@@ -165,9 +167,9 @@ function MmLoginPage() {
             No somos propietarios de sus claves privadas y no podemos acceder a
             sus fondos sin su confirmación. Ver término de uso
           </p>
-        </div>
-        <div className="mediadiv">
-          <SocialMedia />
+          <div className="mediadiv">
+            <SocialMedia />
+          </div>
         </div>
       </div>
     </>
@@ -196,13 +198,17 @@ const CreateAccountForm = (props) => {
         .then(function (response) {
           // console.log(response.data.Success);
           if (response.data.Success === "verified") {
-            alert("You are already registered! Please click Crear Cuenta button");
+            alert(
+              "You are already registered! Please click Crear Cuenta button"
+            );
           }
 
           if (response.data.Success === "unverified") {
-            alert("Check your mailbox, If there is no email, please check your email verification");
+            alert(
+              "Check your mailbox, If there is no email, please check your email verification"
+            );
           }
-          
+
           if (response.data.Success === "emailerror") {
             alert("Check your email verification please.");
           }

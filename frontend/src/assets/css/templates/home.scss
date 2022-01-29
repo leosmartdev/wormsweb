@@ -1,6 +1,7 @@
-main {
+#root {
   background: url(./../../img/back-website.png) no-repeat center;
   background-size: cover;
+  min-height: 100%;
 }
 .slider-one {
   margin: auto;
@@ -9,10 +10,17 @@ main {
   font-size: 6vw;
   line-height: 7vw;
 }
+.text-shadow {
+  text-shadow: 0px 0px 50px yellow;
+  text-align: center;
+  font-size: 48px;
+  line-height: 48px;
+  padding: 1.45rem;
+}
 .box-with-borders {
   border-top: 3px solid #79710b;
   border-bottom: 3px solid #79710b;
-  background: #00000079;
+  background: #00000069;
   text-align: center;
   display: grid;
   place-items: center;
@@ -65,7 +73,9 @@ main {
     flex-direction: column;
   }
   .left-right-flex .right {
+    font-size: clamp(0.8rem, 2.5rem, 0.61vw);
     margin-top: 0;
+    margin-bottom: 3rem;
   }
   .left-right-flex .left {
     padding-top: 5rem;
@@ -73,16 +83,18 @@ main {
 }
 .slider-one-arrow-container,
 .slider-two-arrow-container {
-  position: absolute;
-  top: 45%;
-  left: -7%;
-  right: -5%;
+  display: flex;
+  width: 110%;
+  justify-content: space-between;
+  margin-top: -50%;
+  margin-left: -5%;
+  position: relative;
 }
 .slider-one .carousel__next-button,
 .slider-two .carousel__next-button {
-  position: absolute;
-  right: -20px;
-  top: -40px;
+  // position: absolute;
+  // right: -20px;
+  // top: -40px;
   border: 0;
   background: url(./../../img/slider-arrow.png) no-repeat center;
   background-size: cover;
@@ -93,9 +105,6 @@ main {
 }
 .slider-one .carousel__back-button,
 .slider-two .carousel__back-button {
-  position: absolute;
-  left: -20px;
-  top: -40px;
   border: 0;
   background: url(./../../img/slider-arrow.png) no-repeat center;
   background-size: cover;
@@ -114,10 +123,10 @@ main {
 }
 
 .homefirstimg1 {
-  width: 40vw;
+  max-width: 100%;
 }
 .homefirstimg5 {
-  width: 40vw;
+  max-width: 100%;
 }
 .homeparag1 {
   font-size: 20px;
@@ -125,7 +134,7 @@ main {
 .leftrightinnerdiv {
   margin: auto;
   display: table;
-  width: 80%;
+  // width: 80%;
 }
 .homefirstbuttondiv {
   display: flex;
@@ -134,6 +143,8 @@ main {
   max-width: 100vw;
   margin-top: 30px;
   margin-bottom: 5px;
+  position: relative;
+  z-index: 9;
 }
 .homefirstbutton1 {
   margin-left: 5px;
@@ -171,7 +182,7 @@ main {
 .box-with-borders2 {
   border-top: 3px solid #79710b;
   border-bottom: 3px solid #79710b;
-  background: #00000079;
+  background: #00000069;
   text-align: center;
   width: 100%;
 }
@@ -192,7 +203,6 @@ main {
 }
 .homesecondimg1 {
   width: 250px;
-  margin-top: calc(50vh - 150px);
 }
 .homesecondrightdiv p {
   margin-top: 20px;
@@ -231,9 +241,6 @@ main {
   .homesecondleftdiv {
     width: 100%;
     height: 320px;
-  }
-  .homesecondimg1 {
-    margin-top: 20px;
   }
   .homesecondrightdiv {
     width: 100%;
@@ -321,13 +328,16 @@ main {
     flex: none;
     margin: 20px;
   }
-  .homethirdrightdiv > video {
+  video {
     width: 80vw;
     border-radius: 30px;
     border: 8px solid white;
   }
 }
-
+video {
+  border-radius: 30px;
+  border: 8px solid white;
+}
 @media (max-width: 600px) {
   .homethirdleftdiv p {
     line-height: 1.5rem;
@@ -359,7 +369,7 @@ main {
   position: relative;
   border-top: 3px solid #79710b;
   border-bottom: 3px solid #79710b;
-  background: #00000079;
+  background: #00000069;
   text-align: center;
   place-items: center;
   width: 100%;
@@ -378,25 +388,23 @@ main {
   width: 90%;
 }
 
-.homefourthcontrolpanel {
-  position: absolute;
-  top: 50px;
-  right: 0;
+.fixed-social-media-div {
   width: 65px;
   height: 240px;
   display: grid;
   grid-template-columns: auto;
   background-color: #a79d14;
   border-radius: 20px 0 0 20px;
-}
-
-.homefourthcontrolpanel > .a {
-  display: table;
-}
-
-.homefourthcontrolpanel .homefourthimgs {
-  margin-top: 10px;
-  width: 60%;
+  position: absolute;
+  right: 0;
+  padding-top: 0.3rem;
+  z-index: 11;
+  > * {
+    margin: auto;
+  }
+  a img {
+    max-width: 36px;
+  }
 }
 
 @media (max-width: 1100px) {
@@ -478,7 +486,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem;
   margin-bottom: 0.5rem;
-  font-size: clamp(0.5rem, 2.5rem, 0.91vw);
+  font-size: clamp(0.5rem, 2.5rem, 0.61vw);
+  max-width: 1176px;
   > * {
     text-align: left;
   }
@@ -488,7 +497,8 @@ main {
   grid-template-columns: repeat(3, 1fr);
   gap: 5rem;
   margin-bottom: 0.5rem;
-  font-size: clamp(0.5rem, 2.5rem, 0.91vw);
+  font-size: clamp(0.5rem, 2.5rem, 0.61vw);
+  max-width: 1176px;
   > * {
     text-align: right;
   }
@@ -519,13 +529,26 @@ main {
   width: 3rem;
   margin-top: 3rem;
 }
-.homefourthimg1 {
-  display: grid;
-  place-items: center;
-  height: 100%;
-}
+
 @media (max-width: 761px) {
   .roadmap-mobile-flex {
+    > div {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  .text-shadow {
+    font-size: 38px !important;
+    line-height: 38px;
+    padding: 1rem !important;
+  }
+}
+
+@media (min-width: 900px) {
+  .roadmap-mobile-flex {
     display: flex;
+    > * {
+      margin: 0 auto;
+    }
   }
 }

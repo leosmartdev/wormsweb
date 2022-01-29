@@ -2,7 +2,7 @@ import "../assets/css/templates/home.scss";
 import Button from "../components/atoms/Button";
 import { CarouselScreenshotSlider } from "../components/molecules/CarouselSlider";
 import video from "./../assets/img/game-video.mp4";
-import homefirstimg1 from "./../assets/img/20.png";
+import SpaceWormsLogo from "./../assets/img/20.png";
 import homefirstimg5 from "./../assets/img/1.png";
 import homebuttonimg1 from "./../assets/img/3.png";
 import homebuttonimg2 from "./../assets/img/2.png";
@@ -14,7 +14,7 @@ import Logo from "components/atoms/Logo";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { useEffect, useState } from "react";
 import { connectWallet, getCurrentWalletConnected } from "../util/interact.js";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import CrossIcon from "components/atoms/icons/cross";
 import HamburguerIcon from "components/atoms/icons/hamburguer";
 import { BsFillArrowRightCircleFill } from "react-icons/bs";
@@ -34,6 +34,10 @@ import dcBlack from "assets/img/dc_black.png";
 import tgBlack from "assets/img/telegram_black.png";
 import twBlack from "assets/img/tw_black.png";
 import ytBlack from "assets/img/youtube_black.png";
+import Tooltip from "rc-tooltip";
+import "rc-tooltip/assets/bootstrap_white.css";
+import ReactVisibilitySensor from "react-visibility-sensor";
+
 const Video = () => {
   return (
     <>
@@ -144,72 +148,90 @@ function HomePage() {
           </nav>
         </div>
         <header className={navbarOpen ? "fixed" : ""}>
-          <div className="header flex-wrapper">
-            <div className="header-left">
-              <Logo alt="SPACE WORMS" className="img-logo" />
-            </div>
-            <div className="header-right">
-              <nav>
-                <ul>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="/" rel="author">
-                      Inicio
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="#intro" rel="author">
-                      Introduccion
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="#trailer" rel="author">
-                      Trailer
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="#roadmap" rel="author">
-                      Roadmap
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="#screenshots" rel="author">
-                      Screenshots
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <AnchorLink href="#team" rel="author">
-                      Equipo
-                    </AnchorLink>
-                  </li>
-                  <li className="desktop-only header-link">
-                    <a href="/whitepaper" rel="author">
-                      Whitepaper
-                    </a>
-                  </li>
-                  <Button onClick={routeChange}>
-                    JUGAR AHORA <BsFillArrowRightCircleFill />
-                  </Button>
-                  <li className="mobile-only">
-                    <Button
-                      onClick={handleToggle}
-                      className="buttonHamburguerStyles"
-                    >
-                      {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
-                    </Button>
-                  </li>
-                </ul>
-              </nav>
+          <div className="container header-container">
+            <div className="header flex-wrapper">
+              <div className="header-left">
+                <Logo alt="SPACE WORMS" className="img-logo" />
+              </div>
+              <div className="header-right flex-wrapper direction-column">
+                <div className="ml-auto mr-2 topnav-area">
+                  <Link to="/marketplace" className="topnav-button">
+                    Marketplace
+                  </Link>
+                </div>
+                <nav>
+                  <ul>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="/" rel="author">
+                        Inicio
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#intro" rel="author">
+                        Introduccion
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#trailer" rel="author">
+                        Trailer
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#roadmap" rel="author">
+                        Roadmap
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#screenshots" rel="author">
+                        Screenshots
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#team" rel="author">
+                        Equipo
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <a href="/whitepaper" rel="author">
+                        Whitepaper
+                      </a>
+                    </li>
+                    <li>
+                      <Tooltip
+                        placement="bottom"
+                        trigger={["click"]}
+                        overlay={<span>Juego Próximamente!</span>}
+                      >
+                        <Button>
+                          JUGAR AHORA <BsFillArrowRightCircleFill />
+                        </Button>
+                      </Tooltip>
+                    </li>
+                    <li className="mobile-only">
+                      <Button
+                        onClick={handleToggle}
+                        className="buttonHamburguerStyles"
+                      >
+                        {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
+                      </Button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
             </div>
           </div>
         </header>
       </>
-      <main>
-        <div className="vh-100 grid place-center">
+      <main className="">
+        <div className="hidden">
+          <h1>Space Worms</h1>
+        </div>
+        <div className="grid place-center container ">
           <div className="left-right-flex ">
             <div className="left">
               <div className="leftrightinnerdiv">
                 <img
-                  src={homefirstimg1}
+                  src={SpaceWormsLogo}
                   className="homefirstimg1"
                   alt="spaceworms"
                 />
@@ -218,16 +240,34 @@ function HomePage() {
                 </p>
                 <p>Conviertete en el gusano Nº1 y obten grandes recompensas</p>
                 <div className="homefirstbuttondiv">
-                  <div className="mx-auto flex-wrapper devices-container">
-                    <Button className="homefirstbutton1">
-                      <img src={homebuttonimg1} alt="mobile, windows, mac" />
-                    </Button>
-                    <Button className="homefirstbutton1">
-                      <img src={homebuttonimg2} alt="mobile, windows, mac" />
-                    </Button>
-                    <Button className="homefirstbutton1">
-                      <img src={homebuttonimg3} alt="mobile, windows, mac" />
-                    </Button>
+                  <div className="mx-auto devices-container">
+                    <Tooltip
+                      placement="bottom"
+                      trigger={["click"]}
+                      overlay={<span>Juego Próximamente!</span>}
+                    >
+                      <Button className="homefirstbutton1">
+                        <img src={homebuttonimg1} alt="mobile, windows, mac" />
+                      </Button>
+                    </Tooltip>
+                    <Tooltip
+                      placement="bottom"
+                      trigger={["click"]}
+                      overlay={<span>Juego Próximamente!</span>}
+                    >
+                      <Button className="homefirstbutton1">
+                        <img src={homebuttonimg2} alt="mobile, windows, mac" />
+                      </Button>
+                    </Tooltip>
+                    <Tooltip
+                      placement="bottom"
+                      trigger={["click"]}
+                      overlay={<span>Juego Próximamente!</span>}
+                    >
+                      <Button className="homefirstbutton1">
+                        <img src={homebuttonimg3} alt="mobile, windows, mac" />
+                      </Button>
+                    </Tooltip>
                   </div>
                 </div>
               </div>
@@ -240,224 +280,242 @@ function HomePage() {
           </div>
         </div>
         {/*  */}
-        <div className="vh-100 box-with-borders2">
-          <div className="flex-wrapper hs-flex-column" id="intro">
-            <div className="homesecondleftdiv">
-              <img src={homesecondimg1} className="homesecondimg1" alt="" />
-            </div>
-            <div className="homesecondrightdiv">
-              <p>
-                Una peligrosa raza Alienígena amenaza con destruir todo a su
-                paso para controlar la Fuerza Cósmica y la última esperanza para
-                enfrentarlos son los Gusanos Espaciales.
-              </p>
-              <p>
-                En Space Worms podrás ser parte de esta Guerra Espacial contra
-                los Loriks en un videojuego que te brindará horas interminables
-                de diversión además de generar ingresos ilimitados. No te
-                pierdas la oportunidad de unirte a esta lucha para salvar al
-                Universo usando la fuerza del Sol y las Estrellas, mejorando a
-                tu gusano, resolviendo misiones diarias, o sencillamente
-                enfréntate a otros.
-              </p>
+        <div className="box-with-borders2 grid place-center ">
+          <ReactVisibilitySensor>
+            {({ isVisible }) => (
+              <div
+                className={`${
+                  isVisible ? "fix-social" : ""
+                }  fixed-social-media-div `}
+              >
+                <a href="www.discord.com">
+                  <img
+                    src={dcBlack}
+                    className="homefourthimgs"
+                    alt="unete a discord"
+                  />
+                </a>
+                <a href="www.telegram.com">
+                  <img
+                    src={tgBlack}
+                    className="homefourthimgs"
+                    alt="unete a telegram"
+                  />
+                </a>
+                <a href="www.temti.com">
+                  <img
+                    src={twBlack}
+                    className="homefourthimgs"
+                    alt="unete a twitter"
+                  />
+                </a>
+                <a href="www.youtube.com">
+                  <img
+                    src={ytBlack}
+                    className="homefourthimgs"
+                    alt="suscribete a nuestro canal"
+                  />
+                </a>
+              </div>
+            )}
+          </ReactVisibilitySensor>
+
+          <div className="container">
+            <div className="left-right-flex" id="intro">
+              <div className="left">
+                <img src={homesecondimg1} className="homesecondimg1" alt="" />
+              </div>
+              <div className="right">
+                <h2 className="hidden">Introduccion</h2>
+                <p>
+                  Una peligrosa raza Alienígena amenaza con destruir todo a su
+                  paso para controlar la Fuerza Cósmica y la última esperanza
+                  para enfrentarlos son los Gusanos Espaciales.
+                </p>
+                <p className="mt-2">
+                  En Space Worms podrás ser parte de esta Guerra Espacial contra
+                  los Loriks en un videojuego que te brindará horas
+                  interminables de diversión además de generar ingresos
+                  ilimitados. No te pierdas la oportunidad de unirte a esta
+                  lucha para salvar al Universo usando la fuerza del Sol y las
+                  Estrellas, mejorando a tu gusano, resolviendo misiones
+                  diarias, o sencillamente enfréntate a otros.
+                </p>
+              </div>
             </div>
           </div>
         </div>
         {/*  */}
-        <div className="vh-100 homethirdarea" id="trailer">
-          <div className="homethirdleftdiv">
-            <p>Salva el universo y obten grandes recompensas</p>
-          </div>
-          <div className="homethirdrightdiv">
-            <Video />
+        <div className="homethirdarea grid place-center" id="trailer">
+          <div className="container">
+            <div className="left-right-flex small-container-for-mobiles">
+              <div className="left">
+                <h2 className="hidden">Trailer</h2>
+                <p className="text-shadow">
+                  Salva el universo y obten grandes recompensas
+                </p>
+              </div>
+              <div className="right">
+                <Video />
+              </div>
+            </div>
           </div>
         </div>
+        {/*  */}
+
+        {/*  */}
         {/* roadmap */}
-        <div className="vh-100 flex-wrapper">
-          <div className="homefourtharea" id="roadmap">
-            <div className="absolute w-full text-center">
-              <div className="h6">ROAD MAP</div>
-            </div>
-            <div className="homefourthimg1">
+        <div className="homefourtharea " id="roadmap">
+          <div className="container py-1">
+            <div className="small-container-for-mobiles">
+              <h2 className="text-shadow">ROAD MAP</h2>
               <div className="m-auto px-1 roadmap-mobile-flex">
-                <div className="roadmapqinfo-top large-devices">
-                  <div>
-                    <ul>
-                      <li>Idea y economía del juego</li>
-                      <li>Contratación de equipo</li>
-                      <li>Diseño e ilustración</li>
-                      <li className="h2 mt-1">2021</li>
-                    </ul>
+                <div className="">
+                  <div className="roadmapqinfo-top large-devices">
+                    <div>
+                      <ul>
+                        <li>Idea y economía del juego</li>
+                        <li>Contratación de equipo</li>
+                        <li>Diseño e ilustración</li>
+                        <li className="h2 mt-1">2021</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Staking</li>
+                        <li>Marketplace</li>
+                        <li>Sistema de clanes o gremios</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>Minijuegos</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <ul>
-                      <li>Staking</li>
-                      <li>Marketplace</li>
-                      <li>Sistema de clanes o gremios</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
+                  <div className="roadmapqinfo-left small-and-medium-devices">
+                    <div>
+                      <ul>
+                        <li>Lanzamiento sitio web</li>
+                        <li>Preventa de NFT</li>
+                        <li>Auditorías</li>
+                        <li>Preventa de token</li>
+                        <li>Alpha del juego</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Salas personalizadas</li>
+                        <li>Eventos</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                        <li>Alquiler de NFT</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
                   </div>
-                  <div>
-                    <ul>
-                      <li>&nbsp;</li>
-                      <li>&nbsp;</li>
-                      <li>Minijuegos</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
+                  <img
+                    src={roadmapH}
+                    alt="roadmap"
+                    className=" img-fluid large-devices"
+                  />
+                  <img
+                    src={roadmapV}
+                    alt="roadmap"
+                    className="small-and-medium-devices roadmap-vertical-img"
+                  />
+                  <div className="roadmapqinfo-right small-and-medium-devices">
+                    <div>
+                      <ul>
+                        <li>Idea y economía del juego</li>
+                        <li>Contratación de equipo</li>
+                        <li>Diseño e ilustración</li>
+                        <li className="h2 mt-1">2021</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Staking</li>
+                        <li>Marketplace</li>
+                        <li>Sistema de clanes o gremios</li>
+                        <li className="h2 mt-1">2022</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li>Minijuegos</li>
+                        <li className="h2 mt-1">2022</li>
+                        <li>&nbsp;</li>
+                        <li>&nbsp;</li>
+                      </ul>
+                    </div>
                   </div>
-                </div>
-                <div className="roadmapqinfo-left small-and-medium-devices">
-                  <div>
-                    <ul>
-                      <li>Lanzamiento sitio web</li>
-                      <li>Preventa de NFT</li>
-                      <li>Auditorías</li>
-                      <li>Preventa de token</li>
-                      <li>Alpha del juego</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Salas personalizadas</li>
-                      <li>Eventos</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>&nbsp;</li>
-                      <li>&nbsp;</li>
-                      <li>Alquiler de NFT</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
-                  </div>
-                </div>
-                <img
-                  src={roadmapH}
-                  alt="roadmap"
-                  className=" img-fluid large-devices"
-                />
-                <img
-                  src={roadmapV}
-                  alt="roadmap"
-                  className="small-and-medium-devices roadmap-vertical-img"
-                />
-                <div className="roadmapqinfo-right small-and-medium-devices">
-                  <div>
-                    <ul>
-                      <li>Idea y economía del juego</li>
-                      <li>Contratación de equipo</li>
-                      <li>Diseño e ilustración</li>
-                      <li className="h2 mt-1">2021</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Staking</li>
-                      <li>Marketplace</li>
-                      <li>Sistema de clanes o gremios</li>
-                      <li className="h2 mt-1">2022</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li>Minijuegos</li>
-                      <li className="h2 mt-1">2022</li>
-                      <li>&nbsp;</li>
-                      <li>&nbsp;</li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="roadmapqinfo-bottom large-devices">
-                  <div>
-                    <ul>
-                      <li className="h2 mt-1">2022</li>
-                      <li>Lanzamiento sitio web</li>
-                      <li>Preventa de NFT</li>
-                      <li>Auditorías</li>
-                      <li>Preventa de token</li>
-                      <li>Alpha del juego</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li className="h2 mt-1">2022</li>
-                      <li>Salas personalizadas</li>
-                      <li>Eventos</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <ul>
-                      <li className="h2 mt-1">2022</li>
-                      <li>Alquiler de NFT</li>
-                    </ul>
+                  <div className="roadmapqinfo-bottom large-devices">
+                    <div>
+                      <ul>
+                        <li className="h2 mt-1">2022</li>
+                        <li>Lanzamiento sitio web</li>
+                        <li>Preventa de NFT</li>
+                        <li>Auditorías</li>
+                        <li>Preventa de token</li>
+                        <li>Alpha del juego</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li className="h2 mt-1">2022</li>
+                        <li>Salas personalizadas</li>
+                        <li>Eventos</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul>
+                        <li className="h2 mt-1">2022</li>
+                        <li>Alquiler de NFT</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-
-            {/*  */}
-            {/* <div className="homefourthcontrolpanel">
-              <a href="www.discord.com">
-                <img
-                  src={homefourthimg2}
-                  className="homefourthimgs"
-                  alt="unete a discord"
-                />
-              </a>
-              <a href="www.telegram.com">
-                <img
-                  src={homefourthimg3}
-                  className="homefourthimgs"
-                  alt="unete a telegram"
-                />
-              </a>
-              <a href="www.temti.com">
-                <img
-                  src={homefourthimg4}
-                  className="homefourthimgs"
-                  alt="unete a temti"
-                />
-              </a>
-              <a href="www.youtube.com">
-                <img
-                  src={homefourthimg5}
-                  className="homefourthimgs"
-                  alt="suscribete a nuestro canal"
-                />
-              </a>
-            </div> */}
-            {/*  */}
           </div>
         </div>
         {/*  */}
-        <div
-          className="vh-100 flex-wrapper direction-column homefiftharea"
-          id="screenshots"
-        >
-          <h6>Screenshots</h6>
-          <div className="container-slider-two">
-            <div className="slider-two">
-              <CarouselScreenshotSlider />
+        <div className="  homefiftharea" id="screenshots">
+          <div className="container-slider-two container">
+            <div className="small-container-for-mobiles">
+              <h2 className="hidden">Screenshots</h2>
+              <div className="text-shadow">Screenshots</div>
+              <div className="slider-two">
+                <CarouselScreenshotSlider />
+              </div>
             </div>
           </div>
         </div>
         {/*  */}
       </main>
-      <footer>
-        <div className="footerfirstarea">
-          <div className="footerfirsttitle" id="team">
-            <h1>Equipo</h1>
-          </div>
+      <footer className="">
+        {/*  */}
+        <div className="footerfirstarea container" id="team">
+          <span className=" text-shadow">Equipo</span>
           <div className="footerimgsdiv">
             <div className="footerimgs">
-              <img src={teamMember1} alt="john doe" />
+              <img src={teamMember2} alt="john doe" />
               <p>Brayan Suniaga</p>
               <span>Inversor y creador de contenido</span>
             </div>
             <div className="footerimgs">
-              <img src={teamMember2} alt="john doe" />
+              <img src={teamMember1} alt="john doe" />
               <p>Abraham Leon</p>
               <span>Empresario y entusiasta de las criptomonedas</span>
             </div>
@@ -468,31 +526,28 @@ function HomePage() {
             </div>
           </div>
         </div>
+        {/*  */}
         <div className="footersecondarea">
-          <div className="footersecondchilddivs">
-            <p>Partners</p>
-            <img src={footerimg4} alt="partner" />
-          </div>
-          <div className="footersecondchilddivs">
-            <p>Developers</p>
-            <img src={developersLogo} alt="N&T Negocios y Tecnologías" />
-            <div>Desarrollado por N&T Negocios y Tecnologías s.r.l.</div>
+          <div className="container">
+            <div className="footersecondchilddivs">
+              <p>Partners</p>
+              <img src={footerimg4} alt="partner" />
+            </div>
+            <div className="footersecondchilddivs">
+              <p>Developers</p>
+              <img src={developersLogo} alt="N&T Negocios y Tecnologías" />
+              <div>Desarrollado por N&T Negocios y Tecnologías s.r.l.</div>
+            </div>
           </div>
         </div>
         <div className="footerthirdarea">
-          <div className="footerthirdimgs1">
-            <a href="www.aws.com">
+          <div className="footerthirdimgs1 ">
+            <div className="mx-auto">
               <img src={awsLogo} alt="Amazon Web Store" />
-            </a>
-            <a href="#0">
               <img src={footerimg7} alt="partner" />
-            </a>
-            <a href="#0">
               <img src={footerimg8} className="thirdimg" alt="partner" />
-            </a>
-            <a href="#0">
               <img src={footerimg9} alt="partner" />
-            </a>
+            </div>
           </div>
           <div className="footerthirdimgs2">
             <a href="#0">
@@ -507,20 +562,6 @@ function HomePage() {
             <a href="#0">
               <img src={ytBlack} alt="Youtube" />
             </a>
-          </div>
-          <div className="flex-wrapper footer-links">
-            <div className="mx-auto w-full">
-              <a href="/whitepaper" alt="whitepaper" className="mr-1">
-                Whitepaper
-              </a>
-              <a
-                href="https://docs.spaceworms.app"
-                alt="Space Worms Documentation"
-                className="ml-1"
-              >
-                SpaceWorms Docs
-              </a>
-            </div>
           </div>
         </div>
         <div className="legal">

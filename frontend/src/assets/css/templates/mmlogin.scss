@@ -4,15 +4,12 @@ div.mm-login {
   background-size: 100% 40%, cover;
   background-position: bottom, left;
   border-top: 3px solid #79710b;
-  min-height: 100vh;
   text-align: center;
-  padding-top: 1rem;
   position: relative;
 }
 .mmlogincenterdiv {
   width: 400px;
   margin: auto;
-  margin-top: 18vh;
 }
 .mmtitle {
   font-size: 40px;
@@ -46,7 +43,6 @@ div.mm-login {
   .mmlogincenterdiv {
     width: 350px;
     margin: auto;
-    margin-top: 18vh;
   }
   .mmtitle {
     font-size: 35px;
@@ -64,7 +60,6 @@ div.mm-login {
   .mmlogincenterdiv {
     width: 300px;
     margin: auto;
-    margin-top: 18vh;
   }
   .mmtitle {
     font-size: 32px;

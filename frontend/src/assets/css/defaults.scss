@@ -1,6 +1,6 @@
 // defaults
 :root {
-  --padding: 0.2rem 0;
+  --padding: 0;
   --font: "open-sans";
 }
 * {
@@ -34,6 +34,7 @@ a {
 }
 .fixed {
   position: fixed;
+  z-index: 10;
 }
 .absolute {
   position: absolute;
@@ -96,6 +97,9 @@ nav ul {
   max-width: 100%;
   height: auto;
 }
+.ml-auto {
+  margin: 0 0 0 auto;
+}
 .mt-2 {
   margin-top: 0.4rem;
 }
@@ -124,11 +128,27 @@ video {
 .gap-1 {
   gap: 4px;
 }
+.mt-n3 {
+  margin-top: -3px;
+}
+.pr-1 {
+  padding-right: 0.25rem;
+}
+.mr-1 {
+  margin-right: 0.25rem;
+}
+.mr-2 {
+  margin-right: 0.5rem;
+}
+.mr-3 {
+  margin-right: 1rem;
+}
 @media (max-width: 768px) {
   .vh-100 {
     min-height: 787px;
   }
 }
+
 .grid {
   display: grid;
 }
@@ -149,4 +169,61 @@ video {
 }
 .text-center {
   text-align: center;
+}
+.topnav-button {
+  border: 0;
+  color: white;
+  padding: 0;
+}
+.topnav-area {
+  a {
+    vertical-align: top;
+    background: var(--yellow);
+    color: black;
+    padding: 0.1rem 0.5rem;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    font-size: 20px;
+    font-variant-caps: all-small-caps;
+    &:hover {
+      color: black;
+      text-shadow: none;
+      -webkit-text-fill-color: unset;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .px-1 {
+    padding: 0 0.1%;
+  }
+}
+
+.container {
+  max-width: 1366px;
+  // padding-left: 3%;
+  // padding-right: 3%;
+  margin: 0 auto;
+  position: relative;
+  > div:first-child {
+    min-height: 980px;
+  }
+}
+.header-container {
+  max-width: 1920px !important;
+  padding: 0 !important;
+}
+.small-container-for-mobiles {
+  min-height: 620px !important;
+}
+.py-1 {
+  padding: 1rem 0;
+}
+.hidden {
+  opacity: 0;
+}
+.fix-social {
+  position: fixed !important;
+  right: 0;
+  top: 50vh;
+  z-index: 11;
 }

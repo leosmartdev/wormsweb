@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import cryptoCoinLogo from "assets/img/gusano1.png";
+import cryptoCoinLogo from "assets/img/gusano.png";
 import userAvatar from "assets/img/avatar_2.png";
 import inventoryIcon from "assets/img/icono_inventario.png";
 import walletIcon from "assets/img/icono_wallet.png";
@@ -11,7 +11,7 @@ export default function WalletPage() {
   const [modalOpen, setModalOpen] = useState(true);
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
-  
+
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
 
@@ -108,7 +108,7 @@ export default function WalletPage() {
                 <div className="wallet-blue-box">
                   <h7>Coin</h7>
                   <div className="value">
-                    0 WBNB
+                    0 BNB
                     <legend>0 USD</legend>
                   </div>
                   <div className="value">
@@ -119,8 +119,8 @@ export default function WalletPage() {
                 <div className="wallet-blue-box">
                   <h7>WormsCoin</h7>
                   <div className="value">
-                    1500 WC
-                    <legend>75 USD</legend>
+                    0 WC
+                    <legend>0 USD</legend>
                   </div>
                   <div className="grid mt-2">
                     <button className="button">Depositar</button>
@@ -134,8 +134,7 @@ export default function WalletPage() {
                   <img src={cryptoCoinLogo} alt="" />
                 </div>
                 <div className="crypto-value">
-                  130
-                  <legend>25 USD</legend>
+                  0<legend>0 USD</legend>
                 </div>
                 <div className="grid mt-2">
                   <button className="button">Retirar</button>

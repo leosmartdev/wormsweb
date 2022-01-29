@@ -1,5 +1,5 @@
 footer {
-  background-image: url(./../../img/19.png), url(./../../img/back-game.png);
+  background-image: url(./../../img/19.png);
   background-repeat: no-repeat, repeat;
   background-size: 100%, cover;
   background-position: bottom, left;
@@ -8,6 +8,7 @@ footer {
   text-align: center;
   padding-top: 1rem;
   position: relative;
+  background-color: #00000069;
 }
 
 .footerfirstarea {
@@ -50,6 +51,12 @@ footer {
   .footerimgs img {
     width: 300px;
   }
+  .footersecondarea .container {
+    padding: 0 !important;
+  }
+  .container .footersecondchilddivs:nth-child(2) {
+    border-top: 1px solid #a79d14;
+  }
 }
 @media (max-width: 500px) {
   .footerimgs img {
@@ -64,16 +71,15 @@ footer {
 .footersecondarea {
   display: table;
   width: 100%;
+  border-top: 1px solid #a79d14;
+  border-bottom: 1px solid #a79d14;
 }
 
 .footersecondchilddivs {
   float: left;
   width: 50%;
-  border-top: 1px solid #a79d14;
-  border-bottom: 1px solid #a79d14;
-  border-right: 1px solid #a79d14;
-  // padding: 50px;
-  min-height: 210px;
+
+  min-height: 250px !important;
   > div {
     font-size: 12px;
   }
@@ -85,8 +91,9 @@ footer {
 }
 
 .footersecondchilddivs p {
-  font-size: 50px;
-  margin-bottom: 10px;
+  font-size: 35px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   text-shadow: 0 0 50px yellow;
 }
 
@@ -119,7 +126,7 @@ footer {
 }
 
 .footerthirdimgs2 img {
-  margin: 30px 20px 0;
+  margin: 30px 10px 0;
 }
 
 @media (max-width: 1200px) {
@@ -179,5 +186,10 @@ footer {
 @media (max-width: 500px) {
   .footer-links {
     font-size: 16px;
+  }
+}
+@media (min-width: 900px) {
+  .container .footersecondchilddivs:nth-child(2) {
+    border-left: 1px solid #a79d14;
   }
 }
