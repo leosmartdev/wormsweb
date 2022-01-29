@@ -1,5 +1,5 @@
 #root {
-  background: url(./../../img/back-website.png) no-repeat center;
+  background: url(./../../img/Gusanos-2022-solo.png) no-repeat center;
   background-size: cover;
   min-height: 100%;
 }
@@ -148,7 +148,10 @@
 }
 .homefirstbutton1 {
   margin-left: 5px;
-  padding: 2px 15px;
+  padding: 0 15px;
+  img {
+    max-width: 125px;
+  }
 }
 
 @media (max-width: 1072px) {

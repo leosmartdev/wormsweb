@@ -4,9 +4,9 @@ import { CarouselScreenshotSlider } from "../components/molecules/CarouselSlider
 import video from "./../assets/img/game-video.mp4";
 import SpaceWormsLogo from "./../assets/img/20.png";
 import homefirstimg5 from "./../assets/img/1.png";
-import homebuttonimg1 from "./../assets/img/3.png";
-import homebuttonimg2 from "./../assets/img/2.png";
-import homebuttonimg3 from "./../assets/img/4.png";
+import homebuttonimg1 from "./../assets/img/b_1.png";
+import homebuttonimg2 from "./../assets/img/b2.png";
+import homebuttonimg3 from "./../assets/img/b3.png";
 import homesecondimg1 from "./../assets/img/5.png";
 import roadmapH from "./../assets/img/ROADMAPHORIZONTAL.png";
 import roadmapV from "./../assets/img/ROADMAPVERTICAL.png";
