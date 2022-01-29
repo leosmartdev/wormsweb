@@ -155,7 +155,7 @@ function HomePage() {
               </div>
               <div className="header-right flex-wrapper direction-column">
                 <div className="ml-auto mr-2 topnav-area">
-                  <Link to="/marketplace" className="topnav-button">
+                  <Link to="/login" className="topnav-button">
                     Marketplace
                   </Link>
                 </div>
