@@ -3,9 +3,6 @@ var User = require("../Models/user");
 var Worms = require("../Models/worms");
 var uuid = require("uuid");
 var nodemailer = require("nodemailer");
-let cors = require("cors");
-
-app.use(cors());
 
 router.route("/createmailcode").post((req, res) => {
   var personInfo = req.body.params;

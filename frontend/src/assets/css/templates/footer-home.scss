@@ -121,8 +121,12 @@ footer {
   flex: 25%;
 }
 .footerthirdimgs2 {
-  display: table;
-  margin: auto;
+  display: flex;
+  justify-content: center;
+
+  // a:first-child {
+  //   padding-top: 10px;
+  // }
 }
 
 .footerthirdimgs2 img {

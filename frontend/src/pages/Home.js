@@ -54,6 +54,8 @@ function HomePage() {
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
 
+  const [isOnCorrectArea, setOnCorrectArea] = useState(false);
+
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
 
@@ -280,7 +282,11 @@ function HomePage() {
           </div>
         </div>
         {/*  */}
-        <div className="box-with-borders2 grid place-center ">
+        <div
+          className={`box-with-borders2 grid place-center ${
+            isOnCorrectArea ? "show" : "hide"
+          }`}
+        >
           <ReactVisibilitySensor>
             {({ isVisible }) => (
               <div
@@ -320,7 +326,7 @@ function HomePage() {
             )}
           </ReactVisibilitySensor>
 
-          <div className="container">
+          <div className="container second-section">
             <div className="left-right-flex" id="intro">
               <div className="left">
                 <img src={homesecondimg1} className="homesecondimg1" alt="" />
@@ -347,11 +353,11 @@ function HomePage() {
         </div>
         {/*  */}
         <div className="homethirdarea grid place-center" id="trailer">
-          <div className="container">
+          <div className="container third-area">
             <div className="left-right-flex small-container-for-mobiles">
               <div className="left">
                 <h2 className="hidden">Trailer</h2>
-                <p className="text-shadow">
+                <p className="thirdareatitle">
                   Salva el universo y obten grandes recompensas
                 </p>
               </div>
