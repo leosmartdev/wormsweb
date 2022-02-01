@@ -11,7 +11,7 @@
 html {
   color: white;
   font-family: var(--font);
-  font-size: 30px;
+  font-size: clamp(22px, 1rem, 30px);
   font-weight: 900;
   font-smooth: always;
 }
@@ -197,19 +197,15 @@ video {
     padding: 0 0.1%;
   }
 }
-.screenshots {
-  min-height: 570px;
-}
+// .screenshots {
+//   min-height: 613px;
+// }
 .container {
   max-width: 1366px;
   // padding-left: 3%;
   // padding-right: 3%;
   margin: 0 auto;
   position: relative;
-}
-.header-container {
-  max-width: 1920px !important;
-  padding: 0 !important;
 }
 .small-container-for-mobiles {
   min-height: 420px !important;
@@ -223,7 +219,7 @@ video {
   padding: 1rem 0;
 }
 .hidden {
-  opacity: 0;
+  display: none;
 }
 .fix-social {
   position: fixed !important;

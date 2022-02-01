@@ -234,7 +234,7 @@ function HomePage() {
         </header> */}
       </>
       {/* social media */}
-      <div className={`fix-social fixed-social-media-div `}>
+      <div className={`fix-social fixed-social-media-div desktop-only`}>
         <a href="www.discord.com">
           <img src={dcBlack} className="homefourthimgs" alt="unete a discord" />
         </a>
@@ -259,82 +259,88 @@ function HomePage() {
 
       {/*  */}
       <main className="">
-        <header className={navbarOpen ? "fixed" : ""}>
-          <div className="container header-container">
-            <div className="header flex-wrapper">
-              <div className="header-left">
-                <Logo alt="SPACE WORMS" className="img-logo" />
-              </div>
-              <div className="header-right flex-wrapper direction-column">
-                <div className="ml-auto mr-2 topnav-area">
-                  <Link to="/login" className="topnav-button">
-                    Marketplace
-                  </Link>
+        {/* inicio */}
+        <div className="hero">
+          <header className={navbarOpen ? "fixed" : ""}>
+            <div className="header-container">
+              <div className="header flex-wrapper">
+                <div className="header-left">
+                  <Logo alt="SPACE WORMS" className="img-logo" />
                 </div>
-                <nav>
-                  <ul>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="/" rel="author">
-                        Inicio
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#intro" rel="author">
-                        Introduccion
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#trailer" rel="author">
-                        Trailer
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#roadmap" rel="author">
-                        Roadmap
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#screenshots" rel="author">
-                        Screenshots
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#team" rel="author">
-                        Equipo
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <a href="/whitepaper" rel="author">
-                        Whitepaper
-                      </a>
-                    </li>
-                    <li>
-                      <Tooltip
-                        placement="bottom"
-                        trigger={["click"]}
-                        overlay={<span>Juego Próximamente!</span>}
-                      >
-                        <Button>
-                          JUGAR AHORA <BsFillArrowRightCircleFill />
+                <div className="header-right flex-wrapper direction-column">
+                  <div className="ml-auto mr-2 topnav-area">
+                    <Tooltip
+                      placement="bottom"
+                      trigger={["click"]}
+                      overlay={<span>Próximamente</span>}
+                    >
+                      <Link to="/#0" className="topnav-button">
+                        Marketplace
+                      </Link>
+                    </Tooltip>
+                  </div>
+                  <nav>
+                    <ul>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="/" rel="author">
+                          Inicio
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="#intro" rel="author">
+                          Introduccion
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="#trailer" rel="author">
+                          Trailer
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="#roadmap" rel="author">
+                          Roadmap
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="#screenshots" rel="author">
+                          Screenshots
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <AnchorLink href="#team" rel="author">
+                          Equipo
+                        </AnchorLink>
+                      </li>
+                      <li className="desktop-only header-link">
+                        <a href="/whitepaper" rel="author">
+                          Whitepaper
+                        </a>
+                      </li>
+                      <li>
+                        <Tooltip
+                          placement="bottom"
+                          trigger={["click"]}
+                          overlay={<span>Juego Próximamente!</span>}
+                        >
+                          <Button>
+                            JUGAR AHORA <BsFillArrowRightCircleFill />
+                          </Button>
+                        </Tooltip>
+                      </li>
+                      <li className="mobile-only">
+                        <Button
+                          onClick={handleToggle}
+                          className="buttonHamburguerStyles"
+                        >
+                          {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
                         </Button>
-                      </Tooltip>
-                    </li>
-                    <li className="mobile-only">
-                      <Button
-                        onClick={handleToggle}
-                        className="buttonHamburguerStyles"
-                      >
-                        {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
-                      </Button>
-                    </li>
-                  </ul>
-                </nav>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
               </div>
             </div>
-          </div>
-        </header>
-        {/* inicio */}
-        <div className="container hero">
+          </header>
           <div className="left-right-flex ">
             <div className="left">
               <div className="leftrightinnerdiv">
@@ -342,7 +348,7 @@ function HomePage() {
                   src={SpaceWormsLogo}
                   className="home-img"
                   alt="spaceworms"
-                  style={{ width: width - 820 }}
+                  style={{ width: height - 150 }}
                 />
                 <p className="homeparag1">
                   Videojuego blockchain inspirado en slither.io
@@ -387,7 +393,7 @@ function HomePage() {
                   src={homefirstimg5}
                   className="home-img"
                   alt=""
-                  style={{ width: width - 820 }}
+                  style={{ width: height - 150 }}
                 />
               </div>
             </div>
@@ -439,7 +445,7 @@ function HomePage() {
         </div>
         {/* roadmap */}
         <div className="homefourtharea roadmap" id="roadmap">
-          <div className="container py-1">
+          <div className="container ">
             <div className="small-container-for-mobiles">
               <h2 className="text-shadow">ROAD MAP</h2>
               <div className="m-auto px-1 roadmap-mobile-flex">
@@ -567,10 +573,10 @@ function HomePage() {
         <div
           className="  homefiftharea screenshots"
           id="screenshots"
-          style={{ height: width - 1800 }}
+          style={{ minHeight: height - 300 }}
         >
           <div className="container">
-            <div className="small-container-for-mobiles">
+            <div className="">
               <h2 className="hidden">Screenshots</h2>
               <div className="text-shadow">Screenshots</div>
               <div className="slider-two" style={{ width: width - 100 }}>

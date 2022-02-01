@@ -6,11 +6,12 @@
 }
 main {
   display: grid;
-  grid-template-areas: "header" "hero" "intro" "trailer" "roadmap" "screenshots";
-  grid-template-rows: 175px auto auto auto auto auto;
+  grid-template-areas: "hero" "intro" "trailer" "roadmap" "screenshots";
+  grid-template-rows: auto auto auto auto auto;
 }
 header {
   grid-area: header;
+  min-height: 150px;
 }
 .hero {
   grid-area: hero;
@@ -26,6 +27,16 @@ header {
 }
 .screenshots {
   grid-area: screenshots;
+}
+@media (min-width: 570px) and (max-width: 900px) {
+  .screenshots {
+    min-height: 480px !important;
+  }
+}
+@media (min-width: 900px) {
+  .screenshots {
+    max-height: 520px !important;
+  }
 }
 .slider-one {
   margin: auto;
@@ -152,13 +163,14 @@ header {
   }
 }
 //--------------- first area ------------------
-.home-img {
-  max-width: 600px;
-  min-width: 400px;
-}
-@media (max-width: 500px) {
-  .home-img {
-    min-width: auto;
+// .home-img {
+//   max-width: 600px;
+//   min-width: 400px;
+// }
+.homefirstbutton1 {
+  img {
+    min-height: 10px;
+    min-width: 100%;
   }
 }
 .homeparag1 {
@@ -167,6 +179,9 @@ header {
 .leftrightinnerdiv {
   margin: auto;
   // width: 80%;
+  p {
+    padding: 0 2px;
+  }
 }
 .homefirstbuttondiv {
   display: flex;
@@ -182,7 +197,7 @@ header {
   margin-left: 5px;
   padding: 0 15px;
   img {
-    max-width: 125px;
+    max-width: 125px !important;
   }
 }
 
@@ -387,6 +402,8 @@ video {
   }
   .devices-container {
     transform: scale(0.6);
+    display: flex;
+    width: 100%;
   }
 }
 
@@ -415,21 +432,22 @@ video {
 }
 
 .fixed-social-media-div {
-  width: 65px;
-  height: 240px;
+  width: 40px;
+  height: 180px;
   display: grid;
   grid-template-columns: auto;
   background-color: #a79d14;
-  border-radius: 20px 0 0 20px;
+  border-radius: 10px 0 0 10px;
   position: absolute;
   right: 0;
   padding-top: 0.3rem;
   z-index: 11;
   > * {
     margin: auto;
+    margin-left: 5px;
   }
   a img {
-    max-width: 36px;
+    max-width: 32px;
   }
 }
 
@@ -581,21 +599,15 @@ video {
 
 .second-section {
   p {
-    margin: 1rem 2.3rem 2rem 0;
-    line-height: 1.6rem;
+    margin: 1rem;
+    line-height: 1.4rem;
+    font-size: clamp(16px, 1rem, 19px);
   }
   .left-right-flex .left {
     flex: 30%;
   }
   .left-right-flex .right {
     flex: 70%;
-  }
-}
-@media (max-width: 900px) {
-  .second-section {
-    p {
-      margin: 1rem 2.5rem 1rem 1.5rem;
-    }
   }
 }
 
@@ -614,16 +626,45 @@ video {
     padding-top: 0;
   }
 }
-@media (min-width: 890px) {
-  .hero {
-    min-height: 76vh;
-  }
+// @media (min-width: 890px) {
+//   .hero {
+//     min-height: 76vh;
+//   }
+// }
+.roadmap,
+.trailer {
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 .hero {
-  background-position: 0 -100px;
+  padding-bottom: 50px;
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  .img-logo {
+    max-width: 70% !important;
+  }
+}
+@media (max-width: 475px) {
+  .hero {
+    img {
+      width: 80% !important;
+    }
+  }
+}
+.screenshots,
+.intro,
+.team {
+  padding-top: 50px;
+  padding-bottom: 50px;
 
   img {
     width: 100%;
     height: auto;
   }
+}
+
+.header-link {
+  font-size: 20px;
 }

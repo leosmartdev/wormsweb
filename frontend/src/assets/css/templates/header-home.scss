@@ -1,9 +1,9 @@
 // header templates
-header {
-  position: absolute;
-  left: 0;
-  right: 0;
-}
+// header {
+//   position: absolute;
+//   left: 0;
+//   right: 0;
+// }
 .mm-connect {
   font-size: small;
 }
@@ -80,16 +80,7 @@ li.header-link {
 .buttonHamburguerStyles {
   padding: 0.13rem 0.25rem 0.151rem 0.25rem;
 }
-.img-logo {
-  max-width: 250px;
-  height: auto;
-}
-@media (max-width: 376px) {
-  .img-logo {
-    max-width: 100px !important;
-    padding-top: 0.42rem;
-  }
-}
+
 @media (max-width: 500px) {
   .header-right nav ul {
     flex-direction: column;
@@ -106,12 +97,12 @@ li.header-link {
     order: 1;
   }
 }
-@media (max-width: 650px) {
-  .img-logo {
-    max-width: 150px;
-    padding-top: 0.42rem;
-  }
-}
+// @media (max-width: 650px) {
+//   .img-logo {
+//     max-width: 150px;
+//     padding-top: 0.42rem;
+//   }
+// }
 @media (min-width: 1000px) {
   .header {
     font-size: 0.75rem;
