@@ -342,7 +342,7 @@ function HomePage() {
                   src={SpaceWormsLogo}
                   className="home-img"
                   alt="spaceworms"
-                  style={{ width: width - 687 }}
+                  style={{ width: width - 820 }}
                 />
                 <p className="homeparag1">
                   Videojuego blockchain inspirado en slither.io
@@ -387,7 +387,7 @@ function HomePage() {
                   src={homefirstimg5}
                   className="home-img"
                   alt=""
-                  style={{ width: width - 687 }}
+                  style={{ width: width - 820 }}
                 />
               </div>
             </div>
