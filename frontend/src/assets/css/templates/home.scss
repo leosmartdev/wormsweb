@@ -74,11 +74,11 @@ header {
   display: flex;
   flex-direction: row;
 }
-@media (min-width: 900px) {
-  .left-right-flex {
-    padding: 1rem 2rem;
-  }
-}
+// @media (min-width: 900px) {
+//   .left-right-flex {
+//     padding: 1rem 2rem;
+//   }
+// }
 .left-right-flex .right,
 .left-right-flex .left {
   position: relative;
@@ -106,6 +106,9 @@ header {
   // .left-right-flex .left {
   //   padding-top: 5rem;
   // }
+}
+.slider-two {
+  max-width: 650px;
 }
 .slider-one-arrow-container,
 .slider-two-arrow-container {
@@ -149,7 +152,15 @@ header {
   }
 }
 //--------------- first area ------------------
-
+.home-img {
+  max-width: 600px;
+  min-width: 400px;
+}
+@media (max-width: 500px) {
+  .home-img {
+    min-width: auto;
+  }
+}
 .homeparag1 {
   font-size: 20px;
 }
@@ -343,12 +354,13 @@ header {
     margin: 20px;
   }
   video {
-    width: 80vw;
     border-radius: 30px;
     border: 8px solid white;
   }
 }
 video {
+  max-width: 650px;
+
   border-radius: 30px;
   border: 8px solid white;
 }

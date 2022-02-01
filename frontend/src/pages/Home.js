@@ -36,17 +36,24 @@ import twBlack from "assets/img/tw_black.png";
 import ytBlack from "assets/img/youtube_black.png";
 import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap_white.css";
-import ReactVisibilitySensor from "react-visibility-sensor";
 
-const Video = () => {
-  return (
-    <>
-      <video autoPlay playsInline muted src={video} />
-    </>
-  );
-};
+import useWindowDimensions from "./../components/atoms/useWindowsDimensions";
 
 function HomePage() {
+  const Video = () => {
+    return (
+      <>
+        <video
+          style={{ width: width - 120 }}
+          autoPlay
+          playsInline
+          muted
+          src={video}
+        />
+      </>
+    );
+  };
+
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
 
@@ -55,6 +62,8 @@ function HomePage() {
   const [url, setURL] = useState("");
 
   const [isOnCorrectArea, setOnCorrectArea] = useState(false);
+
+  const { height, width } = useWindowDimensions();
 
   useEffect(async () => {
     const { address, status } = await getCurrentWalletConnected();
@@ -325,14 +334,15 @@ function HomePage() {
           </div>
         </header>
         {/* inicio */}
-        <div className="min-vh container hero">
+        <div className="container hero">
           <div className="left-right-flex ">
             <div className="left">
               <div className="leftrightinnerdiv">
                 <img
                   src={SpaceWormsLogo}
-                  className="homefirstimg1"
+                  className="home-img"
                   alt="spaceworms"
+                  style={{ width: width - 687 }}
                 />
                 <p className="homeparag1">
                   Videojuego blockchain inspirado en slither.io
@@ -373,7 +383,12 @@ function HomePage() {
             </div>
             <div className="right homesecondarea">
               <div className="leftrightinnerdiv">
-                <img src={homefirstimg5} className="homefirstimg5" alt="" />
+                <img
+                  src={homefirstimg5}
+                  className="home-img"
+                  alt=""
+                  style={{ width: width - 687 }}
+                />
               </div>
             </div>
           </div>
@@ -416,7 +431,7 @@ function HomePage() {
                   Salva el universo y obten grandes recompensas
                 </p>
               </div>
-              <div className="right">
+              <div className="right video-right">
                 <Video />
               </div>
             </div>
@@ -554,7 +569,7 @@ function HomePage() {
             <div className="small-container-for-mobiles">
               <h2 className="hidden">Screenshots</h2>
               <div className="text-shadow">Screenshots</div>
-              <div className="slider-two">
+              <div className="slider-two" style={{ width: width - 100 }}>
                 <CarouselScreenshotSlider />
               </div>
             </div>
