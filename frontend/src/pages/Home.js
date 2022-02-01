@@ -228,7 +228,7 @@ function HomePage() {
         <div className="hidden">
           <h1>Space Worms</h1>
         </div>
-        <div className="grid place-center container ">
+        <div className="grid place-center container hero">
           <div className="left-right-flex ">
             <div className="left">
               <div className="leftrightinnerdiv">

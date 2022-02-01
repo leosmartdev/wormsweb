@@ -129,10 +129,12 @@
 }
 
 .homefirstimg1 {
+  height: auto;
   max-width: 100%;
 }
 .homefirstimg5 {
-  max-width: 100%;
+  height: auto;
+  width: 100%;
 }
 .homeparag1 {
   font-size: 20px;
@@ -596,4 +598,7 @@ video {
   #trailer > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
     padding-top: 0;
   }
+}
+.hero {
+  min-height: 100vh;
 }
