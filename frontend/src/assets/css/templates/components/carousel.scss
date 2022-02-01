@@ -36,7 +36,7 @@
 //   margin-top: 50px;
 // }
 .slider-two {
-  max-width: 87%;
+  width: 50%;
   margin: 0 auto;
 }
 .slider-two .slide-container {
@@ -46,11 +46,11 @@
 .carousel__back-button:disabled {
   display: none;
 }
-@media (min-width: 783px) {
-  .slider-two {
-    min-height: 650px;
-  }
-}
+// @media (min-width: 783px) {
+//   .slider-two {
+//     min-height: 650px;
+//   }
+// }
 @media (min-width: 900px) {
   .slider-two {
     margin-bottom: 5vh;

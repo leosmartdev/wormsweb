@@ -149,6 +149,107 @@ function HomePage() {
             </ul>
           </nav>
         </div>
+        {/* <header className={navbarOpen ? "fixed" : ""}>
+          <div className="container header-container">
+            <div className="header flex-wrapper">
+              <div className="header-left">
+                <Logo alt="SPACE WORMS" className="img-logo" />
+              </div>
+              <div className="header-right flex-wrapper direction-column">
+                <div className="ml-auto mr-2 topnav-area">
+                  <Link to="/login" className="topnav-button">
+                    Marketplace
+                  </Link>
+                </div>
+                <nav>
+                  <ul>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="/" rel="author">
+                        Inicio
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#intro" rel="author">
+                        Introduccion
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#trailer" rel="author">
+                        Trailer
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#roadmap" rel="author">
+                        Roadmap
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#screenshots" rel="author">
+                        Screenshots
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <AnchorLink href="#team" rel="author">
+                        Equipo
+                      </AnchorLink>
+                    </li>
+                    <li className="desktop-only header-link">
+                      <a href="/whitepaper" rel="author">
+                        Whitepaper
+                      </a>
+                    </li>
+                    <li>
+                      <Tooltip
+                        placement="bottom"
+                        trigger={["click"]}
+                        overlay={<span>Juego Próximamente!</span>}
+                      >
+                        <Button>
+                          JUGAR AHORA <BsFillArrowRightCircleFill />
+                        </Button>
+                      </Tooltip>
+                    </li>
+                    <li className="mobile-only">
+                      <Button
+                        onClick={handleToggle}
+                        className="buttonHamburguerStyles"
+                      >
+                        {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
+                      </Button>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </header> */}
+      </>
+      {/* social media */}
+      <div className={`fix-social fixed-social-media-div `}>
+        <a href="www.discord.com">
+          <img src={dcBlack} className="homefourthimgs" alt="unete a discord" />
+        </a>
+        <a href="www.telegram.com">
+          <img
+            src={tgBlack}
+            className="homefourthimgs"
+            alt="unete a telegram"
+          />
+        </a>
+        <a href="www.temti.com">
+          <img src={twBlack} className="homefourthimgs" alt="unete a twitter" />
+        </a>
+        <a href="www.youtube.com">
+          <img
+            src={ytBlack}
+            className="homefourthimgs"
+            alt="suscribete a nuestro canal"
+          />
+        </a>
+      </div>
+
+      {/*  */}
+      <main className="">
         <header className={navbarOpen ? "fixed" : ""}>
           <div className="container header-container">
             <div className="header flex-wrapper">
@@ -223,12 +324,8 @@ function HomePage() {
             </div>
           </div>
         </header>
-      </>
-      <main className="">
-        <div className="hidden">
-          <h1>Space Worms</h1>
-        </div>
-        <div className="grid place-center container hero">
+        {/* inicio */}
+        <div className="min-vh container hero">
           <div className="left-right-flex ">
             <div className="left">
               <div className="leftrightinnerdiv">
@@ -281,51 +378,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/*  */}
-        <div
-          className={`box-with-borders2 grid place-center ${
-            isOnCorrectArea ? "show" : "hide"
-          }`}
-        >
-          <ReactVisibilitySensor>
-            {({ isVisible }) => (
-              <div
-                className={`${
-                  isVisible ? "fix-social" : ""
-                }  fixed-social-media-div `}
-              >
-                <a href="www.discord.com">
-                  <img
-                    src={dcBlack}
-                    className="homefourthimgs"
-                    alt="unete a discord"
-                  />
-                </a>
-                <a href="www.telegram.com">
-                  <img
-                    src={tgBlack}
-                    className="homefourthimgs"
-                    alt="unete a telegram"
-                  />
-                </a>
-                <a href="www.temti.com">
-                  <img
-                    src={twBlack}
-                    className="homefourthimgs"
-                    alt="unete a twitter"
-                  />
-                </a>
-                <a href="www.youtube.com">
-                  <img
-                    src={ytBlack}
-                    className="homefourthimgs"
-                    alt="suscribete a nuestro canal"
-                  />
-                </a>
-              </div>
-            )}
-          </ReactVisibilitySensor>
-
+        {/* intro */}
+        <div className={`box-with-borders2 grid place-center intro`}>
+          {/*  */}
           <div className="container second-section">
             <div className="left-right-flex" id="intro">
               <div className="left">
@@ -351,8 +406,8 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/*  */}
-        <div className="homethirdarea grid place-center" id="trailer">
+        {/* trailer */}
+        <div className="homethirdarea grid place-center trailer" id="trailer">
           <div className="container third-area">
             <div className="left-right-flex small-container-for-mobiles">
               <div className="left">
@@ -367,11 +422,8 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/*  */}
-
-        {/*  */}
         {/* roadmap */}
-        <div className="homefourtharea " id="roadmap">
+        <div className="homefourtharea roadmap" id="roadmap">
           <div className="container py-1">
             <div className="small-container-for-mobiles">
               <h2 className="text-shadow">ROAD MAP</h2>
@@ -496,9 +548,9 @@ function HomePage() {
             </div>
           </div>
         </div>
-        {/*  */}
-        <div className="  homefiftharea" id="screenshots">
-          <div className="container-slider-two container">
+        {/* screenshots */}
+        <div className="  homefiftharea screenshots" id="screenshots">
+          <div className="container">
             <div className="small-container-for-mobiles">
               <h2 className="hidden">Screenshots</h2>
               <div className="text-shadow">Screenshots</div>

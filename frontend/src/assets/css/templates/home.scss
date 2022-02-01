@@ -1,8 +1,31 @@
 #root {
-  background: url(./../../img/Gusanos-2022-solo.png) no-repeat fixed;
+  background: url(./../../img/Gusanos-2022-solo.png) no-repeat;
   background-size: cover;
-  background-position: 0 -700px;
+  background-position: 0 0;
   min-height: 100%;
+}
+main {
+  display: grid;
+  grid-template-areas: "header" "hero" "intro" "trailer" "roadmap" "screenshots";
+  grid-template-rows: 175px auto auto auto auto auto;
+}
+header {
+  grid-area: header;
+}
+.hero {
+  grid-area: hero;
+}
+.intro {
+  grid-area: intro;
+}
+.trailer {
+  grid-area: trailer;
+}
+.roadmap {
+  grid-area: roadmap;
+}
+.screenshots {
+  grid-area: screenshots;
 }
 .slider-one {
   margin: auto;
@@ -52,6 +75,9 @@
   flex-direction: row;
 }
 @media (min-width: 900px) {
+  .left-right-flex {
+    padding: 1rem 2rem;
+  }
 }
 .left-right-flex .right,
 .left-right-flex .left {
@@ -76,11 +102,10 @@
   .left-right-flex .right {
     font-size: clamp(0.8rem, 2.5rem, 0.61vw);
     margin-top: 0;
-    margin-bottom: 3rem;
   }
-  .left-right-flex .left {
-    padding-top: 5rem;
-  }
+  // .left-right-flex .left {
+  //   padding-top: 5rem;
+  // }
 }
 .slider-one-arrow-container,
 .slider-two-arrow-container {
@@ -124,24 +149,12 @@
   }
 }
 //--------------- first area ------------------
-.home-first-area {
-  margin-top: 200px;
-}
 
-.homefirstimg1 {
-  height: auto;
-  max-width: 100%;
-}
-.homefirstimg5 {
-  height: auto;
-  width: 100%;
-}
 .homeparag1 {
   font-size: 20px;
 }
 .leftrightinnerdiv {
   margin: auto;
-  display: table;
   // width: 80%;
 }
 .homefirstbuttondiv {
@@ -173,15 +186,7 @@
 }
 
 @media (max-width: 900px) {
-  .homefirstimg1 {
-    width: 80vw;
-    margin-top: 20px;
-  }
   .homefirstbuttondiv {
-    margin-top: 10px;
-  }
-  .homefirstimg5 {
-    width: 80vw;
     margin-top: 10px;
   }
   .homefirstbutton1 {
@@ -212,9 +217,7 @@
 .homesecondleftdiv > div {
   display: table;
 }
-.homesecondimg1 {
-  width: 250px;
-}
+
 .homesecondrightdiv p {
   margin-top: 20px;
   line-height: 40px;
@@ -520,7 +523,7 @@ video {
   gap: 0rem;
   place-items: end;
   margin-right: 0.5rem;
-  font-size: clamp(0.45rem, 1.7rem, 0.47vw);
+  font-size: clamp(0.4rem, 1.7rem, 0.47vw);
   > * {
     text-align: right;
   }
@@ -531,7 +534,7 @@ video {
   gap: 0rem;
   place-items: center left;
   margin-left: 0.5rem;
-  font-size: clamp(0.45rem, 1.7rem, 0.47vw);
+  font-size: clamp(0.4rem, 1.7rem, 0.47vw);
   > * {
     text-align: left;
   }
@@ -567,7 +570,7 @@ video {
 .second-section {
   p {
     margin: 1rem 2.3rem 2rem 0;
-    line-height: 2rem;
+    line-height: 1.6rem;
   }
   .left-right-flex .left {
     flex: 30%;
@@ -599,6 +602,16 @@ video {
     padding-top: 0;
   }
 }
+@media (min-width: 890px) {
+  .hero {
+    min-height: 76vh;
+  }
+}
 .hero {
-  min-height: 100vh;
+  background-position: 0 -100px;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }

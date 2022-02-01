@@ -210,7 +210,12 @@ video {
   padding: 0 !important;
 }
 .small-container-for-mobiles {
-  min-height: 620px !important;
+  min-height: 370px !important;
+}
+@media (min-width: 875px) {
+  .small-container-for-mobiles {
+    min-height: 670px !important;
+  }
 }
 .py-1 {
   padding: 1rem 0;
@@ -221,6 +226,15 @@ video {
 .fix-social {
   position: fixed !important;
   right: 0;
-  top: 50vh;
+  top: 36vh;
   z-index: 11;
+  display: block;
+}
+// @media (max-width: 365px) {
+//   .fix-social {
+//     display: none !important;
+//   }
+// }
+.min-vh {
+  min-height: 100vh;
 }
