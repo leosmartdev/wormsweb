@@ -564,7 +564,11 @@ function HomePage() {
           </div>
         </div>
         {/* screenshots */}
-        <div className="  homefiftharea screenshots" id="screenshots">
+        <div
+          className="  homefiftharea screenshots"
+          id="screenshots"
+          style={{ height: width - 1800 }}
+        >
           <div className="container">
             <div className="small-container-for-mobiles">
               <h2 className="hidden">Screenshots</h2>
