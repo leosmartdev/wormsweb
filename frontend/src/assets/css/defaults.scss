@@ -96,6 +96,11 @@ nav ul {
 .my-3 {
   margin: 1.5rem 0;
 }
+@media (max-width: 500px) {
+  .sm-my-3 {
+    margin: 1.5rem 0;
+  }
+}
 .img-fluid {
   max-width: 100%;
   height: auto;

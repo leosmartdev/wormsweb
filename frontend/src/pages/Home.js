@@ -37,6 +37,8 @@ import ytBlack from "assets/img/youtube_black.png";
 import Tooltip from "rc-tooltip";
 import "rc-tooltip/assets/bootstrap_white.css";
 
+import sdLogo from "assets/img/sd.png";
+
 import useWindowDimensions from "./../components/atoms/useWindowsDimensions";
 
 function HomePage() {
@@ -261,7 +263,7 @@ function HomePage() {
       <main className="">
         {/* inicio */}
         <div className="hero">
-          <header className={navbarOpen ? "fixed" : ""}>
+          <header>
             <div className="header-container">
               <div className="header flex-wrapper">
                 <div className="header-left">
@@ -578,7 +580,7 @@ function HomePage() {
             <div className="">
               <h2 className="hidden">Screenshots</h2>
               <div className="text-shadow">Screenshots</div>
-              <div className="slider-two" style={{ width: width - 100 }}>
+              <div className="slider-two">
                 <CarouselScreenshotSlider />
               </div>
             </div>
@@ -590,13 +592,13 @@ function HomePage() {
         {/*  */}
         <div className="footerfirstarea container team" id="team">
           <span className=" text-shadow">Equipo</span>
-          <div className="footerimgsdiv">
+          <div className="footerimgsdiv my-3">
             <div className="footerimgs">
               <img src={teamMember2} alt="john doe" />
               <div>Brayan Suniaga</div>
               <div>Inversor y creador de contenido</div>
             </div>
-            <div className="footerimgs my-3">
+            <div className="footerimgs sm-my-3">
               <img src={teamMember1} alt="john doe" />
               <div>Abraham Leon</div>
               <div>Empresario y entusiasta de las criptomonedas</div>
@@ -613,7 +615,7 @@ function HomePage() {
           <div className="container">
             <div className="footersecondchilddivs">
               <p>Partners</p>
-              <img src={footerimg4} alt="partner" />
+              <img src={sdLogo} alt="partner" style={{ maxWidth: "100px" }} />
             </div>
             <div className="footersecondchilddivs">
               <p>Developers</p>
