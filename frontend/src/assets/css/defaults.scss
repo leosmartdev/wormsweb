@@ -93,6 +93,9 @@ nav ul {
 .my-1 {
   margin: 0.2rem 0;
 }
+.my-3 {
+  margin: 1.5rem 0;
+}
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -164,7 +167,7 @@ video {
   margin-right: 0.25rem;
   margin-top: 0.25rem;
   & > * {
-    margin: auto 0.25rem;
+    margin: auto 0.75rem;
   }
 }
 .text-center {
@@ -235,4 +238,7 @@ video {
 // }
 .min-vh {
   min-height: 100vh;
+}
+.m-auto {
+  margin: auto;
 }

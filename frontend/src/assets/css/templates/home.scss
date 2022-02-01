@@ -28,11 +28,7 @@ header {
 .screenshots {
   grid-area: screenshots;
 }
-@media (min-width: 570px) and (max-width: 900px) {
-  .screenshots {
-    min-height: 480px !important;
-  }
-}
+
 @media (min-width: 900px) {
   .screenshots {
     max-height: 520px !important;
@@ -596,12 +592,28 @@ video {
     }
   }
 }
-
+html
+  body
+  div#root
+  main
+  div.box-with-borders2.grid.place-center.intro
+  div.container.second-section
+  div#intro.left-right-flex
+  div.right
+  p.mt-2 {
+  margin-top: 3rem;
+}
 .second-section {
   p {
-    margin: 1rem;
-    line-height: 1.4rem;
-    font-size: clamp(16px, 1rem, 19px);
+    margin: 1.5rem;
+    line-height: clamp(18px, 1.75rem, 43px);
+    font-size: clamp(14px, 1.5rem, 39px);
+  }
+  @media (max-width: 600px) {
+    p {
+      font-size: 20px;
+      line-height: 24px;
+    }
   }
   .left-right-flex .left {
     flex: 30%;
@@ -667,4 +679,19 @@ video {
 
 .header-link {
   font-size: 20px;
+}
+.hero {
+  min-height: 100vh;
+}
+.intro {
+  min-height: 100vh;
+}
+.trailer {
+  min-height: 100vh;
+}
+.roadmap {
+  min-height: 100vh;
+}
+.screenshots {
+  min-height: 100vh;
 }

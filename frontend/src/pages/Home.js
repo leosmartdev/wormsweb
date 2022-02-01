@@ -446,7 +446,10 @@ function HomePage() {
         {/* roadmap */}
         <div className="homefourtharea roadmap" id="roadmap">
           <div className="container ">
-            <div className="small-container-for-mobiles">
+            <div
+              className="small-container-for-mobiles"
+              style={{ display: "flex", flexDirection: "column" }}
+            >
               <h2 className="text-shadow">ROAD MAP</h2>
               <div className="m-auto px-1 roadmap-mobile-flex">
                 <div className="">
@@ -570,11 +573,7 @@ function HomePage() {
           </div>
         </div>
         {/* screenshots */}
-        <div
-          className="  homefiftharea screenshots"
-          id="screenshots"
-          style={{ minHeight: height - 300 }}
-        >
+        <div className="  homefiftharea screenshots" id="screenshots">
           <div className="container">
             <div className="">
               <h2 className="hidden">Screenshots</h2>
@@ -589,23 +588,23 @@ function HomePage() {
       </main>
       <footer className="">
         {/*  */}
-        <div className="footerfirstarea container" id="team">
+        <div className="footerfirstarea container team" id="team">
           <span className=" text-shadow">Equipo</span>
           <div className="footerimgsdiv">
             <div className="footerimgs">
               <img src={teamMember2} alt="john doe" />
-              <p>Brayan Suniaga</p>
-              <span>Inversor y creador de contenido</span>
+              <div>Brayan Suniaga</div>
+              <div>Inversor y creador de contenido</div>
             </div>
-            <div className="footerimgs">
+            <div className="footerimgs my-3">
               <img src={teamMember1} alt="john doe" />
-              <p>Abraham Leon</p>
-              <span>Empresario y entusiasta de las criptomonedas</span>
+              <div>Abraham Leon</div>
+              <div>Empresario y entusiasta de las criptomonedas</div>
             </div>
             <div className="footerimgs">
               <img src={teamMember3} alt="john doe" />
-              <p>Neydua Sierra</p>
-              <span>Ingeniero e inversor de NFT</span>
+              <div>Neydua Sierra</div>
+              <div>Ingeniero e inversor de NFT</div>
             </div>
           </div>
         </div>
