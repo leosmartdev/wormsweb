@@ -153,104 +153,30 @@ function HomePage() {
                 </AnchorLink>
               </li>
               <li>
-                <a href="/whitepaper" rel="author">
+                <a href="https://docs.spaceworms.app/" rel="author">
                   Whitepaper
                 </a>
               </li>
             </ul>
           </nav>
         </div>
-        {/* <header className={navbarOpen ? "fixed" : ""}>
-          <div className="container header-container">
-            <div className="header flex-wrapper">
-              <div className="header-left">
-                <Logo alt="SPACE WORMS" className="img-logo" />
-              </div>
-              <div className="header-right flex-wrapper direction-column">
-                <div className="ml-auto mr-2 topnav-area">
-                  <Link to="/login" className="topnav-button">
-                    Marketplace
-                  </Link>
-                </div>
-                <nav>
-                  <ul>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="/" rel="author">
-                        Inicio
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#intro" rel="author">
-                        Introduccion
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#trailer" rel="author">
-                        Trailer
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#roadmap" rel="author">
-                        Roadmap
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#screenshots" rel="author">
-                        Screenshots
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <AnchorLink href="#team" rel="author">
-                        Equipo
-                      </AnchorLink>
-                    </li>
-                    <li className="desktop-only header-link">
-                      <a href="/whitepaper" rel="author">
-                        Whitepaper
-                      </a>
-                    </li>
-                    <li>
-                      <Tooltip
-                        placement="bottom"
-                        trigger={["click"]}
-                        overlay={<span>Juego Próximamente!</span>}
-                      >
-                        <Button>
-                          JUGAR AHORA <BsFillArrowRightCircleFill />
-                        </Button>
-                      </Tooltip>
-                    </li>
-                    <li className="mobile-only">
-                      <Button
-                        onClick={handleToggle}
-                        className="buttonHamburguerStyles"
-                      >
-                        {navbarOpen ? <CrossIcon /> : <HamburguerIcon />}
-                      </Button>
-                    </li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-          </div>
-        </header> */}
       </>
       {/* social media */}
       <div className={`fix-social fixed-social-media-div desktop-only`}>
-        <a href="www.discord.com">
+        <a href="https://discord.com/invite/spaceworms">
           <img src={dcBlack} className="homefourthimgs" alt="unete a discord" />
         </a>
-        <a href="www.telegram.com">
+        <a href="https://t.me/spaceworms">
           <img
             src={tgBlack}
             className="homefourthimgs"
             alt="unete a telegram"
           />
         </a>
-        <a href="www.temti.com">
+        <a href="https://twitter.com/spacewormsnft">
           <img src={twBlack} className="homefourthimgs" alt="unete a twitter" />
         </a>
-        <a href="www.youtube.com">
+        <a href="https://www.youtube.com/c/TioDiamond">
           <img
             src={ytBlack}
             className="homefourthimgs"
@@ -314,7 +240,7 @@ function HomePage() {
                         </AnchorLink>
                       </li>
                       <li className="desktop-only header-link">
-                        <a href="/whitepaper" rel="author">
+                        <a href="https://docs.spaceworms.app/" rel="author">
                           Whitepaper
                         </a>
                       </li>
@@ -634,16 +560,16 @@ function HomePage() {
             </div>
           </div>
           <div className="footerthirdimgs2">
-            <a href="#0">
+            <a href="https://discord.com/invite/spaceworms">
               <img src={dcBlack} alt="discord" />
             </a>
-            <a href="#0">
+            <a href="https://t.me/spaceworms">
               <img src={tgBlack} alt="telegram" />
             </a>
-            <a href="#0">
+            <a href="https://twitter.com/spacewormsnft">
               <img src={twBlack} alt="twitter" />
             </a>
-            <a href="#0">
+            <a href="https://www.youtube.com/c/TioDiamond">
               <img src={ytBlack} alt="Youtube" />
             </a>
           </div>

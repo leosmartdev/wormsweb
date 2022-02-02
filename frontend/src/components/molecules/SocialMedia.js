@@ -4,17 +4,29 @@ function SocialMedia() {
     <div className="social-media-area">
       <ul>
         <li>
-          <a href="discord.com" className="sm-icon discord" rel="noreferrer">
+          <a
+            href="https://discord.com/invite/spaceworms"
+            className="sm-icon discord"
+            rel="noreferrer"
+          >
             &nbsp;
           </a>
         </li>
         <li>
-          <a href="twitter.com" className="sm-icon twitter" rel="noreferrer">
+          <a
+            href="https://twitter.com/spacewormsnft"
+            className="sm-icon twitter"
+            rel="noreferrer"
+          >
             &nbsp;
           </a>
         </li>
         <li>
-          <a href="telegram.com" className="sm-icon telegram" rel="noreferrer">
+          <a
+            href="https://t.me/spaceworms"
+            className="sm-icon telegram"
+            rel="noreferrer"
+          >
             &nbsp;
           </a>
         </li>
