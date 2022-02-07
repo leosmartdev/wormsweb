@@ -149,7 +149,7 @@ function MmLoginPage() {
                 // setModalOpen(false);
                 connectWalletPressed();
               } else {
-                // setModalOpen(true);
+                 setModalOpen(true); // modified by tuktuk
               }
             }}
           >

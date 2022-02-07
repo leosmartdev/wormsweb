@@ -452,13 +452,16 @@ function MarketPlacePage() {
     //   setInputValue(event.target.value);
     // };
     const inputValue = watch(["nftquantity", "number"]);
-
+    const eggPrice=100;
+    const handleChange = (event) => {
+      document.getElementById("totalPrice").innerHTML=eggPrice*event.target.value+" BUSD";      
+    };
     return (
       <>
         <form className="buy-egg-form mt-1" onSubmit={handleSubmit(onSubmit)}>
           <div className="buy-egg-form-label flex-wrapper">
             <div>Costo de huevo</div>
-            <div>100 BUSD</div>
+            <div>{eggPrice} BUSD</div>
           </div>
           <div className="buy-egg-form-quantity flex-wrapper">
             <div>Cantidad</div>
@@ -469,12 +472,13 @@ function MarketPlacePage() {
                 min="1"
                 max="2"
                 {...register("nftquantity")}
+                onChange={handleChange} //added by tuktuk
               />
             </div>
           </div>
           <div className="buy-egg-form-label flex-wrapper">
             <div>Precio total</div>
-            <div>100 BUSD</div>
+            <div id="totalPrice">100 BUSD</div>
           </div>
           <div className="buy-egg-form-terms">
             * máximo de compra por wallet (2)
